@@ -22,10 +22,22 @@ public abstract class AbstractDurationFormatTest {
                   hms(4, 5, 17).format("%h:%M:%S"));
   }
 
+
   // ADD MORE TESTS HERE
   // Your tests must only use hms(...) and sec(...) to construct new Durations
   // and must *not* directly say "new CompactDuration(...)" or
   // "new HmsDuration(...)"
+  @Test
+  public void testOverlappingPercentHms() {
+    assertEquals("%h:05:17",
+            hms(4, 5, 17).format("%%h:%M:%S"));
+  }
+
+  @Test
+  public void testOverlappingPercentSec() {
+    assertEquals("%h:00:0",
+            sec(3600).format("%%h:%M:%s"));
+  }
 
 
 

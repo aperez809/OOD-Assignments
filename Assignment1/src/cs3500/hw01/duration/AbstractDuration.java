@@ -134,8 +134,13 @@ abstract class AbstractDuration implements Duration {
 
     for (int i = 0; i < template.length(); i++) {
       if (template.charAt(i) == '%') {
-        formattedString.append(this.formatHelper(template.charAt(i + 1)));
-        i++;
+        try {
+          formattedString.append(this.formatHelper(template.charAt(i + 1)));
+          i++;
+        }
+        catch (Exception IndexOutOfBoundsException) {
+          throw new IllegalArgumentException("Format specifier malformed.");
+        }
       }
       else {
         formattedString.append(template.charAt(i));

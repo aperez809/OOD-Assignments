@@ -71,7 +71,7 @@ public final class CompactDuration extends AbstractDuration {
     } else if (s == '%') {
       return "%";
     } else {
-      throw new IllegalArgumentException("Format specifier not recognized.");
+      throw new IllegalArgumentException("Format specifier malformed.");
     }
   }
 
