@@ -29,7 +29,7 @@ public class Webpage implements Publication {
 
   @Override
   public String citeMla() {
-    return "\\" + this.title + ".\\ Web. " + this.retrieved + " <" + this.url + ">.";
+    return "\"" + this.title + ".\" Web. " + this.retrieved + " <" + this.url + ">.";
   }
 }
 

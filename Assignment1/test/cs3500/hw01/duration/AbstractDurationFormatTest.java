@@ -27,6 +27,48 @@ public abstract class AbstractDurationFormatTest {
   // Your tests must only use hms(...) and sec(...) to construct new Durations
   // and must *not* directly say "new CompactDuration(...)" or
   // "new HmsDuration(...)"
+
+  @Test
+  public void testLowerCaseTSpecifierCompact() {
+    assertEquals("3600",
+            sec(3600).format("%t"));
+  }
+
+  @Test
+  public void testLowerCaseHSpecifierCompact() {
+    assertEquals("1",
+            sec(3600).format("%h"));
+    assertEquals("10",
+            sec(36000).format("%h"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierCompact() {
+    assertEquals("1",
+            sec(60).format("%m"));
+    assertEquals("10",
+            sec(600).format("%m"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierCompact() {
+    assertEquals("1",
+            sec(1).format("%s"));
+    assertEquals("10",
+            sec(10).format("%s"));
+    assertEquals("1:1",
+            sec(61).format("%m:%s"));
+  }
+
+  @Test
+  public void testPercentSpecifierCompact() {
+    assertEquals("%",
+            sec(1).format("%%"));
+    assertEquals("%t",
+            sec(10).format("%%t"));
+  }
+
+
   @Test
   public void testOverlappingPercentHms() {
     assertEquals("%h:05:17",

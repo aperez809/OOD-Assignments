@@ -130,6 +130,10 @@ abstract class AbstractDuration implements Duration {
   @Override
   public String format(String template) {
 
+    if (template == null) {
+      throw new IllegalArgumentException("Must provide non-null template string");
+    }
+
     StringBuilder formattedString = new StringBuilder();
 
     for (int i = 0; i < template.length(); i++) {

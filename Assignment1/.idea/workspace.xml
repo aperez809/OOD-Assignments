@@ -12,21 +12,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CompactDuration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/CompactDuration.java">
+      <file leaf-file-name="Webpage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="70" />
+            <state relative-caret-position="465">
+              <caret line="31" column="85" lean-forward="true" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HmsDuration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/HmsDuration.java">
+      <file leaf-file-name="CompactDuration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/CompactDuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="1035">
+              <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -35,8 +35,8 @@
       <file leaf-file-name="AbstractDuration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/AbstractDuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="141" column="76" lean-forward="false" selection-start-line="141" selection-start-column="76" selection-end-line="141" selection-end-column="76" />
+            <state relative-caret-position="261">
+              <caret line="133" column="64" lean-forward="false" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -45,8 +45,8 @@
       <file leaf-file-name="AbstractDurationFormatTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/cs3500/hw01/duration/AbstractDurationFormatTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="462">
+              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,11 +78,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/cs3500/hw01/publication/WebpageTest.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java" />
         <option value="$PROJECT_DIR$/test/cs3500/hw01/duration/AbstractDurationTest.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java" />
         <option value="$PROJECT_DIR$/src/cs3500/hw01/duration/HmsDuration.java" />
         <option value="$PROJECT_DIR$/src/cs3500/hw01/duration/CompactDuration.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java" />
         <option value="$PROJECT_DIR$/src/cs3500/hw01/duration/AbstractDuration.java" />
         <option value="$PROJECT_DIR$/test/cs3500/hw01/duration/AbstractDurationFormatTest.java" />
       </list>
@@ -404,7 +404,7 @@
       <option name="presentableId" value="Default" />
       <updated>1547515085625</updated>
       <workItem from="1547515087049" duration="940000" />
-      <workItem from="1547516231714" duration="4073000" />
+      <workItem from="1547516231714" duration="5764000" />
     </task>
     <servers />
   </component>
@@ -424,21 +424,28 @@
     <history-entry file="AbstractDurationFormatTest$CompactDurationTest_and_1_more - 2019.01.14 at 23h 33m 02s.xml">
       <configuration name="AbstractDurationFormatTest$CompactDurationTest and 1 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AbstractDurationTest$CompactDurationTest_and_1_more - 2019.01.14 at 20h 22m 27s.xml">
-      <configuration name="AbstractDurationTest$CompactDurationTest and 1 more" configurationId="JUnit" />
+    <history-entry file="AbstractDurationFormatTest$CompactDurationTest_and_1_more - 2019.01.14 at 23h 56m 18s.xml">
+      <configuration name="AbstractDurationFormatTest$CompactDurationTest and 1 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AbstractDurationTest$CompactDurationTest_and_1_more - 2019.01.14 at 20h 23m 38s.xml">
-      <configuration name="AbstractDurationTest$CompactDurationTest and 1 more" configurationId="JUnit" />
+    <history-entry file="AbstractDurationFormatTest$CompactDurationTest_and_1_more - 2019.01.14 at 23h 57m 40s.xml">
+      <configuration name="AbstractDurationFormatTest$CompactDurationTest and 1 more" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractDurationFormatTest$CompactDurationTest_and_1_more - 2019.01.14 at 23h 59m 09s.xml">
+      <configuration name="AbstractDurationFormatTest$CompactDurationTest and 1 more" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractDurationFormatTest$CompactDurationTest_and_1_more - 2019.01.15 at 00h 00m 46s.xml">
+      <configuration name="AbstractDurationFormatTest$CompactDurationTest and 1 more" configurationId="JUnit" />
     </history-entry>
     <history-entry file="WebpageTest - 2019.01.14 at 20h 22m 12s.xml">
       <configuration name="WebpageTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5013000" />
+    <option name="totallyTimeSpent" value="6704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="391" y="-1080" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -448,7 +455,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291262" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291262" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291262" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -572,14 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/HmsDuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -612,26 +611,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/CompactDuration.java">
+    <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/publication/Webpage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="70" />
+        <state relative-caret-position="465">
+          <caret line="31" column="85" lean-forward="true" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/AbstractDuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="141" column="76" lean-forward="false" selection-start-line="141" selection-start-column="76" selection-end-line="141" selection-end-column="76" />
+        <state relative-caret-position="261">
+          <caret line="133" column="64" lean-forward="false" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/hw01/duration/CompactDuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/cs3500/hw01/duration/AbstractDurationFormatTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="462">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
