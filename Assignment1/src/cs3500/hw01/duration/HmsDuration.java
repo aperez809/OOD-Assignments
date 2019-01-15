@@ -54,20 +54,17 @@ public final class HmsDuration extends AbstractDuration {
   }
 
   public String formatHelper(char s) {
+
+    boolean isUpper = Character.isUpperCase(s);
+
     if (s == 't') {
       return Long.toString(this.inSeconds());
-    } else if (s == 'h') {
-      return Long.toString(hoursOf(hoursOf(this.seconds)));
-    } else if (s == 'H') {
-      return zeroPadding(hoursOf(this.seconds));
-    } else if (s == 'm') {
-      return Long.toString(minutesOf(this.seconds));
-    } else if (s == 'M') {
-      return zeroPadding(minutesOf(this.seconds));
-    } else if (s == 's') {
-      return Long.toString(this.seconds % 60);
-    } else if (s == 'S') {
-      return zeroPadding(this.seconds % 60);
+    } else if (s == 'h' || s == 'H') {
+      return zeroPadding(isUpper, this.hours);
+    } else if (s == 'm' || s == 'M') {
+      return zeroPadding(isUpper, this.minutes);
+    } else if (s == 's' || s == 'S') {
+      return zeroPadding(isUpper,this.seconds % 60);
     } else if (s == '%') {
       return "%";
     } else {
@@ -75,12 +72,12 @@ public final class HmsDuration extends AbstractDuration {
     }
   }
 
-  private String zeroPadding(long num) {
-    if (num < 10) {
-      return "0" + Long.toString(num);
+  private String zeroPadding(boolean isUpper, long num) {
+    if (isUpper) {
+      if (num < 10) {
+        return "0" + Long.toString(num);
+      }
     }
-    else {
-      return Long.toString(num);
-    }
+    return Long.toString(num);
   }
 }
