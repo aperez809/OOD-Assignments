@@ -53,7 +53,26 @@ public final class CompactDuration extends AbstractDuration {
                           secondsOf(inSeconds));
   }
 
-  public String formatHelper(char s) {
+  @Override
+  public String format(String template) {
+
+    StringBuilder formattedString = new StringBuilder();
+
+    for (int i = 0; i < template.length(); i++) {
+      if (template.charAt(i) == '%') {
+        //TODO: helper method taking i and i+1 to do string formatting
+        formattedString.append(formatHelper(this, template.charAt(i + 1)));
+        i++;
+      }
+      else {
+        formattedString.append(template.charAt(i));
+      }
+
+    }
+    return formattedString.toString();
+  }
+
+  private String formatHelper(Duration d, char s) {
     if (s == 't') {
       return Long.toString(this.inSeconds());
     } else if (s == 'h') {

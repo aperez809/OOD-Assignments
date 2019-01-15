@@ -2,9 +2,7 @@ package cs3500.hw01.publication;
 
 public class Webpage implements Publication {
 
-  private final String title;
-  private final String url;
-  private final String retrieved;
+  private final String title, url, retrieved;
 
   /**
    * Constructs a {@code Book} object.

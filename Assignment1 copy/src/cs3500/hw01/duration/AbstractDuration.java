@@ -126,24 +126,4 @@ abstract class AbstractDuration implements Duration {
   protected static int secondsOf(long inSeconds) {
     return (int) (inSeconds % 60);
   }
-
-  @Override
-  public String format(String template) {
-
-    StringBuilder formattedString = new StringBuilder();
-
-    for (int i = 0; i < template.length(); i++) {
-      if (template.charAt(i) == '%') {
-        formattedString.append(this.formatHelper(template.charAt(i + 1)));
-        i++;
-      }
-      else {
-        formattedString.append(template.charAt(i));
-      }
-
-    }
-    return formattedString.toString();
-  }
-
-  protected abstract String formatHelper(char c);
 }
