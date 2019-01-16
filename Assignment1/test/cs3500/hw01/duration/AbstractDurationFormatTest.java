@@ -35,39 +35,159 @@ public abstract class AbstractDurationFormatTest {
   }
 
   @Test
-  public void testLowerCaseHSpecifierCompact() {
+  public void testLowerCaseHSpecifierSingleDigitCompact() {
     assertEquals("1",
             sec(3600).format("%h"));
+  }
+
+  @Test
+  public void testLowerCaseHSpecifierMultiDigitCompact() {
     assertEquals("10",
             sec(36000).format("%h"));
   }
 
   @Test
-  public void testLowerCaseMSpecifierCompact() {
+  public void testLowerCaseHSpecifierStackedCompact() {
+    assertEquals("1010",
+            sec(36000).format("%h%h"));
+  }
+
+  @Test
+  public void testUpperCaseHSpecifierSingleDigitCompact() {
+    assertEquals("01",
+            sec(3600).format("%H"));
+  }
+
+  @Test
+  public void testUpperCaseHSpecifierMultiDigitCompact() {
+    assertEquals("10",
+            sec(36000).format("%H"));
+  }
+
+  @Test
+  public void testUpperCaseHSpecifierStackedCompact() {
+    assertEquals("1010",
+            sec(36000).format("%H%H"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierSingleDigitCompact() {
     assertEquals("1",
             sec(60).format("%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierMultiDigitCompact() {
     assertEquals("10",
             sec(600).format("%m"));
   }
 
   @Test
-  public void testLowerCaseSSpecifierCompact() {
-    assertEquals("1",
-            sec(1).format("%s"));
-    assertEquals("10",
-            sec(10).format("%s"));
-    assertEquals("1:1",
-            sec(61).format("%m:%s"));
+  public void testLowerCaseMSpecifierOverflowCompact() {
+    assertEquals("0",
+            sec(3601).format("%m"));
   }
 
   @Test
-  public void testPercentSpecifierCompact() {
+  public void testLowerCaseMSpecifierSingleDigitStackedCompact() {
+    assertEquals("11",
+            sec(60).format("%m%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierMultiDigitStackedCompact() {
+    assertEquals("1010",
+            sec(600).format("%m%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierOverflowStackedCompact() {
+    assertEquals("00",
+            sec(3601).format("%m%m"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierSingleDigitCompact() {
+    assertEquals("01",
+            sec(60).format("%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierMultiDigitCompact() {
+    assertEquals("10",
+            sec(600).format("%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierOverflowCompact() {
+    assertEquals("00",
+            sec(3601).format("%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierSingleDigitStackedCompact() {
+    assertEquals("0101",
+            sec(60).format("%M%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierMultiDigitStackedCompact() {
+    assertEquals("1010",
+            sec(600).format("%M%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierOverflowStackedCompact() {
+    assertEquals("0000",
+            sec(3601).format("%M%M"));
+  }
+
+
+
+  @Test
+  public void testLowerCaseSSpecifierSingleDigitCompact() {
+    assertEquals("1",
+            sec(1).format("%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierMultiDigitCompact() {
+    assertEquals("10",
+            sec(10).format("%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierOverflowCompact() {
+    assertEquals("1",
+            sec(61).format("%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierStackedCompact() {
+    assertEquals("1010",
+            sec(10).format("%s%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierOverflowStackedCompact() {
+    assertEquals("11",
+            sec(61).format("%s%s"));
+  }
+
+
+
+  @Test
+  public void testPercentSpecifierAloneCompact() {
     assertEquals("%",
-            sec(1).format("%%"));
+            sec(104328602).format("%%"));
+
+  }
+
+  @Test
+  public void testPercentSpecifierMultiplePercentsCompact() {
     assertEquals("%t",
             sec(10).format("%%t"));
   }
-
 
   @Test
   public void testOverlappingPercentHms() {

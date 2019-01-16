@@ -54,33 +54,21 @@ public final class CompactDuration extends AbstractDuration {
   }
 
   public String formatHelper(char s) {
+
+    boolean isUpper = Character.isUpperCase(s);
+
     if (s == 't') {
       return Long.toString(this.inSeconds());
-    } else if (s == 'h') {
-      return Long.toString(hoursOf(this.inSeconds));
-    } else if (s == 'H') {
-      return zeroPadding(hoursOf(this.inSeconds));
-    } else if (s == 'm') {
-      return Long.toString(minutesOf(this.inSeconds));
-    } else if (s == 'M') {
-      return zeroPadding(minutesOf(this.inSeconds));
-    } else if (s == 's') {
-      return Long.toString(this.inSeconds % 60);
-    } else if (s == 'S') {
-      return zeroPadding(this.inSeconds % 60);
+    } else if (s == 'h' || s == 'H') {
+      return zeroPadding(isUpper, hoursOf(this.inSeconds));
+    } else if (s == 'm' || s == 'M') {
+      return zeroPadding(isUpper, minutesOf(this.inSeconds));
+    } else if (s == 's' || s == 'S') {
+      return zeroPadding(isUpper, this.inSeconds % 60);
     } else if (s == '%') {
       return "%";
     } else {
       throw new IllegalArgumentException("Format specifier malformed.");
-    }
-  }
-
-  private String zeroPadding(long num) {
-    if (num < 10) {
-      return "0" + Long.toString(num);
-    }
-    else {
-      return Long.toString(num);
     }
   }
 }

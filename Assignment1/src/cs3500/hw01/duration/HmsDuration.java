@@ -59,25 +59,17 @@ public final class HmsDuration extends AbstractDuration {
 
     if (s == 't') {
       return Long.toString(this.inSeconds());
+    }
+    else if (s == '%') {
+      return "%";
     } else if (s == 'h' || s == 'H') {
       return zeroPadding(isUpper, this.hours);
     } else if (s == 'm' || s == 'M') {
       return zeroPadding(isUpper, this.minutes);
     } else if (s == 's' || s == 'S') {
       return zeroPadding(isUpper,this.seconds % 60);
-    } else if (s == '%') {
-      return "%";
     } else {
       throw new IllegalArgumentException("Format specifier not recognized.");
     }
-  }
-
-  private String zeroPadding(boolean isUpper, long num) {
-    if (isUpper) {
-      if (num < 10) {
-        return "0" + Long.toString(num);
-      }
-    }
-    return Long.toString(num);
   }
 }

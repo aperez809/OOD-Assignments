@@ -127,8 +127,18 @@ abstract class AbstractDuration implements Duration {
     return (int) (inSeconds % 60);
   }
 
+
+  /**
+   * Returns a {@code String} representation of a {@code Duration} object, which
+   * is formatted based on certain specifiers.
+   *
+   * @param template non-null {@code String} with format specifiers (if applicable)
+   * @return String representation of {@code Duration} object
+   * @throws IllegalArgumentException if template is null or format specifier is malformed
+   */
   @Override
   public String format(String template) {
+
 
     if (template == null) {
       throw new IllegalArgumentException("Must provide non-null template string");
@@ -142,7 +152,7 @@ abstract class AbstractDuration implements Duration {
           formattedString.append(this.formatHelper(template.charAt(i + 1)));
           i++;
         }
-        catch (Exception IndexOutOfBoundsException) {
+        catch (IndexOutOfBoundsException e) {
           throw new IllegalArgumentException("Format specifier malformed.");
         }
       }
@@ -155,4 +165,13 @@ abstract class AbstractDuration implements Duration {
   }
 
   protected abstract String formatHelper(char c);
+
+  protected String zeroPadding(boolean isUpper, long num) {
+    if (isUpper) {
+      if (num < 10) {
+        return "0" + Long.toString(num);
+      }
+    }
+    return Long.toString(num);
+  }
 }
