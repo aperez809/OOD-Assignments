@@ -53,7 +53,15 @@ public final class CompactDuration extends AbstractDuration {
                           secondsOf(inSeconds));
   }
 
+  /**
+   * Constructs a String representation of a unit of time
+   * as determined by the format specifier passed to it.
+   *
+   * @param s the {@code char} determining the unit of time to be inserted
+   * @throws IllegalArgumentException {@code s} is not a compatible specifier
+   */
   public String formatHelper(char s) {
+
 
     boolean isUpper = Character.isUpperCase(s);
 

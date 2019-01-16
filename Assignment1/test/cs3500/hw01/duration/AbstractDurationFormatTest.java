@@ -28,6 +28,32 @@ public abstract class AbstractDurationFormatTest {
   // and must *not* directly say "new CompactDuration(...)" or
   // "new HmsDuration(...)"
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testNullStringPassedCompact() {
+    sec(3600).format(null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testIncompatibleFormatSpecifierCompact() {
+    sec(3600).format("%g");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testUpperCaseTFormatSpecifierCompact() {
+    sec(3600).format("%T");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBogusIncompleteFormatSpecifierCompact() {
+    sec(3600).format("%");
+  }
+
+  @Test
+  public void testNoFormatSpecifierProvidedCompact() {
+    assertEquals("Hello!",
+            sec(3600).format("Hello!"));
+  }
+
   @Test
   public void testLowerCaseTSpecifierCompact() {
     assertEquals("3600",
@@ -142,8 +168,6 @@ public abstract class AbstractDurationFormatTest {
             sec(3601).format("%M%M"));
   }
 
-
-
   @Test
   public void testLowerCaseSSpecifierSingleDigitCompact() {
     assertEquals("1",
@@ -174,7 +198,35 @@ public abstract class AbstractDurationFormatTest {
             sec(61).format("%s%s"));
   }
 
+  @Test
+  public void testUpperCaseSSpecifierSingleDigitCompact() {
+    assertEquals("01",
+            sec(1).format("%S"));
+  }
 
+  @Test
+  public void testUpperCaseSSpecifierMultiDigitCompact() {
+    assertEquals("10",
+            sec(10).format("%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierOverflowCompact() {
+    assertEquals("01",
+            sec(61).format("%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierStackedCompact() {
+    assertEquals("1010",
+            sec(10).format("%S%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierOverflowStackedCompact() {
+    assertEquals("0101",
+            sec(61).format("%S%S"));
+  }
 
   @Test
   public void testPercentSpecifierAloneCompact() {
@@ -185,6 +237,221 @@ public abstract class AbstractDurationFormatTest {
 
   @Test
   public void testPercentSpecifierMultiplePercentsCompact() {
+    assertEquals("%t",
+            sec(10).format("%%t"));
+  }
+
+
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNullStringPassedHms() {
+    sec(3600).format(null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testIncompatibleFormatSpecifierHms() {
+    sec(3600).format("%g");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testUpperCaseTFormatSpecifierHms() {
+    sec(3600).format("%T");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBogusIncompleteFormatSpecifierHms() {
+    sec(3600).format("%");
+  }
+
+  @Test
+  public void testNoFormatSpecifierProvidedHms() {
+    assertEquals("Hello!",
+            sec(3600).format("Hello!"));
+  }
+
+  @Test
+  public void testLowerCaseTSpecifierHms() {
+    assertEquals("3600",
+            sec(3600).format("%t"));
+  }
+
+  @Test
+  public void testLowerCaseHSpecifierSingleDigitHms() {
+    assertEquals("1",
+            sec(3600).format("%h"));
+  }
+
+  @Test
+  public void testLowerCaseHSpecifierMultiDigitHms() {
+    assertEquals("10",
+            sec(36000).format("%h"));
+  }
+
+  @Test
+  public void testLowerCaseHSpecifierStackedHms() {
+    assertEquals("1010",
+            sec(36000).format("%h%h"));
+  }
+
+  @Test
+  public void testUpperCaseHSpecifierSingleDigitHms() {
+    assertEquals("01",
+            sec(3600).format("%H"));
+  }
+
+  @Test
+  public void testUpperCaseHSpecifierMultiDigitHms() {
+    assertEquals("10",
+            sec(36000).format("%H"));
+  }
+
+  @Test
+  public void testUpperCaseHSpecifierStackedHms() {
+    assertEquals("1010",
+            sec(36000).format("%H%H"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierSingleDigitHms() {
+    assertEquals("1",
+            sec(60).format("%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierMultiDigitHms() {
+    assertEquals("10",
+            sec(600).format("%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierOverflowHms() {
+    assertEquals("0",
+            sec(3601).format("%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierSingleDigitStackedHms() {
+    assertEquals("11",
+            sec(60).format("%m%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierMultiDigitStackedHms() {
+    assertEquals("1010",
+            sec(600).format("%m%m"));
+  }
+
+  @Test
+  public void testLowerCaseMSpecifierOverflowStackedHms() {
+    assertEquals("00",
+            sec(3601).format("%m%m"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierSingleDigitHms() {
+    assertEquals("01",
+            sec(60).format("%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierMultiDigitHms() {
+    assertEquals("10",
+            sec(600).format("%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierOverflowHms() {
+    assertEquals("00",
+            sec(3601).format("%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierSingleDigitStackedHms() {
+    assertEquals("0101",
+            sec(60).format("%M%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierMultiDigitStackedHms() {
+    assertEquals("1010",
+            sec(600).format("%M%M"));
+  }
+
+  @Test
+  public void testUpperCaseMSpecifierOverflowStackedHms() {
+    assertEquals("0000",
+            sec(3601).format("%M%M"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierSingleDigitHms() {
+    assertEquals("1",
+            sec(1).format("%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierMultiDigitHms() {
+    assertEquals("10",
+            sec(10).format("%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierOverflowHms() {
+    assertEquals("1",
+            sec(61).format("%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierStackedHms() {
+    assertEquals("1010",
+            sec(10).format("%s%s"));
+  }
+
+  @Test
+  public void testLowerCaseSSpecifierOverflowStackedHms() {
+    assertEquals("11",
+            sec(61).format("%s%s"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierSingleDigitHms() {
+    assertEquals("01",
+            sec(1).format("%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierMultiDigitHms() {
+    assertEquals("10",
+            sec(10).format("%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierOverflowHms() {
+    assertEquals("01",
+            sec(61).format("%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierStackedHms() {
+    assertEquals("1010",
+            sec(10).format("%S%S"));
+  }
+
+  @Test
+  public void testUpperCaseSSpecifierOverflowStackedHms() {
+    assertEquals("0101",
+            sec(61).format("%S%S"));
+  }
+
+  @Test
+  public void testPercentSpecifierAloneHms() {
+    assertEquals("%",
+            sec(104328602).format("%%"));
+
+  }
+
+  @Test
+  public void testPercentSpecifierMultiplePercentsHms() {
     assertEquals("%t",
             sec(10).format("%%t"));
   }

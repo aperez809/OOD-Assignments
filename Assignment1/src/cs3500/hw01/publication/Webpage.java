@@ -1,5 +1,8 @@
 package cs3500.hw01.publication;
 
+/**
+ * Represents bibliographic information for webpages.
+ */
 public class Webpage implements Publication {
 
   private final String title;
@@ -7,7 +10,7 @@ public class Webpage implements Publication {
   private final String retrieved;
 
   /**
-   * Constructs a {@code Book} object.
+   * Constructs a {@code Webpage} object.
    *
    * @param title     the title of the webpage
    * @param url       url of the webpage
