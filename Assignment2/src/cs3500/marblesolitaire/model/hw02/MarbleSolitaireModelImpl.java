@@ -12,6 +12,12 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
   private int sRow;
   private int sCol;
 
+  /**
+   * Constructs a {@code MarbleSolitaireModelImpl} object
+   * with a default value of 3 for {@code armThickness}, {@code sRow},
+   * and {@code sCol}.
+   */
+
   public MarbleSolitaireModelImpl() {
     this.armThickness = 3;
     this.sRow = 3;
@@ -19,6 +25,18 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
 
     this.cells = this.makeBoard();
   }
+
+
+  /**
+   * Constructs a {@code MarbleSolitaireModelImpl} object with a default value of 3 for
+   * {@code armThickness}.
+   *
+   *     @param sRow row coordinate of empty starting cell
+   *     @param sCol column coordinate of empty starting cell
+   *
+   *     @throws IllegalArgumentException {@code sRow} or {@code sCol} is invalid (
+   *     i.e. outside board, negative, etc)
+   */
 
   public MarbleSolitaireModelImpl(int sRow, int sCol) {
     this.armThickness = 3;
@@ -33,6 +51,15 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
 
   }
 
+  /**
+   * Constructs a {@code MarbleSolitaireModelImpl} object with default values for
+   * {@code sRow} and {@code sCol} set to the middle of the board.
+   *
+   *     @param armThickness width of the inner square of the board
+   *
+   *     @throws IllegalArgumentException {@code armThickness} is invalid (i.e. even
+   *     or less than or equal to 0)
+   */
   public MarbleSolitaireModelImpl(int armThickness) {
     if (armThickness % 2 != 1 || armThickness <= 0) {
       throw new IllegalArgumentException("armThickness must be a positive, odd number.");
@@ -43,6 +70,18 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
 
     this.cells = this.makeBoard();
   }
+
+  /**
+   * Constructs a {@code MarbleSolitaireModelImpl} object.
+   *
+   *     @param armThickness width of the inner square of the board
+   *     @param sRow row coordinate of empty starting cell
+   *     @param sCol column coordinate of empty starting cell
+   *
+   *     @throws IllegalArgumentException {@code armThickness} is invalid (i.e. even
+   *     or less than or equal to 0) or {@code sRow} or {@code sCol} are invalid
+   *     (i.e. outside board, negative, etc)
+   */
 
   public MarbleSolitaireModelImpl(int armThickness, int sRow, int sCol) {
     if (armThickness % 2 != 1 || armThickness <= 0) {
@@ -124,26 +163,6 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
     }
   }
 
-
-  private boolean isInvalidMoveAttempted(int fromRow, int fromCol, int toRow, int toCol) {
-    if (Math.abs(fromRow - toRow) > 0 && Math.abs(fromCol - toCol) > 0) {
-      return true;
-    }
-
-    else if (Math.abs(fromRow - toRow) > 0) {
-      return Math.abs(fromRow - toRow) != 2
-              || this.cells.get(toRow).get(toCol).hasMarble
-              || !this.cells.get((toCol + fromCol) / 2).get((toRow + fromRow) / 2).hasMarble
-              || isInvalidEmptyPosition(this.armThickness, toRow, toCol);
-    }
-    else {
-      return Math.abs(fromCol - toCol) != 2
-              || this.cells.get(toCol).get(toRow).hasMarble
-              || !this.cells.get((toCol + fromCol) / 2).get((toRow + fromRow) / 2).hasMarble
-              || isInvalidEmptyPosition(this.armThickness, toRow, toCol);
-    }
-  }
-
   @Override
   //test all positions on the board for valid moves. If none, then the game is over
   public boolean isGameOver() {
@@ -161,6 +180,8 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
   }
 
   @Override
+  //build list of lists of string, then create each row in a for loop with different behavior
+  //depending on the quality of the row (full or outer)
   public String getGameState() {
     ArrayList<ArrayList<String>> boardState = new ArrayList<ArrayList<String>>();
 
@@ -241,6 +262,8 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
     return score;
   }
 
+  //determines if position is invalid (negative in row or col coordinates, outside of board bounds
+  //at at empty spot on the board (ex: 0,0)
   private static boolean isInvalidEmptyPosition(int armThickness, int row, int col) {
     return row < 0
             || col < 0
@@ -255,15 +278,11 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
     int middlePiece = (armThickness * 2 + (armThickness - 3)) / 2;
     int validMargin = (armThickness - 1) / 2;
 
-    if (freeVal <= middlePiece + validMargin
-            && freeVal >= middlePiece - validMargin) {
-      return true;
-    }
 
-    else {
-      return constrainedVal <= middlePiece + validMargin
-              && constrainedVal >= middlePiece - validMargin;
-    }
+    return (freeVal <= middlePiece + validMargin
+            && freeVal >= middlePiece - validMargin)
+            || (constrainedVal <= middlePiece + validMargin
+              && constrainedVal >= middlePiece - validMargin);
   }
 
 

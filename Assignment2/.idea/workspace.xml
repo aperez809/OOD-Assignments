@@ -24,11 +24,13 @@
       <file leaf-file-name="MarbleSolitaireModelImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+            <state relative-caret-position="219">
+              <caret line="285" column="3" lean-forward="true" selection-start-line="285" selection-start-column="3" selection-end-line="285" selection-end-column="3" />
               <folding>
-                <element signature="e#1858#1875#0" expanded="true" />
-                <element signature="e#5199#5218#0" expanded="true" />
+                <element signature="e#3254#3271#0" expanded="true" />
+                <element signature="e#5937#5956#0" expanded="true" />
+                <element signature="e#8775#8776#0" expanded="true" />
+                <element signature="e#8839#8840#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,8 +49,8 @@
       <file leaf-file-name="MarbleSolitaireModelImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/MarbleSolitaireModelImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2985">
-              <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+            <state relative-caret-position="705">
+              <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,6 +89,8 @@
       <find>testCon</find>
       <find>makeB</find>
       <find>system.out</find>
+      <find>isInvalid</find>
+      <find>isInvalidMove</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -328,14 +332,11 @@
       <option name="presentableId" value="Default" />
       <updated>1548118452397</updated>
       <workItem from="1548118453988" duration="18873000" />
-      <workItem from="1548726201562" duration="14096000" />
+      <workItem from="1548726201562" duration="15763000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MarbleSolitaireModelImplTest - 2019.01.29 at 15h 54m 23s.xml">
-      <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MarbleSolitaireModelImplTest - 2019.01.29 at 15h 58m 27s.xml">
       <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
     </history-entry>
@@ -363,9 +364,12 @@
     <history-entry file="MarbleSolitaireModelImplTest - 2019.01.29 at 16h 12m 40s.xml">
       <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MarbleSolitaireModelImplTest - 2019.01.29 at 16h 44m 33s.xml">
+      <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32969000" />
+    <option name="totallyTimeSpent" value="34636000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,8 +457,10 @@
         <state relative-caret-position="1650">
           <caret line="110" column="16" lean-forward="false" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="16" />
           <folding>
-            <element signature="e#1858#1875#0" expanded="true" />
-            <element signature="e#5199#5218#0" expanded="true" />
+            <element signature="e#3254#3271#0" expanded="true" />
+            <element signature="e#5937#5956#0" expanded="true" />
+            <element signature="e#8775#8776#0" expanded="true" />
+            <element signature="e#8839#8840#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -546,16 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/MarbleSolitaireModelImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2985">
-          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
@@ -564,13 +560,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/MarbleSolitaireModelImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+        <state relative-caret-position="219">
+          <caret line="285" column="3" lean-forward="true" selection-start-line="285" selection-start-column="3" selection-end-line="285" selection-end-column="3" />
           <folding>
-            <element signature="e#1858#1875#0" expanded="true" />
-            <element signature="e#5199#5218#0" expanded="true" />
+            <element signature="e#3254#3271#0" expanded="true" />
+            <element signature="e#5937#5956#0" expanded="true" />
+            <element signature="e#8775#8776#0" expanded="true" />
+            <element signature="e#8839#8840#0" expanded="true" />
           </folding>
         </state>
       </provider>

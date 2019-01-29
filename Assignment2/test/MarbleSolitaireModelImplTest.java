@@ -51,7 +51,7 @@ public class MarbleSolitaireModelImplTest {
 
   @Test
   public void testConstructorArmThicknessCorrect() {
-    MarbleSolitaireModelImpl initData =new MarbleSolitaireModelImpl(7);
+    MarbleSolitaireModelImpl initData = new MarbleSolitaireModelImpl(7);
     assertEquals("            O O O O O O O\n"
                     + "            O O O O O O O\n"
                     + "            O O O O O O O\n"
