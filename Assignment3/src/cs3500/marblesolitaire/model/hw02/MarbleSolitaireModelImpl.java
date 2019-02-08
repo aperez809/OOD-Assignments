@@ -156,12 +156,10 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
   }
 
   private boolean hasMarbleSafe(int row, int col) {
-    try {
-      return this.cells.get(row).get(col).hasMarble;
-    }
-    catch (IndexOutOfBoundsException e) {
+    if (row == this.getBoardLength() || col == this.getBoardLength()) {
       return false;
     }
+    return this.cells.get(row).get(col).hasMarble;
   }
 
   @Override

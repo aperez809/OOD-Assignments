@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarbleSolitaireModelImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MarbleSolitaireModelImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-367">
-              <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+            <state relative-caret-position="119">
+              <caret line="158" column="50" lean-forward="true" selection-start-line="158" selection-start-column="50" selection-end-line="158" selection-end-column="50" />
               <folding>
                 <element signature="e#3320#3337#0" expanded="true" />
               </folding>
@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarbleSolitaireControllerImplTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MarbleSolitaireControllerImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/MarbleSolitaireControllerImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="900">
@@ -104,8 +104,9 @@
       <find>unable</find>
       <find>illegalSto</find>
       <find>isValidMove</find>
-      <find>endGa</find>
       <find>shit</find>
+      <find>endGa</find>
+      <find>hasMarble</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -120,8 +121,8 @@
         <option value="$PROJECT_DIR$/test/MarbleSolitaireModelImplTest.java" />
         <option value="$PROJECT_DIR$/src/cs3500/marblesolitaire/controller/MarbleSolitaireController.java" />
         <option value="$PROJECT_DIR$/src/cs3500/marblesolitaire/controller/MarbleSolitaireControllerImpl.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java" />
         <option value="$PROJECT_DIR$/test/MarbleSolitaireControllerImplTest.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java" />
       </list>
     </option>
   </component>
@@ -251,6 +252,26 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="MarbleSolitaireModelImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Assignment3" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MarbleSolitaireModelImplTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -332,9 +353,14 @@
       <properties />
       <listeners />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MarbleSolitaireControllerImplTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MarbleSolitaireModelImplTest" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="JUnit.MarbleSolitaireControllerImplTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MarbleSolitaireModelImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -349,26 +375,11 @@
       <option name="presentableId" value="Default" />
       <updated>1549325408299</updated>
       <workItem from="1549325410207" duration="16319000" />
-      <workItem from="1549572771872" duration="15074000" />
+      <workItem from="1549572771872" duration="15396000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 08m 19s.xml">
-      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 08m 45s.xml">
-      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 10m 11s.xml">
-      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 10m 31s.xml">
-      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 11m 07s.xml">
-      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 11m 29s.xml">
       <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
     </history-entry>
@@ -384,9 +395,24 @@
     <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 33m 20s.xml">
       <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 38m 38s.xml">
+      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarbleSolitaireControllerImplTest - 2019.02.07 at 20h 41m 20s.xml">
+      <configuration name="MarbleSolitaireControllerImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarbleSolitaireModelImplTest - 2019.02.07 at 20h 38m 48s.xml">
+      <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarbleSolitaireModelImplTest - 2019.02.07 at 20h 41m 06s.xml">
+      <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarbleSolitaireModelImplTest - 2019.02.07 at 20h 41m 15s.xml">
+      <configuration name="MarbleSolitaireModelImplTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31393000" />
+    <option name="totallyTimeSpent" value="31715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -394,13 +420,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -531,26 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-367">
-          <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-          <folding>
-            <element signature="e#3320#3337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/controller/MarbleSolitaireControllerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/MarbleSolitaireModelImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2955">
@@ -569,6 +575,26 @@
             <element signature="imports" expanded="true" />
             <element signature="e#548#549#0" expanded="true" />
             <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/controller/MarbleSolitaireControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/marblesolitaire/model/hw02/MarbleSolitaireModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="158" column="50" lean-forward="true" selection-start-line="158" selection-start-column="50" selection-end-line="158" selection-end-column="50" />
+          <folding>
+            <element signature="e#3320#3337#0" expanded="true" />
           </folding>
         </state>
       </provider>
