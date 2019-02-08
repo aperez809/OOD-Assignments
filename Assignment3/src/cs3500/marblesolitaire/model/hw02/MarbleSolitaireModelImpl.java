@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Represents the board of a Marble Solitaire game.
+ * Allows for variable board size and validity checking of moves.
 */
 public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
   private final int armThickness;

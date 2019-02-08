@@ -5,14 +5,29 @@ import cs3500.marblesolitaire.model.hw02.MarbleSolitaireModel;
 import java.io.IOException;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
+/**
+ * Represents the controller of a Marble Solitaire game.
+ * provides functionality for reading and writing user input to
+ * make moves within the game and get information about its state.
+ */
 public class MarbleSolitaireControllerImpl implements MarbleSolitaireController {
-  final Readable rd;
-  final Appendable ap;
-  boolean hasQuit;
+  private final Readable rd;
+  private final Appendable ap;
+  private boolean hasQuit;
 
 
+
+  /**
+   * Constructs a {@code MarbleSolitaireControllerImpl} object.
+   *
+   *     @param rd Readable object such as StringReader for taking user input
+   *     @param ap Appendable object such as StringBuilder for printing user input
+   *
+   *     @throws IllegalArgumentException if rd or ap are null.
+   */
   public MarbleSolitaireControllerImpl(Readable rd, Appendable ap) throws IllegalArgumentException {
     if (rd == null || ap == null) {
       throw new IllegalArgumentException("Readable and Appendable must not be null.");
@@ -22,6 +37,15 @@ public class MarbleSolitaireControllerImpl implements MarbleSolitaireController 
     this.ap = ap;
   }
 
+  /**
+   * starts a game of Marble Solitaire by interacting with the given model.
+   *
+   *     @param model MarbleSolitaireMarble object to be controlled by controller.
+   *
+   *     @throws IllegalArgumentException if model is null.
+   *     @throws IllegalStateException if controller is unable to write to the ap field or read
+   *              from rd field.
+   */
   @Override
   public void playGame(MarbleSolitaireModel model) {
     //ensure model is non-null and instantiate Scanner
@@ -100,7 +124,7 @@ public class MarbleSolitaireControllerImpl implements MarbleSolitaireController 
           return Integer.parseInt(val);
         }
         else {
-          sendToAppendable("Input must be positive integer greater than 1, Q, or q.");
+          System.out.println("Input must be positive integer greater than 1, Q, or q.");
         }
       }
 
@@ -110,7 +134,7 @@ public class MarbleSolitaireControllerImpl implements MarbleSolitaireController 
           return null;
         }
         else {
-          sendToAppendable("Input must be positive integer greater than 1, Q, or q.");
+          System.out.println("Input must be positive integer greater than 1, Q, or q.");
         }
       }
     }

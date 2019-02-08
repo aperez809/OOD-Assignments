@@ -1,15 +1,19 @@
 import cs3500.marblesolitaire.controller.MarbleSolitaireController;
-import cs3500.marblesolitaire.controller.MarbleSolitaireControllerImpl;
-import cs3500.marblesolitaire.model.hw02.MarbleSolitaireModel;
-import cs3500.marblesolitaire.model.hw02.MarbleSolitaireModelImpl;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
+import cs3500.marblesolitaire.controller.MarbleSolitaireControllerImpl;
+
+import cs3500.marblesolitaire.model.hw02.MarbleSolitaireModel;
+
+import cs3500.marblesolitaire.model.hw02.MarbleSolitaireModelImpl;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 import java.io.Reader;
 
 import java.io.StringReader;
+
 
 public class MarbleSolitaireControllerImplTest {
 
@@ -71,7 +75,8 @@ public class MarbleSolitaireControllerImplTest {
     MarbleSolitaireModel initModel = new MarbleSolitaireModelImpl();
 
     initControl.playGame(initModel);
-    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n    O O O\n    O O O\nScore: 32\n"
+    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n"
+            + "    O O O\n    O O O\nScore: 32\n"
             + "Game quit!\nState of game when quit:\n"
             + "    O O O\n"
             + "    O O O\n"
@@ -94,7 +99,8 @@ public class MarbleSolitaireControllerImplTest {
     MarbleSolitaireModel initModel = new MarbleSolitaireModelImpl();
 
     initControl.playGame(initModel);
-    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n    O O O\n    O O O\nScore: 32\n"
+    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n"
+            + "    O O O\n    O O O\nScore: 32\n"
             + "Game quit!\nState of game when quit:\n"
             + "    O O O\n"
             + "    O O O\n"
@@ -117,7 +123,8 @@ public class MarbleSolitaireControllerImplTest {
     MarbleSolitaireModel initModel = new MarbleSolitaireModelImpl();
 
     initControl.playGame(initModel);
-    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n    O O O\n    O O O\nScore: 32\n"
+    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n"
+            + "    O O O\n    O O O\nScore: 32\n"
             + "Game quit!\nState of game when quit:\n"
             + "    O O O\n"
             + "    O O O\n"
@@ -140,7 +147,8 @@ public class MarbleSolitaireControllerImplTest {
     MarbleSolitaireModel initModel = new MarbleSolitaireModelImpl();
 
     initControl.playGame(initModel);
-    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n    O O O\n    O O O\nScore: 32\n"
+    assertEquals("    O O O\n    O O O\nO O O O O O O\nO O O _ O O O\n"
+            + "O O O O O O O\n    O O O\n    O O O\nScore: 32\n"
             + "Game quit!\nState of game when quit:\n"
             + "    O O O\n"
             + "    O O O\n"
@@ -190,12 +198,12 @@ public class MarbleSolitaireControllerImplTest {
 
     initControl.playGame(initModel);
     assertEquals("    O O O\n"
-            +"    O _ O\n"
-            +"O O O _ O O O\n"
-            +"O O O O O O O\n"
-            +"O O O O O O O\n"
-            +"    O O O\n"
-            +"    O O O", initModel.getGameState());
+            + "    O _ O\n"
+            + "O O O _ O O O\n"
+            + "O O O O O O O\n"
+            + "O O O O O O O\n"
+            + "    O O O\n"
+            + "    O O O", out.toString());
   }
 
   @Test
@@ -209,12 +217,12 @@ public class MarbleSolitaireControllerImplTest {
 
     initControl.playGame(initModel);
     assertEquals("    O O O\n"
-            +"    O _ O\n"
-            +"O O O _ O O O\n"
-            +"O O O O O O O\n"
-            +"O O O O O O O\n"
-            +"    O O O\n"
-            +"    O O O", initModel.getGameState());
+            + "    O _ O\n"
+            + "O O O _ O O O\n"
+            + "O O O O O O O\n"
+            + "O O O O O O O\n"
+            + "    O O O\n"
+            + "    O O O", initModel.getGameState());
   }
 
   @Test
@@ -228,12 +236,12 @@ public class MarbleSolitaireControllerImplTest {
 
     initControl.playGame(initModel);
     assertEquals("    O O O\n"
-            +"    O _ O\n"
-            +"O O O _ O O O\n"
-            +"O O O O O O O\n"
-            +"O O O O O O O\n"
-            +"    O O O\n"
-            +"    O O O", initModel.getGameState());
+            + "    O _ O\n"
+            + "O O O _ O O O\n"
+            + "O O O O O O O\n"
+            + "O O O O O O O\n"
+            + "    O O O\n"
+            + "    O O O", initModel.getGameState());
   }
 
   @Test
@@ -270,66 +278,89 @@ public class MarbleSolitaireControllerImplTest {
 
     initControl.playGame(initModel);
     assertEquals("    O O O\n"
-            +"    O O O\n"
-            +"O O O O O O O\n"
-            +"O O O _ O O O\n"
-            +"O O O O O O O\n"
-            +"    O O O\n"
-            +"    O O O\n"
-            +"Score: 32\n"
-                    + "    O O O\n"
-                    + "    O _ O\n"
-                    + "O O O _ O O O\n"
-                    + "O O O O O O O\n"
-                    + "O O O O O O O\n"
-                    + "    O O O\n"
-                    + "    O O O\n"
-                    + "Score: 31\n"
-                    + "    O O O\n    O _ O\nO O O O O O O\nO O O _ O O O\nO O O _ O O O\n    O O O\n    O O O\n"
-                    + "Score: 30\n"
-                    + "    O O O\n    O _ O\nO O O O O O O\nO O O _ O O O\nO O O O O O O\n    O _ O\n    O _ O\n"
-                    + "Score: 29\n"
-                    + "    O O O\n    O _ O\nO O O O O O O\nO O O O _ _ O\nO O O O O O O\n    O _ O\n    O _ O\n"
-                    + "Score: 28\n"
-                    + "    O O O\n    O _ O\nO O O O O O O\nO O O O O _ O\nO O O O _ O O\n    O _ _\n    O _ O\n"
-                    + "Score: 27\n"
-                    + "    O O O\n    O _ O\nO O O O _ O O\nO O O O _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 26\n"
-                    + "    O O _\n    O _ _\nO O O O O O O\nO O O O _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 25\n"
-                    + "    O O _\n    O _ _\nO O O O O O O\nO O _ _ O _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 24\n"
-                    + "    O O _\n    O _ O\nO O O O _ O O\nO O _ _ _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 23\n"
-                    + "    O O _\n    O _ O\nO O O O _ O O\n_ _ O _ _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 22\n"
-                    + "    O O _\n    O _ O\nO O _ _ O O O\n_ _ O _ _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 21\n"
-                    + "    O O O\n    O _ _\nO O _ _ _ O O\n_ _ O _ _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 20\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ _\n_ _ O _ _ _ O\nO O O O O O O\n    O _ _\n    O _ O\n"
-                    + "Score: 19\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO O O O O O _\n    O _ _\n    O _ O\n"
-                    +"Score: 18\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO O O O _ _ O\n    O _ _\n    O _ O\n"
-                    + "Score: 17\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO O _ _ O _ O\n    O _ _\n    O _ O\n"
-                    + "Score: 16\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO O O _ O _ O\n    _ _ _\n    _ _ O\n"
-                    + "Score: 15\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO _ _ O O _ O\n    _ _ _\n    _ _ O\n"
-                    + "Score: 14\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO _ _ _ _ O O\n    _ _ _\n    _ _ O\n"
-                    + "Score: 13\n"
-                    + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\nO _ _ _ O _ _\n    _ _ _\n    _ _ O\n"
-                    + "Score: 12\n"
-                    + "    O O O\n    O _ _\n_ _ O _ O _ O\n_ _ O _ _ _ _\nO _ _ _ O _ _\n    _ _ _\n    _ _ O\n"
-                    + "Score: 11\n"
-                    + "    O O O\n    O _ _\n_ _ _ _ O _ O\n_ _ _ _ _ _ _\nO _ O _ O _ _\n    _ _ _\n    _ _ O\n"
-                    + "Score: 10\n"
-                    + "    _ O O\n    _ _ _\n_ _ O _ O _ O\n_ _ _ _ _ _ _\nO _ O _ O _ _\n    _ _ _\n    _ _ O\n"
-                    + "Score: 9\n"
-                    + "Game over!\n    O _ _\n    _ _ _\n_ _ O _ O _ O\n_ _ _ _ _ _ _\nO _ O _ O _ _\n    _ _ _\n    _ _ O\n"
-                    +"Score: 8\n", out.toString());
+            + "    O O O\n"
+            + "O O O O O O O\n"
+            + "O O O _ O O O\n"
+            + "O O O O O O O\n"
+            + "    O O O\n"
+            + "    O O O\n"
+            + "Score: 32\n"
+            + "    O O O\n"
+            + "    O _ O\n"
+            + "O O O _ O O O\n"
+            + "O O O O O O O\n"
+            + "O O O O O O O\n"
+            + "    O O O\n"
+            + "    O O O\n"
+            + "Score: 31\n"
+            + "    O O O\n    O _ O\nO O O O O O O\nO O O _ O O O\n"
+            + "O O O _ O O O\n    O O O\n    O O O\n"
+            + "Score: 30\n"
+            + "    O O O\n    O _ O\nO O O O O O O\nO O O _ O O O\n"
+            + "O O O O O O O\n    O _ O\n    O _ O\n"
+            + "Score: 29\n"
+            + "    O O O\n    O _ O\nO O O O O O O\nO O O O _ _ O\n"
+            + "O O O O O O O\n    O _ O\n    O _ O\n"
+            + "Score: 28\n"
+            + "    O O O\n    O _ O\nO O O O O O O\nO O O O O _ O\n"
+            + "O O O O _ O O\n    O _ _\n    O _ O\n"
+            + "Score: 27\n"
+            + "    O O O\n    O _ O\nO O O O _ O O\nO O O O _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 26\n"
+            + "    O O _\n    O _ _\nO O O O O O O\nO O O O _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 25\n"
+            + "    O O _\n    O _ _\nO O O O O O O\nO O _ _ O _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 24\n"
+            + "    O O _\n    O _ O\nO O O O _ O O\nO O _ _ _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 23\n"
+            + "    O O _\n    O _ O\nO O O O _ O O\n_ _ O _ _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 22\n"
+            + "    O O _\n    O _ O\nO O _ _ O O O\n_ _ O _ _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 21\n"
+            + "    O O O\n    O _ _\nO O _ _ _ O O\n_ _ O _ _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 20\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ _\n_ _ O _ _ _ O\n"
+            + "O O O O O O O\n    O _ _\n    O _ O\n"
+            + "Score: 19\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O O O O O O _\n    O _ _\n    O _ O\n"
+            + "Score: 18\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O O O O _ _ O\n    O _ _\n    O _ O\n"
+            + "Score: 17\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O O _ _ O _ O\n    O _ _\n    O _ O\n"
+            + "Score: 16\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O O O _ O _ O\n    _ _ _\n    _ _ O\n"
+            + "Score: 15\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O _ _ O O _ O\n    _ _ _\n    _ _ O\n"
+            + "Score: 14\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O _ _ _ _ O O\n    _ _ _\n    _ _ O\n"
+            + "Score: 13\n"
+            + "    O O O\n    O _ _\nO O _ _ O _ O\n_ _ O _ _ _ _\n"
+            + "O _ _ _ O _ _\n    _ _ _\n    _ _ O\n"
+            + "Score: 12\n"
+            + "    O O O\n    O _ _\n_ _ O _ O _ O\n_ _ O _ _ _ _\n"
+            + "O _ _ _ O _ _\n    _ _ _\n    _ _ O\n"
+            + "Score: 11\n"
+            + "    O O O\n    O _ _\n_ _ _ _ O _ O\n_ _ _ _ _ _ _\n"
+            + "O _ O _ O _ _\n    _ _ _\n    _ _ O\n"
+            + "Score: 10\n"
+            + "    _ O O\n    _ _ _\n_ _ O _ O _ O\n_ _ _ _ _ _ _\n"
+            + "O _ O _ O _ _\n    _ _ _\n    _ _ O\n"
+            + "Score: 9\n"
+            + "Game over!\n    O _ _\n    _ _ _\n_ _ O _ O _ O\n_ _ _ _ _ _ _\n"
+            + "O _ O _ O _ _\n    _ _ _\n    _ _ O\n"
+            + "Score: 8\n", out.toString());
   }
 }

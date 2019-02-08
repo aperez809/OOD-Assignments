@@ -221,7 +221,7 @@ public class MarbleSolitaireModelImplTest {
   }
 
   @Test
-  public void testSomeShit() {
+  public void testMoveFromEdge() {
     MarbleSolitaireModelImpl initData = new MarbleSolitaireModelImpl(4,0);
     initData.move(2, 0, 4,0);
     assertEquals("    O O O\n"
