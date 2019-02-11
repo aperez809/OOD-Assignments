@@ -24,6 +24,16 @@ public class MarbleSolitaireControllerImplTest {
   }
 
   @Test (expected = IllegalArgumentException.class)
+  public void testNullRdArgToCntrlConstructor() {
+    new MarbleSolitaireControllerImpl(null, new StringBuilder());
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testNullApArgToCntrlConstructor() {
+    new MarbleSolitaireControllerImpl(new StringReader("3 3 3 3"), null);
+  }
+
+  @Test (expected = IllegalArgumentException.class)
   public void testNullModelPassed() {
     Reader in = new StringReader("3 4 3 q");
     StringBuilder out = new StringBuilder();
@@ -64,6 +74,13 @@ public class MarbleSolitaireControllerImplTest {
             + " vertical or horizontal direction.", out.toString());
   }
 
+  @Test
+  public void testEndGameCapitalQ() {
+    Reader in = new StringReader("Q 4 3 4");
+    StringBuilder out = new StringBuilder();
+    MarbleSolitaireController initControl = new MarbleSolitaireControllerImpl(
+            in, out);
+  }
 
   @Test
   public void testEndGameFromRow() {
