@@ -6,7 +6,7 @@ package cs3500.marblesolitaire.model.hw02;
  * provides functionality for determining if there is a marble in the cell
  * and if the cell is within the confines of the game board (i.e. not invalid like 0,0)
  */
-class Cell {
+public class Cell {
 
   boolean hasMarble;
   final boolean isOnBoard;
