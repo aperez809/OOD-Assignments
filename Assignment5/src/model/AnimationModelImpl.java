@@ -23,4 +23,8 @@ public class AnimationModelImpl implements AnimationModel {
     }
     return this.trackedState.toString();
   }
+
+  public ArrayList<Shape> getShapes() {
+    return this.shapes;
+  }
 }

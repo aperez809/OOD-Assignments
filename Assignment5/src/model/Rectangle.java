@@ -12,6 +12,15 @@ public class Rectangle extends AbstractShape {
   }
 
   public void execute(ArrayList<Action> actions, int startTick, int endTick) {
-    super.execute(actions, startTick, endTick, this.shapeName);
+    this.documentChange("Motion",
+            this.shapeName,
+            String.valueOf(startTick));
+
+    for (Action a : actions) {
+      a.apply(this);
+    }
+
+    this.documentChange("","",String.valueOf(endTick));
+    this.trackedState.append("\n");
   }
 }

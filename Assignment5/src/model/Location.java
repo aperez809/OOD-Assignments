@@ -26,4 +26,14 @@ public class Location {
   public void setY(int y) {
     this.y = y;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Location)) {
+      return false;
+    }
+
+    Location other = (Location) o;
+    return other.x == this.x && other.y == this.y;
+  }
 }

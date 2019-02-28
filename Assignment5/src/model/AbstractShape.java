@@ -3,12 +3,12 @@ package model;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class AbstractShape implements Shape {
+public abstract class AbstractShape implements Shape {
   private int height;
   private int width;
   private Location coords;
   private Color color;
-  private StringBuilder trackedState;
+  protected StringBuilder trackedState;
 
   public AbstractShape(int height, int width, Location coords, Color color) {
     this.height = height;
@@ -18,20 +18,9 @@ public class AbstractShape implements Shape {
     this.trackedState = new StringBuilder();
   }
 
-  public void execute(ArrayList<Action> actions, int startTick, int endTick, String shapeType) {
-      this.documentChange("Motion",
-              "Shape",
-              String.valueOf(startTick));
+  public abstract void execute(ArrayList<Action> actions, int startTick, int endTick);
 
-    for (Action a : actions) {
-      a.apply(this);
-    }
-
-    this.documentChange("","",String.valueOf(endTick));
-    this.trackedState.append("\n");
-  }
-
-  private void documentChange(String actionType, String shape, String tick) {
+  protected void documentChange(String actionType, String shape, String tick) {
     trackedState.append(String.format(
             "%s %s %s %s %s %s %s %s %s %s    ",
             actionType,

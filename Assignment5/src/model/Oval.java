@@ -12,7 +12,16 @@ public class Oval extends AbstractShape {
   }
 
   @Override
-  public void execute (ArrayList<Action> actions, int startTick, int endTick, String shape) {
-    super.execute(actions, startTick, endTick, this.shapeName);
+  public void execute (ArrayList<Action> actions, int startTick, int endTick) {
+    this.documentChange("Motion",
+            this.shapeName,
+            String.valueOf(startTick));
+
+    for (Action a : actions) {
+      a.apply(this);
+    }
+
+    this.documentChange("","",String.valueOf(endTick));
+    this.trackedState.append("\n");
   }
 }

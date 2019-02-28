@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -15,5 +16,7 @@ public interface AnimationModel {
   //returns a textual representation of the different attributes of the animation's
   //current state
   String getAnimState();
+
+  ArrayList<Shape> getShapes();
 }
 

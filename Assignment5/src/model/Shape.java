@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public interface Shape {
 
-  void execute(ArrayList<Action> actions, int startTick, int endTick, String shape);
+  void execute(ArrayList<Action> actions, int startTick, int endTick);
 
   void setCoords(Location location);
 
@@ -16,4 +16,12 @@ public interface Shape {
   void setColor(Color color);
 
   StringBuilder getTrackedState();
+
+  Location getCoords();
+
+  Color getColor();
+
+  int getWidth();
+
+  int getHeight();
 }
