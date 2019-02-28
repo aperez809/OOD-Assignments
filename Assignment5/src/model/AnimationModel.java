@@ -10,12 +10,10 @@ import java.util.HashMap;
 public interface AnimationModel {
 
   //place a image of Shape s on the canvas at a given spot
-  void placeImage(AbstractShape s, int x, int y) throws IllegalArgumentException;
+  void placeImage(Shape s);
 
   //returns a textual representation of the different attributes of the animation's
   //current state
   String getAnimState();
-
-  AnimationModel getAnimState(int tick);
 }
 

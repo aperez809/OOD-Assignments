@@ -16,4 +16,8 @@ public class Move implements Action {
   public void apply(Shape s) {
     s.setCoords(new Location(x, y));
   }
+
+  public String getType() {
+    return this.type;
+  }
 }

@@ -20,5 +20,7 @@ public class ChangeDims implements Action {
     s.setWidth(this.width);
   }
 
-
+  public String getType() {
+    return this.type;
+  }
 }
