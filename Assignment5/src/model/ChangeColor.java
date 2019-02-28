@@ -22,4 +22,8 @@ public class ChangeColor implements Action {
   public void apply(Shape s) {
     s.setColor(new Color(this.r, this.g, this.b));
   }
+
+  public String getType() {
+    return this.type;
+  }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public interface Shape {
 
-  void execute(ArrayList<Action> actions, int startTick, int endTick);
+  void execute(ArrayList<Action> actions, int startTick, int endTick, String shapeType);
 
   void setCoords(Location location);
 

@@ -18,7 +18,7 @@ public class AbstractShape implements Shape {
     this.trackedState = new StringBuilder();
   }
 
-  public void execute(ArrayList<Action> actions, int startTick, int endTick) {
+  public void execute(ArrayList<Action> actions, int startTick, int endTick, String shapeType) {
       this.documentChange("Motion",
               "Shape",
               String.valueOf(startTick));
