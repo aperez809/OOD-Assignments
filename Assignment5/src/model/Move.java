@@ -6,7 +6,7 @@ public class Move implements Action {
   private int x;
   private int y;
 
-  public Move(String type, int x, int y) {
+  public Move(int x, int y) {
     this.type = "Motion";
     this.x = x;
     this.y = y;

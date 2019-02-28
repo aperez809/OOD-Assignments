@@ -10,7 +10,7 @@ public class AbstractShape implements Shape {
   private Color color;
   private StringBuilder trackedState;
 
-  public AbstractShape(int height, int width, Location coords, Color color, StringBuilder trackedState) {
+  public AbstractShape(int height, int width, Location coords, Color color) {
     this.height = height;
     this.width = width;
     this.coords = coords;
