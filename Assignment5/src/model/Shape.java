@@ -1,12 +1,19 @@
 package model;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public interface Shape {
 
-  void changeDims(int newH, int newW);
+  void execute(ArrayList<Action> actions, int startTick, int endTick);
 
-  void documentChange();
+  void setCoords(Location location);
 
-  void changeColor(int r, int g, int b);
+  void setWidth(int width);
 
-  void move(int toX, int toY);
+  void setHeight(int height);
+
+  void setColor(Color color);
+
+  StringBuilder getTrackedState();
 }

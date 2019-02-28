@@ -1,38 +1,90 @@
 package model;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AbstractShape implements Shape {
   private int height;
   private int width;
   private Location coords;
   private Color color;
+  private StringBuilder trackedState;
 
-  public AbstractShape(int height, int width, Location coords, Color color) {
+  public AbstractShape(int height, int width, Location coords, Color color, StringBuilder trackedState) {
     this.height = height;
     this.width = width;
     this.coords = coords;
     this.color = color;
+    this.trackedState = new StringBuilder();
   }
 
-  @Override
-  public void changeDims(int newH, int newW) {
+  public void execute(ArrayList<Action> actions, int startTick, int endTick) {
+      this.documentChange("Motion",
+              "Shape",
+              String.valueOf(startTick));
+
+    for (Action a : actions) {
+      a.apply(this);
+    }
+
+    this.documentChange("","",String.valueOf(endTick));
+    this.trackedState.append("\n");
+  }
+
+  private void documentChange(String actionType, String shape, String tick) {
+    trackedState.append(String.format(
+            "%s %s %s %s %s %s %s %s %s %s    ",
+            actionType,
+            shape,
+            tick,
+            this.coords.getX(),
+            this.coords.getY(),
+            this.width,
+            this.height,
+            this.color.getRed(),
+            this.color.getGreen(),
+            this.color.getBlue()));
+  }
+
+  public int getHeight() {
+    return height;
+  }
+
+  public void setHeight(int height) {
+    this.height = height;
+  }
+
+  public int getWidth() {
+    return width;
+  }
+
+  public void setWidth(int width) {
+    this.width = width;
+  }
+
+  public Location getCoords() {
+    return coords;
+  }
+
+  public void setCoords(Location coords) {
+    this.coords = coords;
+  }
+
+  public Color getColor() {
+    return color;
+  }
+
+  public void setColor(Color color) {
+    this.color = color;
+  }
+
+  public StringBuilder getTrackedState() {
+    return trackedState;
 
   }
 
-  @Override
-  public void documentChange() {
-
-  }
-
-  @Override
-  public void changeColor(int r, int g, int b) {
-
-  }
-
-  @Override
-  public void move(int toX, int toY) {
-
+  public void setTrackedState(StringBuilder trackedState) {
+    this.trackedState = trackedState;
   }
 }
 
