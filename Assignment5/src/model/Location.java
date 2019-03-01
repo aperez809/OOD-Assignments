@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Location {
   private int x;
   private int y;
@@ -35,5 +37,10 @@ public class Location {
 
     Location other = (Location) o;
     return other.x == this.x && other.y == this.y;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.x, this.y);
   }
 }

@@ -39,6 +39,9 @@ public abstract class AbstractShape implements Shape {
     return height;
   }
 
+  @Override
+  public abstract Shape makeCopy();
+
   public void setHeight(int height) {
     this.height = height;
   }
@@ -69,7 +72,6 @@ public abstract class AbstractShape implements Shape {
 
   public StringBuilder getTrackedState() {
     return trackedState;
-
   }
 
   public void setTrackedState(StringBuilder trackedState) {

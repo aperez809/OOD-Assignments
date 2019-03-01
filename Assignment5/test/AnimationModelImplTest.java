@@ -7,7 +7,6 @@ import org.junit.Test;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -154,6 +153,16 @@ public class AnimationModelImplTest {
     Shape firstShape = testModel.getShapes().get(0);
     testModel.addAction(firstShape, move1);
     testModel.addAction(firstShape, color1);
+  }
+
+  @Test
+  public void testGetAnimState() {
+    testModel.addAction(testModel.getShapes().get(0), a1.get(0));
+    for (Shape s: testModel.getShapes()) {
+      s.execute(testModel.getShapeActions(s), 5, 10);
+    }
+
+    assertEquals("", testModel.getAnimState());
   }
 
 }

@@ -24,4 +24,6 @@ public interface Shape {
   int getWidth();
 
   int getHeight();
+
+  Shape makeCopy();
 }

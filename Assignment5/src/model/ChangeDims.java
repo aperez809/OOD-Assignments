@@ -21,16 +21,6 @@ public class ChangeDims extends AbstractAction {
     s.setWidth(this.width);
   }
 
-  @Override
-  public int getStartTick() {
-    return 0;
-  }
-
-  @Override
-  public int getEndTick() {
-    return 0;
-  }
-
   public String getType() {
     return this.type;
   }

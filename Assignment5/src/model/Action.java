@@ -1,7 +1,5 @@
 package model;
 
-import javafx.util.Pair;
-
 public interface Action {
 
   //apply Action function to given shape

@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class AnimationModelImpl implements AnimationModel {
   private StringBuilder trackedState;
@@ -48,16 +50,16 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public ArrayList<Shape> getShapes() {
-    ArrayList<Shape> allShapes = new ArrayList<Shape>();
+    ArrayList<Shape> allShapes = new ArrayList<>();
     for (Shape s : this.actionMap.keySet()) {
-      allShapes.add(s);
+      allShapes.add(s.makeCopy());
     }
     return allShapes;
   }
 
   @Override
   public HashMap<Shape, ArrayList<Action>> getScript() {
-    return this.actionMap;
+    return new HashMap<>(this.actionMap);
   }
 
 
