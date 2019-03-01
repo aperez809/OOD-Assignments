@@ -1,17 +1,29 @@
-import model.*;
+import model.AnimationModel;
+import model.AnimationModelImpl;
+import model.Action;
 import model.Rectangle;
+import model.Oval;
 import model.Shape;
+import model.Move;
+import model.ChangeColor;
+import model.ChangeDims;
+import model.Location;
+
+
+
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-
+/**
+ * Test class with an intial set up method using @Before.
+ */
 public class AnimationModelImplTest {
 
   private AnimationModel testModel;
@@ -52,12 +64,57 @@ public class AnimationModelImplTest {
     testModel = new AnimationModelImpl();
     testModel.addShape(rect);
     testModel.addShape(oval);
+
+    testModel.addAction(rect, a1.get(0));
+    testModel.addAction(oval, a2.get(0));
+
   }
 
   @Test
   public void testNoActionsPerformed() {
     assertEquals("", testModel.getAnimState());
   }
+
+  @Test
+  public void testSuccessfullyMakeRect() {
+    Shape r = new Rectangle(100,100,new Location(100,100), Color.BLUE);
+    assertEquals(100, r.getHeight());
+    assertEquals(100, r.getWidth());
+    assertEquals(100, r.getCoords().getX());
+    assertEquals(100, r.getCoords().getY());
+    assertEquals(Color.BLUE, r.getColor());
+  }
+
+  @Test
+  public void testSuccessfullyMakeOval() {
+    Shape o = new Oval(100,100,new Location(100,100), Color.BLUE);
+    assertEquals(100, o.getHeight());
+    assertEquals(100, o.getWidth());
+    assertEquals(100, o.getCoords().getX());
+    assertEquals(100, o.getCoords().getY());
+    assertEquals(Color.BLUE, o.getColor());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBadRectZeroHeight() {
+    Shape r = new Rectangle(0,100,new Location(100,100), Color.RED);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBadOvalZeroWidth() {
+    Shape r = new Rectangle(100,0,new Location(100,100), Color.RED);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBadOvalZeroHeight() {
+    Shape r = new Oval(0,100,new Location(100,100), Color.RED);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBadRectZeroWidth() {
+    Shape r = new Oval(100,0,new Location(100,100), Color.RED);
+  }
+
 
 
   @Test
@@ -155,6 +212,25 @@ public class AnimationModelImplTest {
     testModel.addAction(firstShape, color1);
   }
 
+  @Test (expected = IllegalArgumentException.class)
+  public void testNegativeTimeActions() {
+    Action move1 = new Move(10,9, 300, 300);
+    Shape firstShape = testModel.getShapes().get(0);
+    testModel.addAction(firstShape, move1);
+  }
+
+  @Test
+  public void testGetStartTick() {
+    assertEquals(a1.get(0).getStartTick(), 0);
+  }
+
+  @Test
+  public void testGetEndTick() {
+    assertEquals(a1.get(0).getEndTick(), 10);
+  }
+
+
+
   @Test
   public void testGetAnimState() {
     testModel.addAction(testModel.getShapes().get(0), a1.get(0));
@@ -162,7 +238,30 @@ public class AnimationModelImplTest {
       s.execute(testModel.getShapeActions(s), 5, 10);
     }
 
-    assertEquals("", testModel.getAnimState());
+    assertEquals("Motion Rectangle 5 100 100 100 100 100 100 100 "
+                    + "     10 300 300 100 100 100 100 100    \n"
+                    + "Motion Oval 5 200 200 100 100 200 200 200"
+                    + "      10 200 200 100 100 100 100 100    \n",
+            testModel.getAnimState());
   }
+
+
+  @Test
+  public void testGetShapes() {
+    ArrayList<Shape> temp = new ArrayList<>();
+    temp.add(new Rectangle(
+            100,
+            100,
+            new Location(100, 100),
+            new Color(100, 100, 100)));
+    temp.add(new Oval(
+            100,
+            100,
+            new Location(200, 200),
+            new Color(200, 200, 200)));
+    assertEquals(testModel.getShapes(),temp);
+  }
+
+
 
 }

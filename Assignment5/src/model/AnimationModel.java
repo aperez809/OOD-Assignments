@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 /**
  * Represents that model for creating images and moving them
- * around a canvas
+ * around a canvas.
  */
 public interface AnimationModel {
 
@@ -24,5 +24,7 @@ public interface AnimationModel {
   ArrayList<Shape> getShapes();
 
   HashMap<Shape, ArrayList<Action>> getScript();
+
+  void startAnim();
 }
 

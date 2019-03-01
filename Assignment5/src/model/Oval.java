@@ -1,19 +1,31 @@
 package model;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Represents an Oval Shape on the canvas.
+ *
+ */
 public class Oval extends AbstractShape {
   private String shapeName;
 
+  /**
+   * Constructs an Oval object.
+   *
+   * @param height height of OVal
+   * @param width width of Oval
+   * @param coords position of Oval on canvas
+   * @param color color of Oval
+   */
   public Oval(int height, int width, Location coords, Color color) {
     super(height, width, coords, color);
     this.shapeName = "Oval";
   }
 
   @Override
-  public void execute (ArrayList<Action> actions, int startTick, int endTick) {
+  public void execute(ArrayList<Action> actions, int startTick, int endTick) {
     this.documentChange("Motion",
             this.shapeName,
             String.valueOf(startTick));
@@ -26,10 +38,6 @@ public class Oval extends AbstractShape {
     this.trackedState.append("\n");
   }
 
-  @Override
-  public Shape makeCopy() {
-    return new Oval(this.getHeight(), this.getWidth(), this.getCoords(), this.getColor());
-  }
 
   @Override
   public boolean equals(Object o) {

@@ -1,19 +1,30 @@
 package model;
 
-import com.sun.org.apache.regexp.internal.RE;
-
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Represents a Rectangle shape on the canvas.
+ *
+ */
 public class Rectangle extends AbstractShape {
   private String shapeName;
 
+  /**
+   * Constructs a Rectangle object.
+   *
+   * @param height height of Rectangle
+   * @param width width of Rectangle
+   * @param coords position of Rectangle on canvas
+   * @param color color of Rectangle
+   */
   public Rectangle(int height, int width, Location coords, Color color) {
     super(height, width, coords, color);
     this.shapeName = "Rectangle";
   }
 
+  @Override
   public void execute(ArrayList<Action> actions, int startTick, int endTick) {
     this.documentChange("Motion",
             this.shapeName,
@@ -27,10 +38,6 @@ public class Rectangle extends AbstractShape {
     this.trackedState.append("\n");
   }
 
-  @Override
-  public Shape makeCopy() {
-    return new Rectangle(this.getHeight(), this.getWidth(), this.getCoords(), this.getColor());
-  }
 
   @Override
   public boolean equals(Object o) {
