@@ -1,8 +1,6 @@
 package model;
 
 public class ChangeDims extends AbstractAction {
-  private int startTick;
-  private int endTick;
   private String type;
   private int height;
   private int width;

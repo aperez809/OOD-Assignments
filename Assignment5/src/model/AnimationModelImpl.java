@@ -2,22 +2,22 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class AnimationModelImpl implements AnimationModel {
-  private ArrayList<Shape> shapes;
   private StringBuilder trackedState;
-  private HashMap<Shape, List<Action>> actionMap;
+  private HashMap<Shape, ArrayList<Action>> actionMap;
 
-  public AnimationModelImpl(ArrayList<Shape> shapes) {
-    this.shapes = shapes;
+  public AnimationModelImpl() {
     this.trackedState = new StringBuilder();
     this.actionMap = new HashMap<>();
   }
 
   @Override
-  public void placeImage(Shape s) {
-    this.shapes.add(s);
+  public void addShape(Shape s) {
+    if (actionMap.containsKey(s)) {
+      throw new IllegalArgumentException("Shape already exists in model");
+    }
+    this.actionMap.put(s, new ArrayList<>());
   }
 
   @Override
@@ -42,19 +42,24 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
   @Override
-  public List<Action> getShapeActions(Shape s) {
+  public ArrayList<Action> getShapeActions(Shape s) {
     return actionMap.get(s);
   }
 
   @Override
-  public HashMap<Shape, List<Action>> getScript() {
-    return this.actionMap;
+  public ArrayList<Shape> getShapes() {
+    ArrayList<Shape> allShapes = new ArrayList<Shape>();
+    for (Shape s : this.actionMap.keySet()) {
+      allShapes.add(s);
+    }
+    return allShapes;
   }
 
   @Override
-  public ArrayList<Shape> getShapes() {
-    return this.shapes;
+  public HashMap<Shape, ArrayList<Action>> getScript() {
+    return this.actionMap;
   }
+
 
   private boolean checkOverlap(Shape s, Action a) {
     int actionStart = a.getStartTick();

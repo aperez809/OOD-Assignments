@@ -4,8 +4,6 @@ import java.awt.*;
 
 public class ChangeColor extends AbstractAction {
   private String type;
-  private int startTick;
-  private int endTick;
   private int r;
   private int g;
   private int b;

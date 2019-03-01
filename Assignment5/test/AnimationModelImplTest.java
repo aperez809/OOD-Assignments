@@ -6,8 +6,11 @@ import org.junit.Test;
 
 import java.awt.*;
 import java.util.ArrayList;
-import static org.junit.Assert.assertEquals;
+import java.util.Collection;
+import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 
 public class AnimationModelImplTest {
@@ -47,9 +50,9 @@ public class AnimationModelImplTest {
             new Color(200, 200, 200)); //need to make Rectangle class
 
 
-    testModel = new AnimationModelImpl(new ArrayList<>());
-    testModel.placeImage(rect);
-    testModel.placeImage(oval);
+    testModel = new AnimationModelImpl();
+    testModel.addShape(rect);
+    testModel.addShape(oval);
   }
 
   @Test
@@ -83,6 +86,74 @@ public class AnimationModelImplTest {
     assertEquals(200, curr.getWidth());
   }
 
+  @Test
+  public void testAddShapeAndAction() {
+    AnimationModelImpl shapeActModel = new AnimationModelImpl();
+    Shape rect1 = new Rectangle(
+            80,
+            80,
+            new Location(80, 80),
+            new Color(80, 80, 80));
+    Shape rect2 = new Rectangle(
+            90,
+            90,
+            new Location(90, 90),
+            new Color(90, 90, 90));
+    Action move1 = new Move(0,10, 300, 300);
+    Action move2 = new Move(10,20, 400, 500);
+    ArrayList<Action> moveList2 = new ArrayList<Action>();
+    ArrayList<Action> moveList1 = new ArrayList<Action>();
+    moveList1.add(move1);
+    moveList2.add(move2);
+    shapeActModel.addShape(rect1);
+    shapeActModel.addAction(rect1, move1);
+    assertEquals(rect1, shapeActModel.getShapes().get(0));
+    assertEquals(moveList1.get(0), shapeActModel.getShapeActions(rect1).get(0));
+    assertNotEquals(rect2, shapeActModel.getShapes().get(0));
+    assertNotEquals(moveList2.get(0), shapeActModel.getShapeActions(rect1).get(0));
+  }
 
+  @Test
+  public void testBlankModel() {
+    AnimationModel blankModel = new AnimationModelImpl();
+    assertEquals(new ArrayList<>(), blankModel.getShapes());
+  }
+
+  @Test
+  public void testAddShapes() {
+    AnimationModel shapeActModel = new AnimationModelImpl();
+    Shape rect1 = new Rectangle(
+            80,
+            80,
+            new Location(80, 80),
+            new Color(80, 80, 80));
+    Shape rect2 = new Rectangle(
+            90,
+            90,
+            new Location(90, 90),
+            new Color(90, 90, 90));
+    Shape oval1 = new Oval(
+            85,
+            85,
+            new Location(85, 85),
+            new Color(85, 85, 85));
+    Collection<Shape> shapeList = new ArrayList<>();
+    shapeList.add(rect1);
+    shapeList.add(oval1);
+    shapeList.add(rect2);
+    shapeActModel.addShape(oval1);
+    shapeActModel.addShape(rect1);
+    shapeActModel.addShape(rect2);
+    assertEquals(true, shapeActModel.getShapes().containsAll(shapeList));
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testAddOverlappingActions() {
+    Action move1 = new Move(0,10, 300, 300);
+    Action color1 = new ChangeColor(5, 15, 35, 35, 35);
+    Shape firstShape = testModel.getShapes().get(0);
+    testModel.addAction(firstShape, move1);
+    testModel.addAction(firstShape, color1);
+  }
 
 }

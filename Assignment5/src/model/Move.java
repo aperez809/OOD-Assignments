@@ -2,8 +2,6 @@ package model;
 
 public class Move extends AbstractAction {
   private String type;
-  private int startTick;
-  private int endTick;
   private int x;
   private int y;
 

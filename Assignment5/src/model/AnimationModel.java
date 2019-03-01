@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 /**
@@ -12,7 +11,7 @@ import java.util.List;
 public interface AnimationModel {
 
   //place a image of Shape s on the canvas at a given spot
-  void placeImage(Shape s);
+  void addShape(Shape s);
 
   void addAction(Shape s, Action a);
 
@@ -20,10 +19,10 @@ public interface AnimationModel {
   //current state
   String getAnimState();
 
-  List<Action> getShapeActions(Shape s);
-
-  HashMap<Shape, List<Action>> getScript();
+  ArrayList<Action> getShapeActions(Shape s);
 
   ArrayList<Shape> getShapes();
+
+  HashMap<Shape, ArrayList<Action>> getScript();
 }
 
