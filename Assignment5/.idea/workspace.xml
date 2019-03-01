@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b85c3f-28b8-44a7-a9a4-d17e40a411a2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/model/AbstractShape.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/model/AbstractShape.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/model/AnimationModel.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/model/AnimationModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/model/AnimationModelImpl.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/model/AnimationModelImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/model/Rectangle.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/model/Rectangle.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test/Assignment5/AnimationModelImplTest.class" afterPath="$PROJECT_DIR$/target/test/Assignment5/AnimationModelImplTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/AbstractAction.java" afterPath="$PROJECT_DIR$/src/model/AbstractAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/AbstractShape.java" afterPath="$PROJECT_DIR$/src/model/AbstractShape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Action.java" afterPath="$PROJECT_DIR$/src/model/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/AnimationModel.java" afterPath="$PROJECT_DIR$/src/model/AnimationModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/AnimationModelImpl.java" afterPath="$PROJECT_DIR$/src/model/AnimationModelImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ChangeColor.java" afterPath="$PROJECT_DIR$/src/model/ChangeColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ChangeDims.java" afterPath="$PROJECT_DIR$/src/model/ChangeDims.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Location.java" afterPath="$PROJECT_DIR$/src/model/Location.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Move.java" afterPath="$PROJECT_DIR$/src/model/Move.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Oval.java" afterPath="$PROJECT_DIR$/src/model/Oval.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Rectangle.java" afterPath="$PROJECT_DIR$/src/model/Rectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Shape.java" afterPath="$PROJECT_DIR$/src/model/Shape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/AnimationModelImplTest.java" afterPath="$PROJECT_DIR$/test/AnimationModelImplTest.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +31,7 @@
       <file leaf-file-name="AnimationModelImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="-840">
               <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -421,7 +407,7 @@
       <updated>1550779370576</updated>
       <workItem from="1550779372639" duration="10982000" />
       <workItem from="1551120995382" duration="7810000" />
-      <workItem from="1551463209264" duration="8965000" />
+      <workItem from="1551463209264" duration="9184000" />
     </task>
     <task id="LOCAL-00001" summary="getting up to date">
       <created>1551385822856</created>
@@ -458,13 +444,17 @@
       <option name="project" value="LOCAL" />
       <updated>1551465063536</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Javadoc, some tests, still unsure on tick checking">
+      <created>1551474393414</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551474393414</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AnimationModelImplTest - 2019.03.01 at 15h 17m 22s.xml">
-      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AnimationModelImplTest - 2019.03.01 at 15h 17m 56s.xml">
       <configuration name="AnimationModelImplTest" configurationId="JUnit" />
     </history-entry>
@@ -492,9 +482,12 @@
     <history-entry file="AnimationModelImplTest - 2019.03.01 at 15h 55m 13s.xml">
       <configuration name="AnimationModelImplTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 06m 47s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30471000" />
+    <option name="totallyTimeSpent" value="30690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -570,7 +563,8 @@
     <MESSAGE value="Added model methods for easier data retrieval" />
     <MESSAGE value="added abstract action class, added start and end tick values to actions, added functionality to model to check if action being added is overlapping existing actions for shape" />
     <MESSAGE value="overriding equals and hashCode, testing, and deep copying objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="overriding equals and hashCode, testing, and deep copying objects" />
+    <MESSAGE value="Added Javadoc, some tests, still unsure on tick checking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Javadoc, some tests, still unsure on tick checking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1032,7 +1026,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="-840">
           <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
