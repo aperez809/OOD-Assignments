@@ -22,7 +22,7 @@ public interface AnimationModel {
 
   List<Action> getShapeActions(Shape s);
 
-  HashMap<Shape, List<Action>> getAllActions();
+  HashMap<Shape, List<Action>> getScript();
 
   ArrayList<Shape> getShapes();
 }

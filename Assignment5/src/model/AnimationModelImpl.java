@@ -22,7 +22,15 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public void addAction(Shape s, Action a) {
-    this.actionMap.get(s).add(a);
+    if (!actionMap.containsKey(s)) {
+      throw new IllegalArgumentException("Shape does not exist in model");
+    }
+    else if (this.checkOverlap(s,a)) {
+      throw new IllegalArgumentException("Action overlaps with existing action");
+    }
+    else {
+      this.actionMap.get(s).add(a);
+    }
   }
 
   @Override
@@ -39,12 +47,24 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
   @Override
-  public HashMap<Shape, List<Action>> getAllActions() {
+  public HashMap<Shape, List<Action>> getScript() {
     return this.actionMap;
   }
 
   @Override
   public ArrayList<Shape> getShapes() {
     return this.shapes;
+  }
+
+  private boolean checkOverlap(Shape s, Action a) {
+    int actionStart = a.getStartTick();
+    int actionEnd = a.getEndTick();
+    for (Action act : getShapeActions(s)) {
+      if ((actionStart > act.getStartTick() && actionStart < act.getEndTick())
+      || (actionEnd > act.getStartTick() && actionEnd < act.getEndTick())) {
+        return true;
+      }
+    }
+    return false;
   }
 }

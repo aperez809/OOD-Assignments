@@ -21,9 +21,9 @@ public class AnimationModelImplTest {
   @Before
   public void setUp() {
     //example Action objects
-    Action move = new Move(300, 300);
-    Action changeColor = new ChangeColor(100,100,100);
-    Action changeDims = new ChangeDims(100, 200);
+    Action move = new Move(0,10, 300, 300);
+    Action changeColor = new ChangeColor(10, 20,100,100,100);
+    Action changeDims = new ChangeDims(5, 15,100, 200);
 
     //example list of actions
     a1 = new ArrayList<>();
