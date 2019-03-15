@@ -26,6 +26,7 @@ public class Rectangle extends AbstractShape {
 
   @Override
   public void execute(ArrayList<Action> actions, int startTick, int endTick) {
+    
     this.documentChange("Motion",
             this.shapeName,
             String.valueOf(startTick));
