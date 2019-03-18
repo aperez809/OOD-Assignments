@@ -12,10 +12,8 @@ public interface Shape {
    * Performs action(s) on this Shape, beginning and ending at the given ticks.
    *
    * @param actions list of Actions to be performed by the Shape
-   * @param startTick tick at which to start Actions
-   * @param endTick tick at which to end Actions
    */
-  void execute(ArrayList<Action> actions, int startTick, int endTick);
+  void execute(ArrayList<IAction> actions);
 
   /**
    * Set Location of this Shape object.
@@ -78,4 +76,14 @@ public interface Shape {
    * @return height as an int
    */
   int getHeight();
+
+  boolean checkOverlap(IAction a);
+
+  void addAction(IAction a);
+
+  ArrayList<IAction> getActions();
+
+  String getShapeName();
+
+  void removeAction(IAction a);
 }

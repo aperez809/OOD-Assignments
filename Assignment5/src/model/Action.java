@@ -4,7 +4,7 @@ package model;
  * Abstract class that represents multiple different types of Actions that can
  * be performed on a Shape.
  */
-public abstract class AbstractAction implements Action {
+public class Action implements IAction {
   private int startTick;
   private int endTick;
 
@@ -32,22 +32,21 @@ public abstract class AbstractAction implements Action {
 
 
   /**
-   * Constructs an AbstractAction object.
+   * Constructs an Action object.
    *
-   * @param startTick tick at which the Action starts
-   * @param endTick tick at which the Action ends
+   * @param startTick tick at which the IAction starts
+   * @param endTick tick at which the IAction ends
    *
    * @throws IllegalArgumentException if startTick or endTick < 0 or if endTick - startTick
    *         (time to complete action) is negative.
    */
-  public AbstractAction(int startTick, int endTick) {
+  public Action(int startTick, int endTick) {
 
     this.startTick = startTick;
     this.endTick = endTick;
-
   }
 
-  public AbstractAction(int startTick, int endTick, int startX, int endX, int startY, int endY, int startHeight, int endHeight, int startWidth, int endWidth, int startR, int endR, int startG, int endG, int startB, int endB) {
+  public Action(int startTick, int endTick, int startX, int endX, int startY, int endY, int startHeight, int endHeight, int startWidth, int endWidth, int startR, int endR, int startG, int endG, int startB, int endB) {
     if (startTick < 0 || endTick < 0 || endTick - startTick < 0) {
       throw new IllegalArgumentException(
               "Start tick, end tick, and elapsed time must be greater than or equal to 0");
@@ -72,18 +71,9 @@ public abstract class AbstractAction implements Action {
   }
 
   /**
-   * Apply a certain Action to a given Shape.
-   *
-   * @param s a shape to perform the given Action on
-   */
-  @Override
-  public abstract void apply(Shape s);
-
-
-  /**
    * Get the starting tick of this action.
    *
-   * @return startTick representing tick at which Action began
+   * @return startTick representing tick at which IAction began
    */
   @Override
   public int getStartTick() {
@@ -93,7 +83,7 @@ public abstract class AbstractAction implements Action {
   /**
    * Get the ending tick of this action.
    *
-   * @return endTick representing tick at which Action ended
+   * @return endTick representing tick at which IAction ended
    */
   @Override
   public int getEndTick() {

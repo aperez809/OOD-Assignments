@@ -6,7 +6,7 @@ import java.awt.Color;
  * Represents the action of change the color of a Shape.
  *
  */
-public class ChangeColor extends AbstractAction {
+public class ChangeColor extends Action {
   private String type;
   private int r;
   private int g;

@@ -1,14 +1,5 @@
-import model.AnimationModel;
-import model.AnimationModelImpl;
-import model.Action;
-import model.Rectangle;
-import model.Oval;
-import model.Shape;
-import model.Move;
-import model.ChangeColor;
-import model.ChangeDims;
-import model.Location;
-
+import model.*;
+import model.IAction;
 
 
 import org.junit.Before;
@@ -17,6 +8,7 @@ import org.junit.Test;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -27,17 +19,27 @@ import static org.junit.Assert.assertNotEquals;
 public class AnimationModelImplTest {
 
   private AnimationModel testModel;
-  private ArrayList<Action> a1;
-  private ArrayList<Action> a2;
-  private ArrayList<Action> a3;
+  private ArrayList<IAction> a1;
+  private ArrayList<IAction> a2;
+  private ArrayList<IAction> a3;
 
 
   @Before
   public void setUp() {
-    //example Action objects
-    Action move = new Move(0,10, 300, 300);
-    Action changeColor = new ChangeColor(10, 20,100,100,100);
-    Action changeDims = new ChangeDims(5, 15,100, 200);
+    //example IAction objects
+    IAction move = new Action(
+            0, 10,
+            300, 350,
+            300, 350,
+            200, 200,
+            200, 200,
+            100, 100,
+            100, 100,
+            100, 100);
+    IAction changeColor = new ChangeColor(10, 20,100,100,100);
+    IAction changeDims = new ChangeDims(5, 15,100, 200);
+
+
 
     //example list of actions
     a1 = new ArrayList<>();
@@ -61,12 +63,15 @@ public class AnimationModelImplTest {
             new Color(200, 200, 200)); //need to make Rectangle class
 
 
-    testModel = new AnimationModelImpl();
-    testModel.addShape(rect);
-    testModel.addShape(oval);
+    testModel = new AnimationModelImpl(new StringBuilder(),
+            new HashMap<>(),
+            500, 500,
+            500, 500);
+    testModel.addShape("Rect1", rect);
+    testModel.addShape("Oval1", oval);
 
-    testModel.addAction(rect, a1.get(0));
-    testModel.addAction(oval, a2.get(0));
+    testModel.addAction("Rect1", a1.get(0));
+    testModel.addAction("Oval1", a2.get(0));
 
   }
 
@@ -119,7 +124,7 @@ public class AnimationModelImplTest {
 
   @Test
   public void testMoveRect() {
-    Shape curr = testModel.getShapes().get(0);
+    Shape curr = testModel.getShapes().get
     curr.execute(a1, 10, 50);
 
     assertEquals(new Location(300,300), curr.getCoords());
@@ -155,10 +160,10 @@ public class AnimationModelImplTest {
             90,
             new Location(90, 90),
             new Color(90, 90, 90));
-    Action move1 = new Move(0,10, 300, 300);
-    Action move2 = new Move(10,20, 400, 500);
-    ArrayList<Action> moveList2 = new ArrayList<Action>();
-    ArrayList<Action> moveList1 = new ArrayList<Action>();
+    IAction move1 = new Move(0,10, 300, 300);
+    IAction move2 = new Move(10,20, 400, 500);
+    ArrayList<IAction> moveList2 = new ArrayList<IAction>();
+    ArrayList<IAction> moveList1 = new ArrayList<IAction>();
     moveList1.add(move1);
     moveList2.add(move2);
     shapeActModel.addShape(rect1);
@@ -205,8 +210,8 @@ public class AnimationModelImplTest {
 
   @Test (expected = IllegalArgumentException.class)
   public void testAddOverlappingActions() {
-    Action move1 = new Move(0,10, 300, 300);
-    Action color1 = new ChangeColor(5, 15, 35, 35, 35);
+    IAction move1 = new Move(0,10, 300, 300);
+    IAction color1 = new ChangeColor(5, 15, 35, 35, 35);
     Shape firstShape = testModel.getShapes().get(0);
     testModel.addAction(firstShape, move1);
     testModel.addAction(firstShape, color1);
@@ -214,7 +219,7 @@ public class AnimationModelImplTest {
 
   @Test (expected = IllegalArgumentException.class)
   public void testNegativeTimeActions() {
-    Action move1 = new Move(10,9, 300, 300);
+    IAction move1 = new Move(10,9, 300, 300);
     Shape firstShape = testModel.getShapes().get(0);
     testModel.addAction(firstShape, move1);
   }

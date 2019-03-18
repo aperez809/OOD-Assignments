@@ -4,7 +4,7 @@ package model;
  * Represents the action of changing the dimensions of a Shape.
  *
  */
-public class ChangeDims extends AbstractAction {
+public class ChangeDims extends Action {
   private String type;
   private int height;
   private int width;
@@ -12,8 +12,8 @@ public class ChangeDims extends AbstractAction {
   /**
    * Constructs a ChangeDims object with all necessary data to change the dimensions of a Shape.
    *
-   * @param startTick when Action starts
-   * @param endTick when Action ends
+   * @param startTick when IAction starts
+   * @param endTick when IAction ends
    * @param height new height of Shape
    * @param width new width of Shape
    *

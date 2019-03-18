@@ -4,7 +4,7 @@ package model;
  * Represents the action of moving a Shape.
  *
  */
-public class Move extends AbstractAction {
+public class Move extends Action {
   private String type;
   private int x;
   private int y;
@@ -12,8 +12,8 @@ public class Move extends AbstractAction {
   /**
    * Constructs a Move function object with all necessary data to move the Shape.
    *
-   * @param startTick when Action begins
-   * @param endTick when Action ends
+   * @param startTick when IAction begins
+   * @param endTick when IAction ends
    * @param x new x position of Shape
    * @param y new y position of Shape
    */
@@ -30,7 +30,7 @@ public class Move extends AbstractAction {
   }
 
   /**
-   * Gets the type of Action performed.
+   * Gets the type of IAction performed.
    *
    * @return String of action type
    */

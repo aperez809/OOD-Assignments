@@ -9,7 +9,6 @@ import java.util.Objects;
  *
  */
 public class Oval extends AbstractShape {
-  private String shapeName;
 
   /**
    * Constructs an Oval object.
@@ -19,24 +18,10 @@ public class Oval extends AbstractShape {
    * @param coords position of Oval on canvas
    * @param color color of Oval
    */
-  public Oval(int height, int width, Location coords, Color color) {
-    super(height, width, coords, color);
-    this.shapeName = "Oval";
+  public Oval(int height, int width, Location coords, Color color, ArrayList<IAction> actions, String shapeName) {
+    super(height, width, coords, color, actions, shapeName);
   }
 
-  @Override
-  public void execute(ArrayList<Action> actions, int startTick, int endTick) {
-    this.documentChange("Motion",
-            this.shapeName,
-            String.valueOf(startTick));
-
-    for (Action a : actions) {
-      a.apply(this);
-    }
-
-    this.documentChange("","",String.valueOf(endTick));
-    this.trackedState.append("\n");
-  }
 
 
   @Override
@@ -50,12 +35,12 @@ public class Oval extends AbstractShape {
             && this.getWidth() == other.getWidth()
             && this.getCoords().equals(other.getCoords())
             && this.getColor().equals(other.getColor())
-            && this.shapeName.equals(other.shapeName);
+            && this.getShapeName().equals(other.getShapeName());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-            this.getHeight(), this.getWidth(), this.getCoords(), this.getColor(), this.shapeName);
+            this.getHeight(), this.getWidth(), this.getCoords(), this.getColor(), this.getShapeName());
   }
 }
