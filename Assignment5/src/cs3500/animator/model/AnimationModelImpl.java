@@ -1,11 +1,13 @@
-package model;
+package cs3500.animator.model;
+
+import cs3500.animator.model.util.AnimationBuilder;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Represents the model for an Animation program.
+ * Represents the cs3500.animator.model for an Animation program.
  */
 public class AnimationModelImpl implements AnimationModel {
   private StringBuilder trackedState;
@@ -60,24 +62,24 @@ public class AnimationModelImpl implements AnimationModel {
     @Override
     public AnimationBuilder<AnimationModel> declareShape(String name, String type) {
       switch (type.toLowerCase()) {
-        case "oval":
+        case "ellipse":
           this.model.addShape(
-                  new Oval(0,
-                          0,
+                  new Ellipse(1,
+                          1,
                           new Location(0,0),
                           new Color(0,0,0),
                           new ArrayList<>(),
-                          "oval"));
+                          name));
           break;
 
         case "rectangle":
           this.model.addShape(
-                  new Rectangle(0,
-                          0,
+                  new Rectangle(1,
+                          1,
                           new Location(0,0),
                           new Color(0,0,0),
                           new ArrayList<>(),
-                          "oval"));
+                          name));
           break;
 
         default:
@@ -89,7 +91,7 @@ public class AnimationModelImpl implements AnimationModel {
 
     @Override
     public AnimationBuilder<AnimationModel> addMotion(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1, int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
-      this.model.addAction(name, new Action(t1,t1,x1,x2,y1,y2,h1,h2,w1,w2,r1,r2,g1,g2,b1,b2));
+      this.model.addAction(name, new Action(t1,t2,x1,x2,y1,y2,h1,h2,w1,w2,r1,r2,g1,g2,b1,b2));
 
       return this;
     }
@@ -102,14 +104,14 @@ public class AnimationModelImpl implements AnimationModel {
     // all your methods that you already wrote
 
   /**
-   * Adds a Shape to this model's list of Shape (without any Actions to go along with it).
+   * Adds a Shape to this cs3500.animator.model's list of Shape (without any Actions to go along with it).
    *
    * @param s Shape to add to the shape map
    */
   @Override
   public void addShape(Shape s) {
     if (shapes.containsKey(s.getShapeName())) {
-      throw new IllegalArgumentException("Shape already exists in model");
+      throw new IllegalArgumentException("Shape already exists in cs3500.animator.model");
     }
     this.shapes.put(s.getShapeName(), s);
   }
@@ -122,7 +124,7 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
   /**
-   * Adds an IAction to this model's action map for the given Shape.
+   * Adds an IAction to this cs3500.animator.model's action map for the given Shape.
    *
    * @param a IAction to add to the Shape's list of Actions
    *
@@ -131,7 +133,7 @@ public class AnimationModelImpl implements AnimationModel {
   @Override
   public void addAction(String name, IAction a) {
     if (!shapes.containsKey(name)) {
-      throw new IllegalArgumentException("Shape does not exist in model");
+      throw new IllegalArgumentException("Shape does not exist in cs3500.animator.model");
     }
     else {
       shapes.get(name).addAction(a);
@@ -140,7 +142,7 @@ public class AnimationModelImpl implements AnimationModel {
 
   public void removeAction(String name, IAction a) {
     if (!shapes.containsKey(name)) {
-      throw new IllegalArgumentException("Shape does not exist in model");
+      throw new IllegalArgumentException("Shape does not exist in cs3500.animator.model");
     }
     else {
       shapes.get(name).removeAction(a);
@@ -172,7 +174,7 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
   /**
-   * Get list of Shapes in the model.
+   * Get list of Shapes in the cs3500.animator.model.
    *
    * @return list of Shapes
    */
@@ -184,7 +186,7 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
   /**
-   * Get the set of Shapes in the model along with their corresponding IAction lists.
+   * Get the set of Shapes in the cs3500.animator.model along with their corresponding IAction lists.
    *
    * @return HashMap of Shapes and list of IAction
    */
@@ -238,5 +240,25 @@ public class AnimationModelImpl implements AnimationModel {
 
   public void setMaxY(int maxY) {
     this.maxY = maxY;
+  }
+
+  public String getNextShapeName(String shapeType) {
+    int rectCount = 0;
+    int ellipseCount = 0;
+
+    for (Shape s : this.shapes.values()) {
+      if (s instanceof Rectangle) {
+        rectCount++;
+      }
+      else {
+        ellipseCount++;
+      }
+    }
+    if (shapeType.equalsIgnoreCase("ellipse")) {
+      return "o" + String.valueOf(ellipseCount);
+    }
+    else {
+      return "r" + String.valueOf(rectCount);
+    }
   }
 }

@@ -1,4 +1,4 @@
-package model;
+package cs3500.animator.model;
 
 /**
  * Abstract class that represents multiple different types of Actions that can

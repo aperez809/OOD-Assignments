@@ -1,24 +1,24 @@
-package model;
+package cs3500.animator.model;
 
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * Represents an Oval Shape on the canvas.
+ * Represents an Ellipse Shape on the canvas.
  *
  */
-public class Oval extends AbstractShape {
+public class Ellipse extends AbstractShape {
 
   /**
-   * Constructs an Oval object.
+   * Constructs an Ellipse object.
    *
    * @param height height of OVal
-   * @param width width of Oval
-   * @param coords position of Oval on canvas
-   * @param color color of Oval
+   * @param width width of Ellipse
+   * @param coords position of Ellipse on canvas
+   * @param color color of Ellipse
    */
-  public Oval(int height, int width, Location coords, Color color, ArrayList<IAction> actions, String shapeName) {
+  public Ellipse(int height, int width, Location coords, Color color, ArrayList<IAction> actions, String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
 
@@ -26,11 +26,11 @@ public class Oval extends AbstractShape {
 
   @Override
   public boolean equals(Object o) {
-    if (!(o instanceof Oval)) {
+    if (!(o instanceof Ellipse)) {
       return false;
     }
 
-    Oval other = (Oval) o;
+    Ellipse other = (Ellipse) o;
     return this.getHeight() == other.getHeight()
             && this.getWidth() == other.getWidth()
             && this.getCoords().equals(other.getCoords())

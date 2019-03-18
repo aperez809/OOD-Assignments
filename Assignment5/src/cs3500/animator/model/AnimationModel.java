@@ -1,4 +1,4 @@
-package model;
+package cs3500.animator.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 
 /**
- * Represents that model for creating images and moving them
+ * Represents that cs3500.animator.model for creating images and moving them
  * around a canvas.
  */
 public interface AnimationModel {
@@ -35,5 +35,7 @@ public interface AnimationModel {
   void setWidth(int width);
 
   void setHeight(int height);
+
+  String getNextShapeName(String shapeType);
 }
 

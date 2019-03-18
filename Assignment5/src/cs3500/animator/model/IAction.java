@@ -1,4 +1,4 @@
-package model;
+package cs3500.animator.model;
 
 /**
  * Represents the possible actions that can be performed on a Shape that is on the

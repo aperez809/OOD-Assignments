@@ -1,4 +1,4 @@
-package model;
+package cs3500.animator.model.util;
 
 public interface AnimationBuilder<Doc> {
   /**

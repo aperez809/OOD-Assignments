@@ -1,5 +1,6 @@
-import model.*;
-import model.IAction;
+/*
+import cs3500.animator.model.*;
+import cs3500.animator.model.IAction;
 
 
 import org.junit.Before;
@@ -13,9 +14,11 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+*/
 /**
  * Test class with an intial set up method using @Before.
- */
+ *//*
+
 public class AnimationModelImplTest {
 
   private AnimationModel testModel;
@@ -56,7 +59,7 @@ public class AnimationModelImplTest {
             100,
             new Location(100, 100),
             new Color(100, 100, 100)); //need to make Rectangle class
-    Shape oval = new Oval(
+    Shape oval = new Ellipse(
             100,
             100,
             new Location(200, 200),
@@ -92,7 +95,7 @@ public class AnimationModelImplTest {
 
   @Test
   public void testSuccessfullyMakeOval() {
-    Shape o = new Oval(100,100,new Location(100,100), Color.BLUE);
+    Shape o = new Ellipse(100,100,new Location(100,100), Color.BLUE);
     assertEquals(100, o.getHeight());
     assertEquals(100, o.getWidth());
     assertEquals(100, o.getCoords().getX());
@@ -112,12 +115,12 @@ public class AnimationModelImplTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testBadOvalZeroHeight() {
-    Shape r = new Oval(0,100,new Location(100,100), Color.RED);
+    Shape r = new Ellipse(0,100,new Location(100,100), Color.RED);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testBadRectZeroWidth() {
-    Shape r = new Oval(100,0,new Location(100,100), Color.RED);
+    Shape r = new Ellipse(100,0,new Location(100,100), Color.RED);
   }
 
 
@@ -193,7 +196,7 @@ public class AnimationModelImplTest {
             90,
             new Location(90, 90),
             new Color(90, 90, 90));
-    Shape oval1 = new Oval(
+    Shape oval1 = new Ellipse(
             85,
             85,
             new Location(85, 85),
@@ -245,7 +248,7 @@ public class AnimationModelImplTest {
 
     assertEquals("Motion Rectangle 5 100 100 100 100 100 100 100 "
                     + "     10 300 300 100 100 100 100 100    \n"
-                    + "Motion Oval 5 200 200 100 100 200 200 200"
+                    + "Motion Ellipse 5 200 200 100 100 200 200 200"
                     + "      10 200 200 100 100 100 100 100    \n",
             testModel.getAnimState());
   }
@@ -259,7 +262,7 @@ public class AnimationModelImplTest {
             100,
             new Location(100, 100),
             new Color(100, 100, 100)));
-    temp.add(new Oval(
+    temp.add(new Ellipse(
             100,
             100,
             new Location(200, 200),
@@ -270,3 +273,4 @@ public class AnimationModelImplTest {
 
 
 }
+*/

@@ -1,19 +1,16 @@
-package view;
+package cs3500.animator.view;
 
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
-import java.util.List;
 import java.util.function.Consumer;
 
 public interface IView {
   /**
-   * Make the view visible. This is usually called
-   * after the view is constructed
+   * Make the cs3500.animator.view visible. This is usually called
+   * after the cs3500.animator.view is constructed
    */
   void makeVisible();
 
   /**
-   * Provide the view with a callback option to
+   * Provide the cs3500.animator.view with a callback option to
    * process a command.
    *
    * @param callback object
@@ -21,7 +18,7 @@ public interface IView {
   void setCommandCallback(Consumer<String> callback);
 
   /**
-   * Transmit an error message to the view, in case
+   * Transmit an error message to the cs3500.animator.view, in case
    * the command could not be processed correctly
    *
    * @param error
@@ -29,7 +26,7 @@ public interface IView {
   void showErrorMessage(String error);
 
   /**
-   * Signal the view to draw itself
+   * Signal the cs3500.animator.view to draw itself
    */
   void refresh();
 }

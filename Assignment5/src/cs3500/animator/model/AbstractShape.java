@@ -1,4 +1,4 @@
-package model;
+package cs3500.animator.model;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -225,8 +225,9 @@ public abstract class AbstractShape implements Shape {
         curr = act;
       }
     }
-    return currMax == a.getStartTick()
-            && Arrays.equals(curr.getEndState(), a.getStartState());
+
+    return currMax == null || (currMax == a.getStartTick()
+            && Arrays.equals(curr.getEndState(), a.getStartState()));
   }
 
   @Override

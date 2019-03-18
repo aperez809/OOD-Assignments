@@ -1,4 +1,4 @@
-package view;
+package cs3500.animator.view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,6 +22,8 @@ public class AnimationGraphicsView extends JFrame implements IView {
     this.add(scrollPane, BorderLayout.CENTER);
     this.scrollPane = scrollPane;
     this.commandCallback = commandCallback;
+
+    this.pack();
   }
 
   @Override
