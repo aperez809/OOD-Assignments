@@ -36,6 +36,9 @@ public class AnimationModelImpl implements AnimationModel {
     this.maxY = maxY;
   }
 
+  /**
+   * Add Javadoc here
+   */
   public static final class Builder implements AnimationBuilder<AnimationModel> {
     private AnimationModel model;
 
@@ -101,13 +104,7 @@ public class AnimationModelImpl implements AnimationModel {
       return this;
     }
   }
-    // all your methods that you already wrote
 
-  /**
-   * Adds a Shape to this cs3500.animator.model's list of Shape (without any Actions to go along with it).
-   *
-   * @param s Shape to add to the shape map
-   */
   @Override
   public void addShape(Shape s) {
     if (shapes.containsKey(s.getShapeName())) {
@@ -116,6 +113,7 @@ public class AnimationModelImpl implements AnimationModel {
     this.shapes.put(s.getShapeName(), s);
   }
 
+  @Override
   public void removeShape(String name) {
     if (!this.shapes.containsKey(name)) {
       throw new IllegalArgumentException("Shape is not in list of shapes");
@@ -123,13 +121,6 @@ public class AnimationModelImpl implements AnimationModel {
     this.shapes.remove(name);
   }
 
-  /**
-   * Adds an IAction to this cs3500.animator.model's action map for the given Shape.
-   *
-   * @param a IAction to add to the Shape's list of Actions
-   *
-   * @throws IllegalArgumentException if the given IAction overlaps with an existing one
-   */
   @Override
   public void addAction(String name, IAction a) {
     if (!shapes.containsKey(name)) {
@@ -140,6 +131,7 @@ public class AnimationModelImpl implements AnimationModel {
     }
   }
 
+  @Override
   public void removeAction(String name, IAction a) {
     if (!shapes.containsKey(name)) {
       throw new IllegalArgumentException("Shape does not exist in cs3500.animator.model");
@@ -149,11 +141,6 @@ public class AnimationModelImpl implements AnimationModel {
     }
   }
 
-  /**
-   * Get the state of the animation (which Actions have been performed).
-   *
-   * @return String log of the Actions
-   */
   @Override
   public String getAnimState() {
     for (Shape s : this.shapes.values()) {
@@ -162,22 +149,11 @@ public class AnimationModelImpl implements AnimationModel {
     return this.trackedState.toString();
   }
 
-  /**
-   * Get list of Actions that a Shape has been set to perform.
-   *
-   * @param s the given Shape
-   * @return list of Actions
-   */
   @Override
   public ArrayList<IAction> getShapeActions(Shape s) {
     return s.getActions();
   }
 
-  /**
-   * Get list of Shapes in the cs3500.animator.model.
-   *
-   * @return list of Shapes
-   */
   @Override
   public ArrayList<Shape> getShapes() {
     ArrayList<Shape> temp = new ArrayList<>();
@@ -185,11 +161,6 @@ public class AnimationModelImpl implements AnimationModel {
     return temp;
   }
 
-  /**
-   * Get the set of Shapes in the cs3500.animator.model along with their corresponding IAction lists.
-   *
-   * @return HashMap of Shapes and list of IAction
-   */
   @Override
   public HashMap<Shape, ArrayList<IAction>> getScript() {
     HashMap<Shape, ArrayList<IAction>> temp = new HashMap<>();
@@ -199,66 +170,23 @@ public class AnimationModelImpl implements AnimationModel {
     return temp;
   }
 
-
-
-  /**
-   * Starts the Anim and adds ticks to a running counter.
-   *
-   */
   @Override
-  public void startAnim() {
-    //will keep track of currTick and perform actions at designated times
-  }
-
-  public int getHeight() {
-    return height;
-  }
-
   public void setHeight(int height) {
     this.height = height;
   }
 
-  public int getWidth() {
-    return width;
-  }
-
+  @Override
   public void setWidth(int width) {
     this.width = width;
   }
 
-  public int getMaxX() {
-    return maxX;
-  }
-
+  @Override
   public void setMaxX(int maxX) {
     this.maxX = maxX;
   }
 
-  public int getMaxY() {
-    return maxY;
-  }
-
+  @Override
   public void setMaxY(int maxY) {
     this.maxY = maxY;
-  }
-
-  public String getNextShapeName(String shapeType) {
-    int rectCount = 0;
-    int ellipseCount = 0;
-
-    for (Shape s : this.shapes.values()) {
-      if (s instanceof Rectangle) {
-        rectCount++;
-      }
-      else {
-        ellipseCount++;
-      }
-    }
-    if (shapeType.equalsIgnoreCase("ellipse")) {
-      return "o" + String.valueOf(ellipseCount);
-    }
-    else {
-      return "r" + String.valueOf(rectCount);
-    }
   }
 }

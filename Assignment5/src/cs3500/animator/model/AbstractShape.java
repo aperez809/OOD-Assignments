@@ -215,6 +215,13 @@ public abstract class AbstractShape implements Shape {
     return false;
   }
 
+  /**
+   * Checks if there is any overlap between the given IAction and the Actions already assigned
+   * to the given Shape.
+   *
+   * @param a the given IAction
+   * @return boolean of whether or not there is overlap
+   */
   private boolean checkConsecutive(IAction a) {
     Integer currMax = null;
     IAction curr = null;
