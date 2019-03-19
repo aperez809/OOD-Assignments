@@ -23,10 +23,6 @@ public class Rectangle extends AbstractShape {
     super(height, width, coords, color, actions, shapeName);
   }
 
-  public Rectangle(Rectangle other) {
-    super(other);
-  }
-
   @Override
   public Shape cloneShape() {
     return new Rectangle(

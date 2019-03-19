@@ -17,11 +17,7 @@ public final class ViewMain {
     Appendable output;
 
 
-    HashMap<String, String> cla = new HashMap<>();
-    for (int i = 0; i < args.length; i++) {
-      cla.put(args[i], args[i+1]);
-      i++;
-    }
+    HashMap<String, String> cla = argsToHM(args);
 
     //throw IllegalArgumentException if this fails
     checkValidArgs(cla);
@@ -40,26 +36,37 @@ public final class ViewMain {
     switch (cla.get("-view")) {
       case "text":
         output = System.out;
-        IView view = new TextRepresentation(model.getShapes());
+        IView view = new TextRepresentation(
+                model.getShapes(),
+                model.getMaxX(),
+                model.getMaxY(),
+                model.getWidth(),
+                model.getHeight());
         view.createAnimOutput();
         output.append(view.getOutput().toString());
-        System.out.println(output);
         return;
 
       case "svg":
         try {
-          output = new FileWriter(cla.get("-out"));
-          IView svg = new SVGRepresentation(model.getShapes(), Integer.valueOf(cla.get("-speed")));
+          File f = new File(cla.get("-out"));
+          FileWriter fw = new FileWriter(f);
+          BufferedWriter bw = new BufferedWriter(fw);
+          IView svg = new SVGRepresentation(model.getShapes(),
+                  model.getMaxX(),
+                  model.getMaxY(),
+                  model.getWidth(),
+                  model.getHeight(),
+                  Integer.valueOf(cla.get("-speed")));
           svg.createAnimOutput();
-          //System.out.println(svg.getOutput().toString());
-          output.append(svg.getOutput().toString());
+          System.out.println(svg.getOutput().toString());
+          bw.append(svg.getOutput().toString());
+          bw.close();
           return;
-          //TODO: Figure out SVG
-
         }
         catch (IOException e) {
           throw new IOException("File could not be written");
-      }
+        }
+
       case "visual":
         AnimationPanelView panel = new AnimationPanelView(
                 model.getShapes(),
@@ -67,11 +74,8 @@ public final class ViewMain {
         IView gui = new AnimationGraphicsView(panel, model.getMaxX(), model.getMaxY(),
                 model.getWidth(), model.getHeight());
 
-        setTimerSpeed(cla, panel);
         gui.add(panel);
         gui.makeVisible();
-        //TODO: Put swing stuff here
-        break;
     }
   }
 
@@ -88,15 +92,6 @@ public final class ViewMain {
     }
   }
 
-  private static void setTimerSpeed(HashMap<String, String> cla, AnimationPanelView panel) {
-    if (cla.containsKey("-speed")) {
-      panel.setTimerSpeed(Integer.valueOf(cla.get("-speed")));
-    }
-    else {
-      panel.setTimerSpeed(1);
-    }
-  }
-
   private static String setFile(HashMap<String, String> cla) {
     if (cla.containsKey("-in")) {
       return cla.get("-in");
@@ -104,5 +99,14 @@ public final class ViewMain {
     else {
       throw new IllegalArgumentException("Arguments passed to command line must include -in flag");
     }
+  }
+
+  private static HashMap<String, String> argsToHM(String[] args) {
+    HashMap<String, String> temp = new HashMap<>();
+    for (int i = 0; i < args.length; i++) {
+      temp.put(args[i], args[i+1]);
+      i++;
+    }
+    return temp;
   }
 }

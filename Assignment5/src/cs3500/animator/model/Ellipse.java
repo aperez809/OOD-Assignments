@@ -22,11 +22,6 @@ public class Ellipse extends AbstractShape {
     super(height, width, coords, color, actions, shapeName);
   }
 
-
-  public Ellipse(Ellipse other) {
-    super(other);
-  }
-
   @Override
   public Shape cloneShape() {
     return new Ellipse(

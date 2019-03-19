@@ -32,7 +32,7 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   @Override
   public void paintComponent(Graphics g) {
     Graphics2D twoDimG = (Graphics2D) g;
-    super.paintComponent(g);
+    super.paintComponent(twoDimG);
 
     for (Shape s : this.shapes) {
       twoDimG.setColor(s.getColor());
@@ -115,34 +115,29 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     }
   }
 
-
-  public void setTimerSpeed(int speed) {
-    t = new Timer(1000 / speed, this);
-  }
-
   @Override
   public void makeVisible() {
-
+    throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
   @Override
   public void setCommandCallback(Consumer<String> callback) {
-
+    throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
   @Override
   public void showErrorMessage(String error) {
-
+    new JOptionPane();
   }
 
   @Override
   public void refresh() {
-
+    throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
   @Override
   public void add(AnimationPanelView panel) {
-
+    throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
   @Override

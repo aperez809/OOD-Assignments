@@ -9,7 +9,6 @@ public class AnimationGraphicsView extends JFrame implements IView {
   private JPanel shapeAnimPanel;
   private JScrollPane scrollPane;
   Consumer<String> commandCallback;
-  Timer t;
   int maxX;
   int maxY;
   int height;
@@ -25,7 +24,7 @@ public class AnimationGraphicsView extends JFrame implements IView {
     //this.setPreferredSize(new Dimension(width,height));
     this.shapeAnimPanel = shapeAnimPanel;
     scrollPane = new JScrollPane(shapeAnimPanel);
-    scrollPane.setPreferredSize(new Dimension(width, height));
+    scrollPane.setPreferredSize(new Dimension(width + 20, height + 20));
     this.add(scrollPane, BorderLayout.CENTER);
 
 

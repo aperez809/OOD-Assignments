@@ -12,23 +12,36 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 
-public class SVGRepresentation extends JPanel implements IView, ActionListener {
+public class SVGRepresentation implements IView, ActionListener {
 
   private ArrayList<Shape> shapes;
   private Appendable output;
   private int speed;
+  int maxX;
+  int maxY;
+  int height;
+  int width;
 
-  public SVGRepresentation(ArrayList<Shape> shapes, int speed) {
+  public SVGRepresentation(ArrayList<Shape> shapes,
+                           int maxX,
+                           int maxY,
+                           int width,
+                           int height,
+                           int speed) {
     super();
     this.shapes = shapes;
     this.speed = 1000 / speed;
     this.output = new StringBuilder();
+    this.maxX = maxX;
+    this.maxY = maxY;
+    this.width = width;
+    this.height = height;
   }
 
   @Override
   public void createAnimOutput() throws IOException {
     output.append(String.format("<svg width=\"%s\" height=\"%s\" version=\"1.1\"\n" +
-            "     xmlns=\"http://www.w3.org/2000/svg\">\n", this.getWidth(), this.getHeight()));
+            "     xmlns=\"http://www.w3.org/2000/svg\">\n", this.width, this.height));
     for (Shape s : this.shapes) {
       String type;
       if (s instanceof Rectangle) {
@@ -101,7 +114,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
     output.append(
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
-                            "attributeName=\"y\" from=\"rgb(%s,%s,%s)\" " +
+                            "attributeName=\"fill\" from=\"rgb(%s,%s,%s)\" " +
                             "to=\"rgb(%s,%s,%s)\" fill=\"freeze\"/>\n",
                     start[0] * this.speed,
                     timeToComplete,
@@ -116,32 +129,32 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
 
   @Override
   public void makeVisible() {
-    throw new UnsupportedOperationException("Only for Visual View");
+    throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
   @Override
   public void setCommandCallback(Consumer<String> callback) {
-
+    throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
   @Override
   public void showErrorMessage(String error) {
-
+    throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
   @Override
   public void refresh() {
-    throw new UnsupportedOperationException("Only for Visual View");
+    throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
   @Override
   public void add(AnimationPanelView panel) {
-    throw new UnsupportedOperationException("Only for Visual View");
+    throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
-
+    throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
 }
