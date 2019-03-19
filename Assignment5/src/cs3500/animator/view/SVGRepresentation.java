@@ -39,7 +39,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
       }
       output.append(
               String.format(
-                      "<%s id=\"%s\" x=\"%s\" y=\"%s\" width=\"%s\" height=\"%s\" fill=\"rgb(%s,%s,%s)\" visibility=\"visible\" >",
+                      "<%s id=\"%s\" x=\"%s\" y=\"%s\" width=\"%s\" height=\"%s\" fill=\"rgb(%s,%s,%s)\" visibility=\"visible\" >\n",
               type,
               s.getShapeName(),
               s.getCoords().getX(),
@@ -54,8 +54,9 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
 
           createMoveLine(a);
       }
-      output.append(String.format("</%s>", type));
+      output.append(String.format("</%s>\n", type));
     }
+    output.append("</svg>");
   }
 
   private void createMoveLine(IAction a) throws IOException {
@@ -67,7 +68,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
     output.append(
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
-                            "attributeName=\"x\" from=\"%s\" to=\"%s\" fill=\"freeze\" />",
+                            "attributeName=\"x\" from=\"%s\" to=\"%s\" fill=\"freeze\"/>\n",
                     start[0] * this.speed,
                     timeToComplete,
                     start[1],
@@ -76,7 +77,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
     output.append(
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
-                            "attributeName=\"y\" from=\"%s\" to=\"%s\" fill=\"freeze\" />",
+                            "attributeName=\"y\" from=\"%s\" to=\"%s\" fill=\"freeze\"/>\n",
                     start[0] * this.speed,
                     timeToComplete,
                     start[2],
@@ -84,7 +85,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
     output.append(
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
-                            "attributeName=\"height\" from=\"%s\" to=\"%s\" fill=\"freeze\" />",
+                            "attributeName=\"height\" from=\"%s\" to=\"%s\" fill=\"freeze\"/>\n",
                     start[0] * this.speed,
                     timeToComplete,
                     start[3],
@@ -92,7 +93,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
     output.append(
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
-                            "attributeName=\"width\" from=\"%s\" to=\"%s\" fill=\"freeze\" />",
+                            "attributeName=\"width\" from=\"%s\" to=\"%s\" fill=\"freeze\"/>\n",
                     start[0] * this.speed,
                     timeToComplete,
                     start[4],
@@ -101,7 +102,7 @@ public class SVGRepresentation extends JPanel implements IView, ActionListener {
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
                             "attributeName=\"y\" from=\"rgb(%s,%s,%s)\" " +
-                            "to=\"rgb(%s,%s,%s)\" fill=\"freeze\" />",
+                            "to=\"rgb(%s,%s,%s)\" fill=\"freeze\"/>\n",
                     start[0] * this.speed,
                     timeToComplete,
                     start[5], start[6], start[7],

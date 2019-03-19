@@ -66,7 +66,6 @@ public interface AnimationModel {
    */
   ArrayList<IAction> getShapeActions(Shape s);
 
-  ArrayList<Shape> getShapes();
   /**
    * Get list of Shapes in the cs3500.animator.model.
    *
@@ -74,13 +73,13 @@ public interface AnimationModel {
    */
   ArrayList<Shape> getShapes();
 
-  TreeMap<Shape, ArrayList<IAction>> getScript();
   /**
    * Get the set of Shapes in the cs3500.animator.model along with their corresponding IAction lists.
    *
-   * @return HashMap of Shapes and list of IAction
+   * @return TreeMap of Shapes and list of IAction
    */
-  HashMap<Shape, ArrayList<IAction>> getScript();
+  TreeMap<Shape, ArrayList<IAction>> getScript();
+
 
   /**
    * Setter method to set the leftmost x value on the screen for the canvas
@@ -101,8 +100,6 @@ public interface AnimationModel {
    * Setter method to set the height of the bounding box for the canvas
    */
   void setHeight(int height);
-
-  String getNextShapeName(String shapeType);
 
   int getWidth();
 

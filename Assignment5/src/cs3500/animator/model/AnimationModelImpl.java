@@ -4,7 +4,6 @@ import cs3500.animator.model.util.AnimationBuilder;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.TreeMap;
 
 /**
@@ -203,17 +202,6 @@ public class AnimationModelImpl implements AnimationModel {
       temp.put(s, s.getActions());
     }
     return temp;
-  }
-
-
-
-  /**
-   * Starts the Anim and adds ticks to a running counter.
-   *
-   */
-  @Override
-  public void startAnim() {
-    //will keep track of currTick and perform actions at designated times
   }
 
   public int getHeight() {
