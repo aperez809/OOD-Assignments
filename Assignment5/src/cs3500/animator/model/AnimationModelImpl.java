@@ -1,10 +1,10 @@
 package cs3500.animator.model;
 
-import cs3500.animator.model.util.AnimationBuilder;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.TreeMap;
+
+import cs3500.animator.model.util.AnimationBuilder;
 
 /**
  * Represents the cs3500.animator.model for an Animation program.
@@ -158,6 +158,7 @@ public class AnimationModelImpl implements AnimationModel {
   @Override
   public String getAnimState() {
     for (Shape s : this.shapes.values()) {
+      s.execute(s.getActions());
       trackedState.append(s.getTrackedState().toString());
     }
     return this.trackedState.toString();
