@@ -48,7 +48,30 @@ public abstract class AbstractShape implements Shape {
     this.shapeName = shapeName;
   }
 
+  public AbstractShape(AbstractShape other) {
+    this.height = other.height;
+    this.width = other.width;
+    this.coords = new Location(other.getCoords().getX(), other.getCoords().getY());
+    this.color = new Color(
+            other.getColor().getRed(),
+            other.getColor().getGreen(),
+            other.getColor().getBlue());
 
+    this.trackedState = new StringBuilder();
+    this.actions = cloneActions(this.getActions());
+    this.shapeName = other.shapeName;
+  }
+
+  protected ArrayList<IAction> cloneActions(ArrayList<IAction> actions) {
+    ArrayList<IAction> temp = new ArrayList<>();
+    for (IAction a : actions) {
+      temp.add(a.cloneAction());
+    }
+    return temp;
+  }
+
+  @Override
+  public abstract Shape cloneShape();
 
   /**
    * Performs action(s) on this Shape, beginning and ending at the given ticks.

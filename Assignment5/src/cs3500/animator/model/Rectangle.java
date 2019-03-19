@@ -23,6 +23,21 @@ public class Rectangle extends AbstractShape {
     super(height, width, coords, color, actions, shapeName);
   }
 
+  public Rectangle(Rectangle other) {
+    super(other);
+  }
+
+  @Override
+  public Shape cloneShape() {
+    return new Rectangle(
+            this.getHeight(),
+            this.getWidth(),
+            new Location(this.getCoords().getX(), this.getCoords().getY()),
+            new Color(this.getColor().getRed(), this.getColor().getBlue(), this.getColor().getGreen()),
+            cloneActions(this.getActions()),
+            this.getShapeName());
+  }
+
 
   @Override
   public boolean equals(Object o) {

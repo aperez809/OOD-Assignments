@@ -1,8 +1,8 @@
 package cs3500.animator.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 
 /**
@@ -22,9 +22,9 @@ public interface AnimationModel {
 
   ArrayList<IAction> getShapeActions(Shape s);
 
-  Collection<Shape> getShapes();
+  ArrayList<Shape> getShapes();
 
-  HashMap<Shape, ArrayList<IAction>> getScript();
+  TreeMap<Shape, ArrayList<IAction>> getScript();
 
   void startAnim();
 
@@ -37,5 +37,13 @@ public interface AnimationModel {
   void setHeight(int height);
 
   String getNextShapeName(String shapeType);
+
+  int getWidth();
+
+  int getHeight();
+
+  int getMaxX();
+
+  int getMaxY();
 }
 

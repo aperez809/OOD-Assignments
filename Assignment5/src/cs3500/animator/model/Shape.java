@@ -86,4 +86,6 @@ public interface Shape {
   String getShapeName();
 
   void removeAction(IAction a);
+
+  Shape cloneShape();
 }

@@ -70,6 +70,26 @@ public class Action implements IAction {
     this.endB = endB;
   }
 
+  public Action(Action other) {
+    this.startTick = other.startTick;
+    this.endTick = other.endTick;
+
+    this.startX = other.startX;
+    this.endX = other.endX;
+    this.startY = other.startY;
+    this.endY = other.endY;
+    this.startHeight = other.startHeight;
+    this.endHeight = other.endHeight;
+    this.startWidth = other.startWidth;
+    this.endWidth = other.endWidth;
+    this.startR = other.startR;
+    this.endR = other.endR;
+    this.startG = other.startG;
+    this.endG = other.endG;
+    this.startB = other.startB;
+    this.endB = other.endB;
+  }
+
   /**
    * Get the starting tick of this action.
    *
@@ -78,6 +98,11 @@ public class Action implements IAction {
   @Override
   public int getStartTick() {
     return this.startTick;
+  }
+
+  @Override
+  public IAction cloneAction() {
+    return new Action(this);
   }
 
   /**

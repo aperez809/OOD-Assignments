@@ -23,6 +23,21 @@ public class Ellipse extends AbstractShape {
   }
 
 
+  public Ellipse(Ellipse other) {
+    super(other);
+  }
+
+  @Override
+  public Shape cloneShape() {
+    return new Ellipse(
+            this.getHeight(),
+            this.getWidth(),
+            new Location(this.getCoords().getX(), this.getCoords().getY()),
+            new Color(this.getColor().getRed(), this.getColor().getBlue(), this.getColor().getGreen()),
+            cloneActions(this.getActions()),
+            this.getShapeName());
+  }
+
 
   @Override
   public boolean equals(Object o) {

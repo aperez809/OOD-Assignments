@@ -22,4 +22,6 @@ public interface IAction {
   int[] getStartState();
 
   int[] getEndState();
+
+  IAction cloneAction();
 }

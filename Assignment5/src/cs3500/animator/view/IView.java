@@ -1,5 +1,6 @@
 package cs3500.animator.view;
 
+import java.io.IOException;
 import java.util.function.Consumer;
 
 public interface IView {
@@ -29,4 +30,10 @@ public interface IView {
    * Signal the cs3500.animator.view to draw itself
    */
   void refresh();
+
+  void add(AnimationPanelView panel);
+
+  void createAnimOutput() throws IOException;
+
+  Appendable getOutput();
 }

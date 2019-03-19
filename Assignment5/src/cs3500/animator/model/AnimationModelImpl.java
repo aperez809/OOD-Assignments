@@ -5,13 +5,14 @@ import cs3500.animator.model.util.AnimationBuilder;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * Represents the cs3500.animator.model for an Animation program.
  */
 public class AnimationModelImpl implements AnimationModel {
   private StringBuilder trackedState;
-  private HashMap<String, Shape> shapes;
+  private TreeMap<String, Shape> shapes;
   private int height;
   private int width;
   private int maxX;
@@ -23,7 +24,7 @@ public class AnimationModelImpl implements AnimationModel {
    * and an apply map of actions to shapes. Sets default (empty) values for each field.
    */
   public AnimationModelImpl(StringBuilder trackedState,
-                            HashMap<String, Shape> shapes,
+                            TreeMap<String, Shape> shapes,
                             int height,
                             int width,
                             int maxX,
@@ -34,6 +35,11 @@ public class AnimationModelImpl implements AnimationModel {
     this.width = width;
     this.maxX = maxX;
     this.maxY = maxY;
+  }
+
+  public AnimationModelImpl() {
+    this.trackedState = new StringBuilder();
+    this.shapes = new TreeMap<>();
   }
 
   public static final class Builder implements AnimationBuilder<AnimationModel> {
@@ -92,7 +98,6 @@ public class AnimationModelImpl implements AnimationModel {
     @Override
     public AnimationBuilder<AnimationModel> addMotion(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1, int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
       this.model.addAction(name, new Action(t1,t2,x1,x2,y1,y2,h1,h2,w1,w2,r1,r2,g1,g2,b1,b2));
-
       return this;
     }
 
@@ -181,18 +186,22 @@ public class AnimationModelImpl implements AnimationModel {
   @Override
   public ArrayList<Shape> getShapes() {
     ArrayList<Shape> temp = new ArrayList<>();
-    temp.addAll(this.shapes.values());
+    for (Shape s : this.shapes.values()) {
+      temp.add(s.cloneShape());
+    }
     return temp;
   }
+
+
 
   /**
    * Get the set of Shapes in the cs3500.animator.model along with their corresponding IAction lists.
    *
-   * @return HashMap of Shapes and list of IAction
+   * @return TreeMap of Shapes and list of IAction
    */
   @Override
-  public HashMap<Shape, ArrayList<IAction>> getScript() {
-    HashMap<Shape, ArrayList<IAction>> temp = new HashMap<>();
+  public TreeMap<Shape, ArrayList<IAction>> getScript() {
+    TreeMap<Shape, ArrayList<IAction>> temp = new TreeMap<>();
     for (Shape s : this.shapes.values()) {
       temp.put(s, s.getActions());
     }
