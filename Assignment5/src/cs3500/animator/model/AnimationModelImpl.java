@@ -108,11 +108,6 @@ public class AnimationModelImpl implements AnimationModel {
   }
     // all your methods that you already wrote
 
-  /**
-   * Adds a Shape to this cs3500.animator.model's list of Shape (without any Actions to go along with it).
-   *
-   * @param s Shape to add to the shape map
-   */
   @Override
   public void addShape(Shape s) {
     if (shapes.containsKey(s.getShapeName())) {
@@ -121,6 +116,7 @@ public class AnimationModelImpl implements AnimationModel {
     this.shapes.put(s.getShapeName(), s);
   }
 
+  @Override
   public void removeShape(String name) {
     if (!this.shapes.containsKey(name)) {
       throw new IllegalArgumentException("Shape is not in list of shapes");
@@ -145,6 +141,7 @@ public class AnimationModelImpl implements AnimationModel {
     }
   }
 
+  @Override
   public void removeAction(String name, IAction a) {
     if (!shapes.containsKey(name)) {
       throw new IllegalArgumentException("Shape does not exist in cs3500.animator.model");
@@ -249,25 +246,5 @@ public class AnimationModelImpl implements AnimationModel {
 
   public void setMaxY(int maxY) {
     this.maxY = maxY;
-  }
-
-  public String getNextShapeName(String shapeType) {
-    int rectCount = 0;
-    int ellipseCount = 0;
-
-    for (Shape s : this.shapes.values()) {
-      if (s instanceof Rectangle) {
-        rectCount++;
-      }
-      else {
-        ellipseCount++;
-      }
-    }
-    if (shapeType.equalsIgnoreCase("ellipse")) {
-      return "o" + String.valueOf(ellipseCount);
-    }
-    else {
-      return "r" + String.valueOf(rectCount);
-    }
   }
 }
