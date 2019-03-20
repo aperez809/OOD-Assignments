@@ -9,6 +9,9 @@ import static junit.framework.TestCase.assertEquals;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Holds only those tests that apply to the SVGRepresentation class.
+ */
 public class SVGRepresentationTest {
   AnimationModel testModel;
   IView testView;
@@ -24,8 +27,6 @@ public class SVGRepresentationTest {
     }
     testView = new SVGRepresentation(
             testModel.getShapes(),
-            testModel.getMaxX(),
-            testModel.getMaxY(),
             testModel.getWidth(),
             testModel.getHeight(),
             5);
@@ -100,14 +101,17 @@ public class SVGRepresentationTest {
   public void testRefreshUnsupported() {
     testView.refresh();
   }
+
   @Test(expected = UnsupportedOperationException.class)
   public void testAddUnsupported() {
     testView.add(null);
   }
+
   @Test(expected = UnsupportedOperationException.class)
   public void testShowErrorMessageUnsupported() {
     testView.showErrorMessage(null);
   }
+
   @Test(expected = UnsupportedOperationException.class)
   public void testCommandCallbackUnsupported() {
     testView.setCommandCallback(null);

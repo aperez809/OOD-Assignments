@@ -1,10 +1,8 @@
 package cs3500.animator.view;
 
-import cs3500.animator.model.*;
+import cs3500.animator.model.IAction;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -12,19 +10,29 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 
+/**
+ * Represents a method for developing an SVG version of the animation. Takes in shapes to draw,
+ * speed to calculate how fast to draw, and attributes about the canvas, then spits it out into
+ * a file (name given by command line args).
+ */
 public class SVGRepresentation implements IView, ActionListener {
 
   private ArrayList<Shape> shapes;
   private Appendable output;
   private int speed;
-  int maxX;
-  int maxY;
-  int height;
-  int width;
+  private int height;
+  private int width;
 
+  /**
+   * Creates an object that will render all the text needed for SVG-formatted file to be made (list
+   * of shapes, canvas size, speed of animation, etc).
+   *
+   * @param shapes list of shapes to draw
+   * @param width width of the canvas
+   * @param height height of the canvas
+   * @param speed number of ticks that are incremented per second
+   */
   public SVGRepresentation(ArrayList<Shape> shapes,
-                           int maxX,
-                           int maxY,
                            int width,
                            int height,
                            int speed) {
@@ -32,12 +40,17 @@ public class SVGRepresentation implements IView, ActionListener {
     this.shapes = shapes;
     this.speed = 1000 / speed;
     this.output = new StringBuilder();
-    this.maxX = maxX;
-    this.maxY = maxY;
     this.width = width;
     this.height = height;
   }
 
+  /**
+   * Writes the output of the program to a file. File name, location, etc. are handled externally
+   * and collected by the method.
+   *
+   * @throws IOException in case there is an issue with writing to the file
+   *          (not found, corrupt, etc)
+   */
   @Override
   public void createAnimOutput() throws IOException {
     output.append(String.format("<svg width=\"%s\" height=\"%s\" version=\"1.1\"\n" +
@@ -52,7 +65,8 @@ public class SVGRepresentation implements IView, ActionListener {
       }
       output.append(
               String.format(
-                      "<%s id=\"%s\" x=\"%s\" y=\"%s\" width=\"%s\" height=\"%s\" fill=\"rgb(%s,%s,%s)\" visibility=\"visible\" >\n",
+                      "<%s id=\"%s\" x=\"%s\" y=\"%s\" width=\"%s\" height=\"%s\" " +
+                              "fill=\"rgb(%s,%s,%s)\" visibility=\"visible\" >\n",
               type,
               s.getShapeName(),
               s.getCoords().getX(),
@@ -64,7 +78,6 @@ public class SVGRepresentation implements IView, ActionListener {
                       s.getColor().getBlue()));
 
       for (IAction a : s.getActions()) {
-
           createMoveLine(a);
       }
       output.append(String.format("</%s>\n", type));
@@ -77,7 +90,6 @@ public class SVGRepresentation implements IView, ActionListener {
     int[] end = a.getEndState();
     int timeToComplete = (end[0] - start[0]) * this.speed;
 
-    //"<animate attributeType=\"xml\" begin=\"1000ms\" dur=\"4000ms\" attributeName=\"x\" from=\"200\" to=\"300\" fill=\"freeze\" />"
     output.append(
             String.format(
                     "<animate attributeType=\"xml\" begin=\"%sms\" dur=\"%sms\" " +
@@ -122,38 +134,71 @@ public class SVGRepresentation implements IView, ActionListener {
                     end[5], end[6], end[7]));
   }
 
+  /**
+   * Gets the output of the program for the SVG and Text representations.
+   *
+   * @return Appendable that changes based on both the command line arguments and the
+   *          type of representation
+   */
   @Override
   public Appendable getOutput() {
     return this.output;
   }
 
+  /**
+   * Make the view visible. This is usually called
+   * after the view is constructed.
+   */
   @Override
   public void makeVisible() {
     throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
+  /**
+   * Provide the view with a callback option to
+   * process a command. Not yet implemented.
+   *
+   * @param callback object
+   */
   @Override
   public void setCommandCallback(Consumer<String> callback) {
     throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
+  /**
+   * Transmit an error message to view, in case
+   * the command could not be processed correctly. Comes in the form of either a JOptionPane
+   * or simple text.
+   *
+   * @param error The error message to be transmitted
+   */
   @Override
   public void showErrorMessage(String error) {
     throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
+  /**
+   * Signal the view to draw itself again.
+   */
   @Override
   public void refresh() {
     throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
-  @Override
-  public void add(AnimationPanelView panel) {
-    throw new UnsupportedOperationException("Only for Visual Representations");
-  }
 
   @Override
   public void actionPerformed(ActionEvent e) {
+    throw new UnsupportedOperationException("Only for Visual Representations");
+  }
+
+  /**
+   * adds a panel of type AnimationPanelView (extended from JPanel) to the JFrame. Only used in
+   * by the visual representations.
+   *
+   * @param panel AnimationPanelView to add to the JFrame
+   */
+  @Override
+  public void add(AnimationPanelView panel) {
     throw new UnsupportedOperationException("Only for Visual Representations");
   }
 

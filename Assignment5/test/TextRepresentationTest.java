@@ -5,12 +5,13 @@ import cs3500.animator.view.IView;
 import cs3500.animator.view.TextRepresentation;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.FileReader;
 import java.io.IOException;
-
 import static junit.framework.TestCase.assertEquals;
 
+/**
+ * Holds only those tests that apply to the TextRepresentation class.
+ */
 public class TextRepresentationTest {
   AnimationModel testModel;
   IView testView;
@@ -31,6 +32,7 @@ public class TextRepresentationTest {
             testModel.getWidth(),
             testModel.getHeight());
   }
+
   @Test
   public void testExpectedOutput() {
     try {
@@ -61,14 +63,17 @@ public class TextRepresentationTest {
   public void testRefreshUnsupported() {
     testView.refresh();
   }
+
   @Test(expected = UnsupportedOperationException.class)
   public void testAddUnsupported() {
     testView.add(null);
   }
+
   @Test(expected = UnsupportedOperationException.class)
   public void testShowErrorMessageUnsupported() {
     testView.showErrorMessage(null);
   }
+
   @Test(expected = UnsupportedOperationException.class)
   public void testCommandCallbackUnsupported() {
     testView.setCommandCallback(null);

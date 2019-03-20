@@ -1,11 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
-
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.TreeMap;
-
 import cs3500.animator.model.Action;
 import cs3500.animator.model.AnimationModel;
 import cs3500.animator.model.AnimationModelImpl;
@@ -14,13 +12,13 @@ import cs3500.animator.model.IAction;
 import cs3500.animator.model.Location;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-//Test class with an intial set up method using @Before.
 
-
+/**
+ * Holds only those tests that apply to the SVGRepresentation class.
+ */
 public class AnimationModelImplTest {
 
   private AnimationModel testModel;

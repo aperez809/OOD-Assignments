@@ -1,30 +1,47 @@
 package cs3500.animator.view;
 
-import cs3500.animator.model.*;
+import cs3500.animator.model.Ellipse;
+import cs3500.animator.model.IAction;
+import cs3500.animator.model.Location;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
-
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-
+/**
+ * Represents the pieces of an animation that actually contain images. Handles all the lower-level
+ * logic for drawing and placing shapes on the canvas.
+ */
 public class AnimationPanelView extends JPanel implements IView, ActionListener {
 
   private ArrayList<Shape> shapes;
-  private Timer t;
   private int currTick;
-  private int speed;
 
+
+  /**
+   * Creates an object that will hold all the shapes that need to be drawing and represent the
+   * frames of the animation. Also instantiates a timer that will be used to keep track of ticks
+   * and the speed at which they are incremented.
+   *
+   * @param shapes list of shapes that need to be drawn.
+   * @param speed tick speed which is calculated as the number of times per second that
+   *              a tick moves
+   */
   public AnimationPanelView(ArrayList<Shape> shapes, int speed) {
     super();
+    int tickSpeed = (int) (1000 / speed);
     this.shapes = shapes;
     this.setBackground(Color.WHITE);
-    this.speed = (int) (1000 / speed);
-    this.t = new Timer(this.speed, this);
+    Timer t = new Timer(tickSpeed, this);
     this.currTick = 0;
     t.start();
   }
@@ -115,38 +132,79 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     }
   }
 
+  /**
+   * Make the view visible. This is only called
+   * after the view is constructed in the Visual representation.
+   */
   @Override
   public void makeVisible() {
     throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
+
+  /**
+   * Provide the view with a callback option to
+   * process a command. Not yet used for this iteration of the Animator.
+   *
+   * @param callback object
+   */
   @Override
   public void setCommandCallback(Consumer<String> callback) {
     throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
+
+  /**
+   * Transmit an error message to view, in case
+   * the command could not be processed correctly. Comes in the form of either a JOptionPane
+   * or simple text.
+   *
+   * @param error The error message to be transmitted
+   */
   @Override
   public void showErrorMessage(String error) {
     new JOptionPane();
   }
 
+  /**
+   * Signal the view to draw itself again. Only used in the visual representation.
+   */
   @Override
   public void refresh() {
     throw new UnsupportedOperationException("For use by AnimationGraphics View class");
   }
 
-  @Override
-  public void add(AnimationPanelView panel) {
-    throw new UnsupportedOperationException("For use by AnimationGraphics View class");
-  }
-
+  /**
+   * Writes the output of the program to a file. File name, location, etc. are handled externally
+   * and collected by the method.
+   *
+   * @throws IOException in case there is an issue with writing to the file
+   *          (not found, corrupt, etc)
+   */
   @Override
   public void createAnimOutput() {
     throw new UnsupportedOperationException("Only for TextRepresentations");
   }
 
+  /**
+   * Gets the output of the program for the SVG and Text representations.
+   *
+   * @return Appendable that changes based on both the command line arguments and the
+   *          type of representation
+   */
   @Override
   public Appendable getOutput() {
     throw new UnsupportedOperationException("Only for TextRepresentations");
+  }
+
+  /**
+   * adds a panel of type AnimationPanelView (extended from JPanel) to the JFrame. Only used in
+   * by the visual representations.
+   *
+   * @param panel AnimationPanelView to add to the JFrame
+   */
+  @Override
+  public void add(AnimationPanelView panel) {
+    throw new UnsupportedOperationException("Only for AnimationGraphicsView class");
   }
 }
