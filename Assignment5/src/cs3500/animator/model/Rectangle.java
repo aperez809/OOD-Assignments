@@ -19,7 +19,8 @@ public class Rectangle extends AbstractShape {
    * @param coords position of Rectangle on canvas
    * @param color color of Rectangle
    */
-  public Rectangle(int height, int width, Location coords, Color color, ArrayList<IAction> actions, String shapeName) {
+  public Rectangle(int height, int width, Location coords, Color color,
+                   ArrayList<IAction> actions, String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
 
@@ -29,7 +30,8 @@ public class Rectangle extends AbstractShape {
             this.getHeight(),
             this.getWidth(),
             new Location(this.getCoords().getX(), this.getCoords().getY()),
-            new Color(this.getColor().getRed(), this.getColor().getBlue(), this.getColor().getGreen()),
+            new Color(this.getColor().getRed(), this.getColor().getBlue(),
+                    this.getColor().getGreen()),
             cloneActions(this.getActions()),
             this.getShapeName());
   }
@@ -52,6 +54,7 @@ public class Rectangle extends AbstractShape {
   @Override
   public int hashCode() {
     return Objects.hash(
-            this.getHeight(), this.getWidth(), this.getCoords(), this.getColor(), this.getShapeName());
+            this.getHeight(), this.getWidth(), this.getCoords(),
+            this.getColor(), this.getShapeName());
   }
 }

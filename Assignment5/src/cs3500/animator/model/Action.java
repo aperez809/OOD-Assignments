@@ -46,7 +46,33 @@ public class Action implements IAction {
     this.endTick = endTick;
   }
 
-  public Action(int startTick, int endTick, int startX, int endX, int startY, int endY, int startHeight, int endHeight, int startWidth, int endWidth, int startR, int endR, int startG, int endG, int startB, int endB) {
+  /**
+   * Constructs an Action object with all of initial and end parameters defined. Both start and
+   * end states are defined via the given parameters.
+   *
+   * @param startTick tick at which the IAction starts
+   * @param endTick tick at which the IAction ends
+   * @param startX x location at which IAction starts
+   * @param endX x location at which IAction ends
+   * @param startY y location at which IAction starts
+   * @param endY y location at which IAction ends
+   * @param startHeight height of shape at start
+   * @param endHeight height of shape at end
+   * @param startWidth width of shape at start
+   * @param endWidth width of shape at end
+   * @param startR red value of shape at start
+   * @param endR red value of shape at end
+   * @param startG green value of shape at start
+   * @param endG green value of shape at end
+   * @param startB blue value of shape at start
+   * @param endB blue value of shape at end
+   *
+   * @throws IllegalArgumentException if startTick or endTick < 0 or if endTick - startTick
+   *         (time to complete action) is negative.
+   */
+  public Action(int startTick, int endTick, int startX, int endX, int startY, int endY,
+                int startHeight, int endHeight, int startWidth, int endWidth, int startR, int endR,
+                int startG, int endG, int startB, int endB) {
     if (startTick < 0 || endTick < 0 || endTick - startTick < 0) {
       throw new IllegalArgumentException(
               "Start tick, end tick, and elapsed time must be greater than or equal to 0");
@@ -70,6 +96,13 @@ public class Action implements IAction {
     this.endB = endB;
   }
 
+  /**
+   * Constructs an Action object by copying another Action object. Assigns all value of this
+   * Action object to those of the given other Action object
+   *
+   * @param other Action object being copied
+   *
+   */
   public Action(Action other) {
     this.startTick = other.startTick;
     this.endTick = other.endTick;
@@ -116,13 +149,11 @@ public class Action implements IAction {
   }
 
   public int[] getStartState() {
-    return new int[]{
-            startTick, startX, startY, startHeight, startWidth, startR, startG, startB};
+    return new int[]{startTick, startX, startY, startHeight, startWidth, startR, startG, startB};
   }
 
   public int[] getEndState() {
-    return new int[]{
-            endTick, endX, endY, endHeight, endWidth, endR, endG, endB};
+    return new int[]{endTick, endX, endY, endHeight, endWidth, endR, endG, endB};
   }
 
 }
