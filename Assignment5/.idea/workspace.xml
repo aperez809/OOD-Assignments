@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b85c3f-28b8-44a7-a9a4-d17e40a411a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/looping.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/playpause.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/rewind.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/Excellence_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/animator/controller/IAnimControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bigbang.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/buildings.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/buildingsSimple.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hanoi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simple-example-with-loopback.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simple-example.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/smalldemo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/smalldemo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/ViewMain.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test/Assignment5/AnimationGraphicsViewTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/toh-12.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/toh-3.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/toh-5.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/toh-8.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submission.zip" afterPath="$PROJECT_DIR$/submission.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AbstractShape.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AbstractShape.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Action.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Action.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AnimationModelImpl$Builder.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AnimationModelImpl$Builder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AnimationModelImpl.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AnimationModelImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Ellipse.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Ellipse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Rectangle.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Rectangle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/AnimationGraphicsView.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/AnimationGraphicsView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/AnimationPanelView.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/AnimationPanelView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/SVGRepresentation.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/SVGRepresentation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/TextRepresentation.class" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/view/TextRepresentation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test/Assignment5/AnimationModelImplTest.class" afterPath="$PROJECT_DIR$/target/test/Assignment5/AnimationModelImplTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test/Assignment5/SVGRepresentationTest.class" afterPath="$PROJECT_DIR$/target/test/Assignment5/SVGRepresentationTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test/Assignment5/TextRepresentationTest.class" afterPath="$PROJECT_DIR$/target/test/Assignment5/TextRepresentationTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Action.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Ellipse.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Ellipse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Rectangle.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Rectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/util/AnimationBuilder.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/util/AnimationBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/view/Excellence.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/Excellence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/view/SVGRepresentation.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/SVGRepresentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/AnimationModelImplTest.java" afterPath="$PROJECT_DIR$/test/AnimationModelImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/SVGRepresentationTest.java" afterPath="$PROJECT_DIR$/test/SVGRepresentationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/TextRepresentationTest.java" afterPath="$PROJECT_DIR$/test/TextRepresentationTest.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,11 +27,29 @@
       <file leaf-file-name="AnimationModelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="1965">
               <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1553042722260" expanded="true" signature="6007:6121" ph="{...}" />
+                <marker date="1553712984630" expanded="true" signature="1203:1207" ph="/**...*/" />
+                <marker date="1553712984630" expanded="true" signature="6776:6838" ph="/**...*/" />
+                <marker date="1553712984630" expanded="true" signature="6907:7076" ph="{...}" />
+                <marker date="1553712984630" expanded="false" signature="7102:7109" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7123:7127" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7164:7171" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7192:7196" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7221:7228" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7241:7245" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7280:7287" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7306:7310" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7334:7341" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7353:7357" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7390:7397" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7414:7418" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7442:7449" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7461:7465" ph=" }" />
+                <marker date="1553712984630" expanded="false" signature="7498:7505" ph=" { " />
+                <marker date="1553712984630" expanded="false" signature="7522:7526" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -110,8 +78,8 @@
       <file leaf-file-name="EditorView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+            <state relative-caret-position="1440">
+              <caret line="101" column="23" lean-forward="false" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,7 +90,7 @@
       <file leaf-file-name="ActionEvent.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/awt/event/ActionEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
+            <state relative-caret-position="3270">
               <caret line="245" column="18" lean-forward="false" selection-start-line="245" selection-start-column="18" selection-end-line="245" selection-end-column="18" />
               <folding>
                 <element signature="e#8372#8373#0" expanded="true" />
@@ -135,7 +103,7 @@
       <file leaf-file-name="Timer.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/javax/swing/Timer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
+            <state relative-caret-position="4155">
               <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
               <folding />
             </state>
@@ -145,7 +113,7 @@
       <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="1215">
               <caret line="106" column="13" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
               <folding />
             </state>
@@ -155,7 +123,7 @@
       <file leaf-file-name="Excellence.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/Excellence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
+            <state relative-caret-position="650">
               <caret line="85" column="9" lean-forward="false" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -167,8 +135,8 @@
       <file leaf-file-name="AnimationPanelView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="885">
+              <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6228#6229#0" expanded="true" />
@@ -181,7 +149,7 @@
       <file leaf-file-name="AnimationGraphicsView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1770">
+            <state relative-caret-position="1680">
               <caret line="124" column="65" lean-forward="false" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -310,7 +278,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -332,7 +300,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -378,8 +345,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -768,6 +736,7 @@
       <workItem from="1553019630288" duration="16528000" />
       <workItem from="1553042055705" duration="2052000" />
       <workItem from="1553616836901" duration="7857000" />
+      <workItem from="1553709213426" duration="416000" />
     </task>
     <task id="LOCAL-00001" summary="getting up to date">
       <created>1551385822856</created>
@@ -875,36 +844,37 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102939000" />
+    <option name="totallyTimeSpent" value="103355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24313408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24717286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39752406" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39752406" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1060,7 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="110" column="13" lean-forward="false" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,9 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,7 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,7 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,7 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +1210,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="1215">
           <caret line="106" column="13" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
           <folding />
         </state>
@@ -1255,7 +1218,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
+        <state relative-caret-position="1680">
           <caret line="124" column="65" lean-forward="false" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1273,7 +1236,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/javax/swing/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="4155">
           <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
           <folding />
         </state>
@@ -1281,7 +1244,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/awt/event/ActionEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
+        <state relative-caret-position="3270">
           <caret line="245" column="18" lean-forward="false" selection-start-line="245" selection-start-column="18" selection-end-line="245" selection-end-column="18" />
           <folding>
             <element signature="e#8372#8373#0" expanded="true" />
@@ -1292,8 +1255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="885">
+          <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6228#6229#0" expanded="true" />
@@ -1304,8 +1267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+        <state relative-caret-position="1440">
+          <caret line="101" column="23" lean-forward="false" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1314,18 +1277,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="1965">
           <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1553042722260" expanded="true" signature="6007:6121" ph="{...}" />
+            <marker date="1553712984630" expanded="true" signature="1203:1207" ph="/**...*/" />
+            <marker date="1553712984630" expanded="true" signature="6776:6838" ph="/**...*/" />
+            <marker date="1553712984630" expanded="true" signature="6907:7076" ph="{...}" />
+            <marker date="1553712984630" expanded="false" signature="7102:7109" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7123:7127" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7164:7171" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7192:7196" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7221:7228" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7241:7245" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7280:7287" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7306:7310" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7334:7341" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7353:7357" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7390:7397" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7414:7418" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7442:7449" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7461:7465" ph=" }" />
+            <marker date="1553712984630" expanded="false" signature="7498:7505" ph=" { " />
+            <marker date="1553712984630" expanded="false" signature="7522:7526" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/Excellence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
+        <state relative-caret-position="650">
           <caret line="85" column="9" lean-forward="false" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
