@@ -285,6 +285,17 @@ public abstract class AbstractShape implements Shape {
   public String getShapeName() {
     return this.shapeName;
   }
+
+  @Override
+  public ArrayList<IAction> getActionsAtTick(int t){
+    ArrayList<IAction> associatedActions = new ArrayList<>();
+    for (IAction action : actions) {
+      if (t == action.getStartTick() || t == action.getEndTick()) {
+        associatedActions.add(action);
+      }
+    }
+    return associatedActions;
+  }
 }
 
 

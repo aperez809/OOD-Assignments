@@ -88,4 +88,13 @@ public interface Shape {
   void removeAction(IAction a);
 
   Shape cloneShape();
+
+  /**
+   * Get the action(s) occurring at the given tick. Will return two actions if tick is a keyframe
+   * shared by multiple actions. Returns one action if tick is in middle of motion or tick is
+   * start or end of list of actions.
+   *
+   * @return list of actions associated with given tick
+   */
+  ArrayList<IAction> getActionsAtTick(int t);
 }

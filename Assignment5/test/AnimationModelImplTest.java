@@ -14,6 +14,7 @@ import cs3500.animator.model.Location;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -491,16 +492,18 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    testModel.addAction("rectangle", colorX);
-    testModel.removeKeyFrame("rectangle", 0);
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    testModel.addAction(rectXName, colorX);
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    testModel.removeKeyFrame(rectXName, 0);
     int[] colorXStartState = new int[] {10, 350, 350, 200, 200, 100, 100, 100};
     int[] colorXEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
-    assertEquals(true,
-            Arrays.equals(colorXStartState,
-                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
-    assertEquals(true,
-            Arrays.equals(colorXEndState,
-                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+    assertEquals(1,testModel.getShapes().get(rectIndex).getActions().size());
+    assertArrayEquals(colorXStartState,
+            testModel.getShapes().get(rectIndex).getActions().get(0).getStartState());
+    assertArrayEquals(colorXEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getEndState());
   }
 
   @Test
@@ -514,16 +517,17 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    testModel.addAction("rectangle", colorX);
-    testModel.removeKeyFrame("rectangle", 20);
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    testModel.addAction(rectXName, colorX);
+    testModel.removeKeyFrame(rectXName, 20);
     int[] moveStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
     int[] moveEndState = new int[] {10, 350, 350, 200, 200, 100, 100, 100};
-    assertEquals(true,
-            Arrays.equals(moveStartState,
-                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
-    assertEquals(true,
-            Arrays.equals(moveEndState,
-                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+    assertArrayEquals(moveStartState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getStartState());
+    assertArrayEquals(moveEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getEndState());
   }
 
   @Test
@@ -537,16 +541,17 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    testModel.addAction("rectangle", colorX);
-    testModel.removeKeyFrame("rectangle", 10);
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    testModel.addAction(rectXName, colorX);
+    testModel.removeKeyFrame(rectXName, 10);
     int[] fullStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
     int[] fullEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
-    assertEquals(true,
-            Arrays.equals(fullStartState,
-                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
-    assertEquals(true,
-            Arrays.equals(fullEndState,
-                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+    assertArrayEquals(fullStartState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getStartState());
+    assertArrayEquals(fullEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getEndState());
   }
 
   @Test
@@ -560,16 +565,17 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    testModel.addAction("rectangle", colorX);
-    testModel.removeKeyFrame("rectangle", 10);
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    testModel.addAction(rectXName, colorX);
+    testModel.removeKeyFrame(rectXName, 10);
     int[] fullStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
     int[] fullEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
-    assertEquals(true,
-            Arrays.equals(fullStartState,
-                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
-    assertEquals(true,
-            Arrays.equals(fullEndState,
-                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+    assertArrayEquals(fullStartState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getStartState());
+    assertArrayEquals(fullEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getEndState());
   }
 
   @Test
@@ -592,24 +598,23 @@ public class AnimationModelImplTest {
             150, 150,
             150, 150,
             150, 150);
-    testModel.addAction("rectangle", colorX);
-    testModel.addAction("rectangle", sizeX);
-    testModel.removeKeyFrame("rectangle", 10);
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    testModel.addAction(rectXName, colorX);
+    testModel.addAction(rectXName, sizeX);
+    testModel.removeKeyFrame(rectXName, 10);
     int[] combinedStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
     int[] combinedEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
     int[] secondEndState = new int[] {30, 350, 350, 300, 300, 150, 150, 150};
-    assertEquals(true,
-            Arrays.equals(combinedStartState,
-                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
-    assertEquals(true,
-            Arrays.equals(combinedEndState,
-                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
-    assertEquals(true,
-            Arrays.equals(combinedEndState,
-                    testModel.getShapes().get(0).getActions().get(1).getStartState()));
-    assertEquals(true,
-            Arrays.equals(secondEndState,
-                    testModel.getShapes().get(0).getActions().get(1).getEndState()));
+    assertArrayEquals(combinedStartState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getStartState());
+    assertArrayEquals(combinedEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getEndState());
+    assertArrayEquals(combinedEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(1).getStartState());
+    assertArrayEquals(secondEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(1).getEndState());
   }
 
   @Test
@@ -632,23 +637,22 @@ public class AnimationModelImplTest {
             150, 150,
             150, 150,
             150, 150);
-    testModel.addAction("rectangle", colorX);
-    testModel.addAction("rectangle", sizeX);
-    testModel.removeKeyFrame("rectangle", 20);
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    testModel.addAction(rectXName, colorX);
+    testModel.addAction(rectXName, sizeX);
+    testModel.removeKeyFrame(rectXName, 20);
     int[] firstStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
-    int[] firstEndState = new int[] {0, 350, 350, 200, 200, 100, 100, 100};
+    int[] firstEndState = new int[] {10, 350, 350, 200, 200, 100, 100, 100};
     int[] combinedEndState = new int[] {30, 350, 350, 300, 300, 150, 150, 150};
-    assertEquals(true,
-            Arrays.equals(firstStartState,
-                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
-    assertEquals(true,
-            Arrays.equals(firstEndState,
-                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
-    assertEquals(true,
-            Arrays.equals(firstEndState,
-                    testModel.getShapes().get(0).getActions().get(1).getStartState()));
-    assertEquals(true,
-            Arrays.equals(combinedEndState,
-                    testModel.getShapes().get(0).getActions().get(1).getEndState()));
+    assertArrayEquals(firstStartState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getStartState());
+    assertArrayEquals(firstEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(0).getEndState());
+    assertArrayEquals(firstEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(1).getStartState());
+    assertArrayEquals(combinedEndState,
+                    testModel.getShapes().get(rectIndex).getActions().get(1).getEndState());
   }
 }

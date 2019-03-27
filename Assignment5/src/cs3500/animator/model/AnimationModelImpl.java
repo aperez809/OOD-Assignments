@@ -242,7 +242,6 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
 
-
   /**
    * Get the set of Shapes in the cs3500.animator.model along with their corresponding
    * IAction lists.
@@ -268,7 +267,46 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public void removeKeyFrame(String name, int t) {
-
+    Shape givenShape = shapes.get(name);
+    int firstActIndex;
+    int lastActIndex;
+    if (givenShape == null) {
+      throw new IllegalArgumentException("Invalid Shape Name");
+    }
+    ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
+    if (actionsAtTick.size() == 0) {
+      throw new IllegalArgumentException("Given Tick Not a Keyframe");
+    }
+    if (actionsAtTick.size() == 1) {
+      givenShape.removeAction(actionsAtTick.get(0));
+    }
+    else if (actionsAtTick.size() == 2) {
+      //check which action of list comes first and assign indices accordingly
+      if (actionsAtTick.get(0).getEndTick() == t) {
+        firstActIndex = 0;
+        lastActIndex = 1;
+      }
+      else {
+        firstActIndex = 1;
+        lastActIndex = 0;
+      }
+      //merge two bordering actions into one action by making new action with start state of first
+      //and end state of second, removing the first action and replacing the second action with
+      //the new merged action
+      int[] combinedStartState = actionsAtTick.get(firstActIndex).getStartState();
+      int[] combinedEndState = actionsAtTick.get(lastActIndex).getEndState();
+      givenShape.removeAction(actionsAtTick.get(firstActIndex));
+      int combinedActIndex = givenShape.getActions().indexOf(actionsAtTick.get(lastActIndex));
+      IAction combinedAct = new Action(combinedStartState[0],combinedEndState[0],
+              combinedStartState[1], combinedEndState[1],
+              combinedStartState[2], combinedEndState[2],
+              combinedStartState[3], combinedEndState[3],
+              combinedStartState[4], combinedEndState[4],
+              combinedStartState[5], combinedEndState[5],
+              combinedStartState[6], combinedEndState[6],
+              combinedStartState[7], combinedEndState[7]);
+      givenShape.getActions().set(combinedActIndex, combinedAct);
+    }
   }
 
   public int getWidth() {
