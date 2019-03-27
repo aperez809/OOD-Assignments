@@ -2,6 +2,7 @@ package cs3500.animator.view;
 
 import cs3500.animator.model.AnimationModel;
 import cs3500.animator.model.AnimationModelImpl;
+import cs3500.animator.model.Shape;
 import cs3500.animator.model.util.AnimationReader;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -47,6 +48,9 @@ public final class Excellence {
     model = AnimationReader.parseFile(file,
             new AnimationModelImpl.Builder(
                     new AnimationModelImpl()));
+    for (Shape s: model.getShapes()) {
+      System.out.println(s.getShapeName());
+    }
 
     switch (cla.get("-view")) {
       case "text":
@@ -129,7 +133,15 @@ public final class Excellence {
 
   private static HashMap<String, String> argsToHM(String[] args) {
     HashMap<String, String> temp = new HashMap<>();
-    for (int i = 0; i < args.length; i++) {
+    int startVal;
+    if (args.length % 2 == 0) {
+      startVal = 0;
+    }
+    else {
+      startVal = 1;
+    }
+
+    for (int i = startVal; i < args.length; i++) {
       temp.put(args[i], args[i + 1]);
       i++;
     }

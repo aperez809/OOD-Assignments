@@ -209,7 +209,5 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     throw new UnsupportedOperationException("Only for AnimationGraphicsView class");
   }
 
-  public void setTimerSpeed(int newSpeed) {
-    t.setDelay(1000/newSpeed);
-  }
+
 }

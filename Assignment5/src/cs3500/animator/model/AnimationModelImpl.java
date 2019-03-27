@@ -2,7 +2,8 @@ package cs3500.animator.model;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashMap;
 
 import cs3500.animator.model.util.AnimationBuilder;
 
@@ -11,7 +12,7 @@ import cs3500.animator.model.util.AnimationBuilder;
  */
 public class AnimationModelImpl implements AnimationModel {
   private StringBuilder trackedState;
-  private TreeMap<String, Shape> shapes;
+  private LinkedHashMap<String, Shape> shapes;
   private int height;
   private int width;
   private int maxX;
@@ -23,7 +24,7 @@ public class AnimationModelImpl implements AnimationModel {
    * and an apply map of actions to shapes. Sets default (empty) values for each field.
    */
   public AnimationModelImpl(StringBuilder trackedState,
-                            TreeMap<String, Shape> shapes,
+                            LinkedHashMap<String, Shape> shapes,
                             int height,
                             int width,
                             int maxX,
@@ -38,7 +39,7 @@ public class AnimationModelImpl implements AnimationModel {
 
   public AnimationModelImpl() {
     this.trackedState = new StringBuilder();
-    this.shapes = new TreeMap<>();
+    this.shapes = new LinkedHashMap<>();
   }
 
   /**
@@ -246,11 +247,11 @@ public class AnimationModelImpl implements AnimationModel {
    * Get the set of Shapes in the cs3500.animator.model along with their corresponding
    * IAction lists.
    *
-   * @return TreeMap of Shapes and list of IAction
+   * @return LinkedHashMap of Shapes and list of IAction
    */
   @Override
-  public TreeMap<Shape, ArrayList<IAction>> getScript() {
-    TreeMap<Shape, ArrayList<IAction>> temp = new TreeMap<>();
+  public LinkedHashMap<Shape, ArrayList<IAction>> getScript() {
+    LinkedHashMap<Shape, ArrayList<IAction>> temp = new LinkedHashMap<>();
     for (Shape s : this.shapes.values()) {
       temp.put(s, s.getActions());
     }

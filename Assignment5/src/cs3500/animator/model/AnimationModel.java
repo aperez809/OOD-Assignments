@@ -1,7 +1,7 @@
 package cs3500.animator.model;
 
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 
 
 /**
@@ -75,9 +75,9 @@ public interface AnimationModel {
    * Get the set of Shapes in the cs3500.animator.model along with their corresponding
    * IAction lists.
    *
-   * @return TreeMap of Shapes and list of IAction
+   * @return LinkedHashMap of Shapes and list of IAction
    */
-  TreeMap<Shape, ArrayList<IAction>> getScript();
+  LinkedHashMap<Shape, ArrayList<IAction>> getScript();
 
 
   /**
