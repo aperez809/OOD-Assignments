@@ -12,3 +12,9 @@ Renamed Oval Class to Ellipse to match shape description in given text files.
 Shape:
 Added checkOverlap, addAction, getActions, getShapeName, removeAction methods to Shape,
 declared in Shape interface and implemented in AbstractShape / child classes.
+
+METHODS TO ADD FOR ASSIGNMENT 7
+- setTick that can replay animations
+    - will also need to add a button to the Swing panel that can trigger this method
+
+-

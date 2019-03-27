@@ -18,7 +18,8 @@ public class Ellipse extends AbstractShape {
    * @param coords position of Ellipse on canvas
    * @param color color of Ellipse
    */
-  public Ellipse(int height, int width, Location coords, Color color, ArrayList<IAction> actions, String shapeName) {
+  public Ellipse(int height, int width, Location coords, Color color, ArrayList<IAction> actions,
+                 String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
 
@@ -28,7 +29,8 @@ public class Ellipse extends AbstractShape {
             this.getHeight(),
             this.getWidth(),
             new Location(this.getCoords().getX(), this.getCoords().getY()),
-            new Color(this.getColor().getRed(), this.getColor().getBlue(), this.getColor().getGreen()),
+            new Color(this.getColor().getRed(), this.getColor().getBlue(),
+                    this.getColor().getGreen()),
             cloneActions(this.getActions()),
             this.getShapeName());
   }
@@ -51,6 +53,7 @@ public class Ellipse extends AbstractShape {
   @Override
   public int hashCode() {
     return Objects.hash(
-            this.getHeight(), this.getWidth(), this.getCoords(), this.getColor(), this.getShapeName());
+            this.getHeight(), this.getWidth(), this.getCoords(), this.getColor(),
+            this.getShapeName());
   }
 }

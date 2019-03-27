@@ -45,7 +45,7 @@ public interface AnimationModel {
    * @param name name of Shape to remove the Action from
    *
    * @throws IllegalArgumentException if the given shape does not exist in the shape map or the
-   * IAction does not exist in the given Shape's action map
+   *         IAction does not exist in the given Shape's action map
    */
   void removeAction(String name, IAction a);
 
@@ -72,7 +72,8 @@ public interface AnimationModel {
   ArrayList<Shape> getShapes();
 
   /**
-   * Get the set of Shapes in the cs3500.animator.model along with their corresponding IAction lists.
+   * Get the set of Shapes in the cs3500.animator.model along with their corresponding
+   * IAction lists.
    *
    * @return TreeMap of Shapes and list of IAction
    */
@@ -80,22 +81,22 @@ public interface AnimationModel {
 
 
   /**
-   * Setter method to set the leftmost x value on the screen for the canvas
+   * Setter method to set the leftmost x value on the screen for the canvas.
    */
   void setMaxX(int x);
 
   /**
-   * Setter method to set the uppermost y value on the screen for the canvas
+   * Setter method to set the uppermost y value on the screen for the canvas.
    */
   void setMaxY(int y);
 
   /**
-   * Setter method to set the width of the bounding box for the canvas
+   * Setter method to set the width of the bounding box for the canvas.
    */
   void setWidth(int width);
 
   /**
-   * Setter method to set the height of the bounding box for the canvas
+   * Setter method to set the height of the bounding box for the canvas.
    */
   void setHeight(int height);
 

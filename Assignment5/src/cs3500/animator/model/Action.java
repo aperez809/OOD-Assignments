@@ -46,7 +46,29 @@ public class Action implements IAction {
     this.endTick = endTick;
   }
 
-  public Action(int startTick, int endTick, int startX, int endX, int startY, int endY, int startHeight, int endHeight, int startWidth, int endWidth, int startR, int endR, int startG, int endG, int startB, int endB) {
+  /**
+   * Constructor that takes in the entire set of possible parameters for the Action to be made.
+   *
+   * @param startTick tick it starts on
+   * @param endTick tick it ends on
+   * @param startX beginning X position
+   * @param endX ending X position
+   * @param startY beginning Y position
+   * @param endY ending Y position
+   * @param startHeight beginning height
+   * @param endHeight ending height
+   * @param startWidth beginning width
+   * @param endWidth ending width
+   * @param startR beginning red value
+   * @param endR ending red value
+   * @param startG beginning green value
+   * @param endG ending green value
+   * @param startB beginning blue value
+   * @param endB ending blue value
+   */
+  public Action(int startTick, int endTick, int startX, int endX, int startY, int endY,
+                int startHeight, int endHeight, int startWidth, int endWidth, int startR,
+                int endR, int startG, int endG, int startB, int endB) {
     if (startTick < 0 || endTick < 0 || endTick - startTick < 0) {
       throw new IllegalArgumentException(
               "Start tick, end tick, and elapsed time must be greater than or equal to 0");
@@ -70,6 +92,10 @@ public class Action implements IAction {
     this.endB = endB;
   }
 
+  /**
+   * copy constructor that makes a deep copy of the Action object.
+   * @param other Action to be copied
+   */
   public Action(Action other) {
     this.startTick = other.startTick;
     this.endTick = other.endTick;
@@ -116,13 +142,11 @@ public class Action implements IAction {
   }
 
   public int[] getStartState() {
-    return new int[]{
-            startTick, startX, startY, startHeight, startWidth, startR, startG, startB};
+    return new int[]{startTick, startX, startY, startHeight, startWidth, startR, startG, startB};
   }
 
   public int[] getEndState() {
-    return new int[]{
-            endTick, endX, endY, endHeight, endWidth, endR, endG, endB};
+    return new int[]{endTick, endX, endY, endHeight, endWidth, endR, endG, endB};
   }
 
 }

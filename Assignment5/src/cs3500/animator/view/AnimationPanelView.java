@@ -23,8 +23,9 @@ import java.util.function.Consumer;
  */
 public class AnimationPanelView extends JPanel implements IView, ActionListener {
 
-  private ArrayList<Shape> shapes;
-  private int currTick;
+  protected ArrayList<Shape> shapes;
+  protected int currTick;
+  protected Timer t;
 
 
   /**
@@ -41,7 +42,7 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     int tickSpeed = (int) (1000 / speed);
     this.shapes = shapes;
     this.setBackground(Color.WHITE);
-    Timer t = new Timer(tickSpeed, this);
+    this.t = new Timer(tickSpeed, this);
     this.currTick = 0;
     t.start();
   }
@@ -77,7 +78,7 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     System.out.println(currTick);
   }
 
-  private void executeMove(Shape s, IAction a) {
+  protected void executeMove(Shape s, IAction a) {
 
     int[] start = a.getStartState();
     int[] end = a.getEndState();
@@ -206,5 +207,9 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   @Override
   public void add(AnimationPanelView panel) {
     throw new UnsupportedOperationException("Only for AnimationGraphicsView class");
+  }
+
+  public void setTimerSpeed(int newSpeed) {
+    t.setDelay(1000/newSpeed);
   }
 }

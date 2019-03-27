@@ -41,9 +41,18 @@ public class AnimationModelImpl implements AnimationModel {
     this.shapes = new TreeMap<>();
   }
 
+  /**
+   * Builder class that is used by AnimationBuilder to create a custom model.
+   * Uses the methods below to set the model's attributes.
+   */
   public static final class Builder implements AnimationBuilder<AnimationModel> {
     private AnimationModel model;
 
+    /**
+     * Constructs a Builder object using an instance of a model that is passed in (usually with
+     * default values for all fields).
+     * @param model AnimationModel object that will be edited by the Builder's methods
+     */
     public Builder(AnimationModel model) {
       this.model = model;
     }
@@ -95,12 +104,16 @@ public class AnimationModelImpl implements AnimationModel {
     }
 
     @Override
-    public AnimationBuilder<AnimationModel> addMotion(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1, int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
+    public AnimationBuilder<AnimationModel> addMotion(String name, int t1, int x1, int y1, int w1,
+                                                      int h1, int r1, int g1, int b1, int t2,
+                                                      int x2, int y2, int w2, int h2, int r2,
+                                                      int g2, int b2) {
       this.model.addAction(name, new Action(t1,t2,x1,x2,y1,y2,h1,h2,w1,w2,r1,r2,g1,g2,b1,b2));
       return this;
     }
 
     /**
+     * addKeyFrame method is not actually used for anything in the model/view and is unnecessary.
      *
      * @param name The name of the shape (added with {@link AnimationBuilder#declareShape})
      * @param t    The time for this keyframe
@@ -115,11 +128,12 @@ public class AnimationModelImpl implements AnimationModel {
      *          for anything in the view and is unnecessary
      */
     @Override
-    public AnimationBuilder<AnimationModel> addKeyframe(String name, int t, int x, int y, int w, int h, int r, int g, int b) {
+    public AnimationBuilder<AnimationModel> addKeyframe(String name, int t, int x, int y,
+                                                        int w, int h, int r, int g, int b) {
       throw new UnsupportedOperationException("Operation not used for building frames");
     }
   }
-    // all your methods that you already wrote
+
 
   @Override
   public void addShape(Shape s) {
@@ -206,7 +220,8 @@ public class AnimationModelImpl implements AnimationModel {
 
 
   /**
-   * Get the set of Shapes in the cs3500.animator.model along with their corresponding IAction lists.
+   * Get the set of Shapes in the cs3500.animator.model along with their corresponding
+   * IAction lists.
    *
    * @return TreeMap of Shapes and list of IAction
    */

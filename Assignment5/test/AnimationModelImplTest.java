@@ -12,6 +12,7 @@ import cs3500.animator.model.IAction;
 import cs3500.animator.model.Location;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 

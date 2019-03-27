@@ -48,6 +48,10 @@ public abstract class AbstractShape implements Shape {
     this.shapeName = shapeName;
   }
 
+  /**
+   * Copy constructor that will return a deep copy of the AbstractShape.
+   * @param other AbstractShape to be copied
+   */
   public AbstractShape(AbstractShape other) {
     this.height = other.height;
     this.width = other.width;

@@ -7,7 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 import java.io.FileReader;
 import java.io.IOException;
+
 import static junit.framework.TestCase.assertEquals;
+
 
 /**
  * Holds only those tests that apply to the TextRepresentation class.

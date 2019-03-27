@@ -82,8 +82,10 @@ public final class Excellence {
         break;
 
       case "visual":
-         AnimationPanelView panel = new AnimationPanelView(model.getShapes(),
-                 Integer.valueOf(cla.get("-speed")));
+        //AnimationPanelView panel = new AnimationPanelView(model.getShapes(),
+                 //Integer.valueOf(cla.get("-speed")));
+        AnimationPanelView panel = new EditorView(model.getShapes(),
+                Integer.valueOf(cla.get("-speed")), true);
         IView gui = new AnimationGraphicsView(panel, model.getMaxX(), model.getMaxY(),
                 model.getWidth(),
                 model.getHeight());

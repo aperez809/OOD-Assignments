@@ -78,7 +78,7 @@ public class SVGRepresentation implements IView, ActionListener {
                       s.getColor().getBlue()));
 
       for (IAction a : s.getActions()) {
-          createMoveLine(a);
+        createMoveLine(a);
       }
       output.append(String.format("</%s>\n", type));
     }

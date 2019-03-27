@@ -2,7 +2,6 @@ package cs3500.animator.view;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -123,6 +122,6 @@ public class AnimationGraphicsView extends JFrame implements IView {
    */
   @Override
   public void add(AnimationPanelView panel) {
-
+    throw new UnsupportedOperationException("Not yet supported");
   }
 }
