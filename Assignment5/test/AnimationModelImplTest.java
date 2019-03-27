@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.TreeMap;
 import cs3500.animator.model.Action;
@@ -23,6 +24,7 @@ import static org.junit.Assert.assertNotEquals;
 public class AnimationModelImplTest {
 
   private AnimationModel testModel;
+  private AnimationModel testModelX;
   private ArrayList<IAction> a1;
   private ArrayList<IAction> a2;
   private ArrayList<IAction> a3;
@@ -96,6 +98,31 @@ public class AnimationModelImplTest {
     testModel.addAction("rectangle", a1.get(0));
     testModel.addAction("ellipse", a2.get(0));
 
+  }
+
+  public void noActionModelSetUp() {
+    //example Shape objects
+    Shape rectX = new Rectangle(
+            200,
+            200,
+            new Location(300,300),
+            new Color(100,100,100),
+            new ArrayList<>(),
+            "rectX");
+    Shape ellipseX = new Ellipse(200,
+            200,
+            new Location(300,300),
+            new Color(100,100,100),
+            new ArrayList<>(),
+            "ellipseX");
+
+
+    testModelX = new AnimationModelImpl(new StringBuilder(),
+            new TreeMap<>(),
+            500, 500,
+            500, 500);
+    testModelX.addShape(rectX);
+    testModelX.addShape(ellipseX);
   }
 
   @Test
@@ -401,5 +428,227 @@ public class AnimationModelImplTest {
             new ArrayList<>(),
             "ellipse"));
     assertEquals(true, temp.containsAll(testModel.getShapes()));
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testDeleteKeyFrameNoMotions() {
+    this.noActionModelSetUp();
+    testModel.removeKeyFrame("rectX", 0);
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testDeleteKeyFrameInvalidShapeName() {
+    testModel.removeKeyFrame("foo", 0);
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testDeleteKeyFrameNotKeyframe() {
+    testModel.removeKeyFrame("rect", 3);
+  }
+
+  @Test
+  public void testDeleteKeyFrameBeginningOnlyMotion() {
+    this.noActionModelSetUp();
+    IAction moveX = new Action(
+            0, 10,
+            300, 350,
+            300, 350,
+            200, 200,
+            200, 200,
+            100, 100,
+            100, 100,
+            100, 100);
+    testModelX.addAction("rectX", moveX);
+    testModelX.removeKeyFrame("rectX", 0);
+    assertEquals(true, testModelX.getShapes().get(0).getActions().isEmpty());
+  }
+
+  @Test
+  public void testDeleteKeyFrameEndOnlyMotion() {
+    this.noActionModelSetUp();
+    IAction moveX = new Action(
+            0, 10,
+            300, 350,
+            300, 350,
+            200, 200,
+            200, 200,
+            100, 100,
+            100, 100,
+            100, 100);
+    testModelX.addAction("rectX", moveX);
+    testModelX.removeKeyFrame("rectX", 10);
+    assertEquals(true, testModelX.getShapes().get(0).getActions().isEmpty());
+  }
+
+  @Test
+  public void testDeleteKeyFrameBeginningFirstMotion() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.removeKeyFrame("rectangle", 0);
+    int[] colorXStartState = new int[] {10, 350, 350, 200, 200, 100, 100, 100};
+    int[] colorXEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
+    assertEquals(true,
+            Arrays.equals(colorXStartState,
+                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
+    assertEquals(true,
+            Arrays.equals(colorXEndState,
+                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+  }
+
+  @Test
+  public void testDeleteKeyFrameEndLastMotion() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.removeKeyFrame("rectangle", 20);
+    int[] moveStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
+    int[] moveEndState = new int[] {10, 350, 350, 200, 200, 100, 100, 100};
+    assertEquals(true,
+            Arrays.equals(moveStartState,
+                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
+    assertEquals(true,
+            Arrays.equals(moveEndState,
+                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+  }
+
+  @Test
+  public void testDeleteKeyFrameEndFirstMotion() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.removeKeyFrame("rectangle", 10);
+    int[] fullStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
+    int[] fullEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
+    assertEquals(true,
+            Arrays.equals(fullStartState,
+                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
+    assertEquals(true,
+            Arrays.equals(fullEndState,
+                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+  }
+
+  @Test
+  public void testDeleteKeyFrameBeginningSecondMotion() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.removeKeyFrame("rectangle", 10);
+    int[] fullStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
+    int[] fullEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
+    assertEquals(true,
+            Arrays.equals(fullStartState,
+                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
+    assertEquals(true,
+            Arrays.equals(fullEndState,
+                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+  }
+
+  @Test
+  public void testDeleteKeyFrameBeginningMiddleMotion() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    IAction sizeX = new Action(
+            20, 30,
+            350, 350,
+            350, 350,
+            200, 300,
+            200, 300,
+            150, 150,
+            150, 150,
+            150, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.addAction("rectangle", sizeX);
+    testModel.removeKeyFrame("rectangle", 10);
+    int[] combinedStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
+    int[] combinedEndState = new int[] {20, 350, 350, 200, 200, 150, 150, 150};
+    int[] secondEndState = new int[] {30, 350, 350, 300, 300, 150, 150, 150};
+    assertEquals(true,
+            Arrays.equals(combinedStartState,
+                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
+    assertEquals(true,
+            Arrays.equals(combinedEndState,
+                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+    assertEquals(true,
+            Arrays.equals(combinedEndState,
+                    testModel.getShapes().get(0).getActions().get(1).getStartState()));
+    assertEquals(true,
+            Arrays.equals(secondEndState,
+                    testModel.getShapes().get(0).getActions().get(1).getEndState()));
+  }
+
+  @Test
+  public void testDeleteKeyFrameEndMiddleMotion() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    IAction sizeX = new Action(
+            20, 30,
+            350, 350,
+            350, 350,
+            200, 300,
+            200, 300,
+            150, 150,
+            150, 150,
+            150, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.addAction("rectangle", sizeX);
+    testModel.removeKeyFrame("rectangle", 20);
+    int[] firstStartState = new int[] {0, 300, 300, 200, 200, 100, 100, 100};
+    int[] firstEndState = new int[] {0, 350, 350, 200, 200, 100, 100, 100};
+    int[] combinedEndState = new int[] {30, 350, 350, 300, 300, 150, 150, 150};
+    assertEquals(true,
+            Arrays.equals(firstStartState,
+                    testModel.getShapes().get(0).getActions().get(0).getStartState()));
+    assertEquals(true,
+            Arrays.equals(firstEndState,
+                    testModel.getShapes().get(0).getActions().get(0).getEndState()));
+    assertEquals(true,
+            Arrays.equals(firstEndState,
+                    testModel.getShapes().get(0).getActions().get(1).getStartState()));
+    assertEquals(true,
+            Arrays.equals(combinedEndState,
+                    testModel.getShapes().get(0).getActions().get(1).getEndState()));
   }
 }

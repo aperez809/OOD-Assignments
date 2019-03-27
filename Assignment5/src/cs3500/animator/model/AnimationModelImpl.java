@@ -113,7 +113,11 @@ public class AnimationModelImpl implements AnimationModel {
     }
 
     /**
-     * addKeyFrame method is not actually used for anything in the model/view and is unnecessary.
+     * Adds a new keyframe to motions of given shape. If keyframe is in the middle of an existing
+     * motion it splits the motion into two motions with the respective end and start time and
+     * state being the given keyframe values. If keyframe tick value is already an existing
+     * keyframe, replaces the start and end states of the surrounding motions determined by the
+     * existing keyframe with the given state values.
      *
      * @param name The name of the shape (added with {@link AnimationBuilder#declareShape})
      * @param t    The time for this keyframe
@@ -124,13 +128,33 @@ public class AnimationModelImpl implements AnimationModel {
      * @param r    The red color-value of the shape
      * @param g    The green color-value of the shape
      * @param b    The blue color-value of the shape
-     * @throws UnsupportedOperationException addKeyFrame method is not actually used to
-     *          for anything in the view and is unnecessary
+     * @throws UnsupportedOperationException if attempting to add keyframe at invalid tick value
+     *            or invalid shape name
      */
     @Override
     public AnimationBuilder<AnimationModel> addKeyframe(String name, int t, int x, int y,
                                                         int w, int h, int r, int g, int b) {
       throw new UnsupportedOperationException("Operation not used for building frames");
+    }
+
+    /**
+     * Removes the keyframe from the given shape at the given tick. If keyframe is bordered by a
+     * single motion, that motions is removed from the list of motions. If keyframe is bordered by
+     * two motions, the start state of the first motion and the end state of the second motion are
+     * merged to become a single motion.
+     *
+     * @param name The name of the shape (added with {@link AnimationBuilder#declareShape})
+     * @param t    The time for this keyframe
+     * @throws UnsupportedOperationException if the keyframe tick value is not a keyframe or invalid
+     *          shape name
+     */
+    public AnimationBuilder<AnimationModel> removeKeyframe(String name, int t) {
+      try {
+        model.removeKeyFrame(name, t);
+      } catch (Exception e) {
+        throw new UnsupportedOperationException(e.getMessage());
+      }
+      return this;
     }
   }
 
@@ -240,6 +264,11 @@ public class AnimationModelImpl implements AnimationModel {
 
   public void setHeight(int height) {
     this.height = height;
+  }
+
+  @Override
+  public void removeKeyFrame(String name, int t) {
+
   }
 
   public int getWidth() {

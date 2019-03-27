@@ -100,6 +100,20 @@ public interface AnimationModel {
    */
   void setHeight(int height);
 
+  /**
+   * Removes the keyframe from the given shape at the given tick by modifying the motion list of
+   * the shape with the given name. If keyframe is bordered by a single motion, that motions is
+   * removed from the list of motions. If keyframe is bordered by
+   * two motions, the start state of the first motion and the end state of the second motion are
+   * merged to become a single motion.
+   *
+   * @param name The name of the shape
+   * @param t    The time for this keyframe
+   * @throws IllegalArgumentException if the keyframe tick value is not a keyframe or if the shape
+   *          with given name does not exist
+   */
+  void removeKeyFrame(String name, int t);
+
   int getWidth();
 
   int getHeight();
