@@ -363,14 +363,19 @@ public class AnimationModelImpl implements AnimationModel {
       //add new keyframe and create new motion with first keyframe copying state of
       //existing keyframe
       int[] startingState = givenShape.getActions().get(firstLastActions.get(0)).getStartState();
-      this.addShapeAction(givenShape,0, false, startingState, startingState);
+      int[] keyFrameState = startingState.clone();
+      keyFrameState[0] = t;
+      this.addShapeAction(givenShape,0, false, keyFrameState, startingState);
     }
     else if (actionsAtTick.size() == 0
             && t > givenShape.getActions().get(firstLastActions.get(1)).getEndTick()) {
       //add new keyframe and create new motion with last keyframe copying state of
       //existing keyframe
       int[] endingState = givenShape.getActions().get(firstLastActions.get(1)).getEndState();
-      this.addShapeAction(givenShape,0, false, endingState, endingState);
+      int[] keyFrameState = endingState.clone();
+      keyFrameState[0] = t;
+      this.addShapeAction(givenShape, firstLastActions.get(1),
+              false, endingState, keyFrameState);
     }
 
   }
