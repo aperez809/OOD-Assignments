@@ -143,6 +143,23 @@ public class AnimationModelImpl implements AnimationModel {
       return this;
     }
 
+    /**
+     * Adds the keyframe to the given shape at the given tick by adding a new motion to the shape's
+     * list of motions, splitting the motion that the tick tweens. The state of the keyframe is
+     * determined by calculating the intermediate state between the two nearest tick frames. This
+     * method does not edit the state of the shape, but places a keyframe that can later be modified
+     * to modify the actions of the shape. Adding a keyframe at a tick where a keyframe already exists
+     * does nothing, adding a keyframe before the first keyframe creates a new motion between it and
+     * the previous first keyframe, adding a keyframe after the last keyframe creates a new motion
+     * between the previous last keyframe and it, adding a keyframe to a shape with no motions creates
+     * a new action with both the start and end states being 0. Once a second keyframe is added,
+     * these two keyframes will create a full motion.
+     *
+     * @param name The name of the shape
+     * @param t    The time for this keyframe
+     * @throws UnsupportedOperationException if attempting to add keyframe at invalid tick value
+     *           or invalid shape name
+     */
     public AnimationBuilder<AnimationModel> insertKeyFrame(String name, int t) {
       try {
         this.model.insertKeyFrame(name, t);
@@ -286,14 +303,16 @@ public class AnimationModelImpl implements AnimationModel {
     if (actionsAtTick.size() == 0) {
       throw new IllegalArgumentException("Given Tick Not a Keyframe");
     }
+    //if keyframe is keyframe start or end state of just one action, remove the associated action
+    //from the shape's list of actions
     else if (actionsAtTick.size() == 1 && (t == actionsAtTick.get(0).getStartTick()
             || t == actionsAtTick.get(0).getEndTick())) {
       this.removeAction(name,actionsAtTick.get(0));
     }
+    //if keyframe is keyframe of multiple actions, merge two bordering actions into one action by
+    //making new action with start state of first and end state of second, removing the
+    //first action and replacing the second action with the new merged action
     else if (actionsAtTick.size() == 2) {
-      //merge two bordering actions into one action by making new action with start state of first
-      //and end state of second, removing the first action and replacing the second action with
-      //the new merged action
       int[] combinedStartState = actionsAtTick.get(0).getStartState();
       int[] combinedEndState = actionsAtTick.get(1).getEndState();
       this.removeAction(name,actionsAtTick.get(0));
@@ -307,20 +326,23 @@ public class AnimationModelImpl implements AnimationModel {
     Shape givenShape = this.getShapeByName(name);
     ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
     int[] givenState = new int[] {t,x,y,h,w,r,g,b};
+    //if keyframe is first state of existing action, edit action so that start state
+    //is equal to given state values
     if (actionsAtTick.size() == 1 && t == actionsAtTick.get(0).getStartTick()) {
-      //edit action so that start state is equal to given state values
       int[] actEndState = actionsAtTick.get(0).getEndState();
       int newActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
       this.addShapeAction(givenShape, newActIndex, true, givenState, actEndState);
     }
+    //if keyframe is end state of existing action, edit action so that end state
+    //is equal to given state values
     else if (actionsAtTick.size() == 1 && t == actionsAtTick.get(0).getEndTick()) {
-      //edit action so that end state is equal to given state values
       int[] actStartState = actionsAtTick.get(0).getStartState();
       int newActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
       this.addShapeAction(givenShape, newActIndex, true, actStartState, givenState);
     }
+    //if keyframe is both start state of one action and end state of another action, edit both
+    //actions so that the state at given tick is equal to the given state values
     else if (actionsAtTick.size() == 2) {
-      //edit both actions so that state at given tick is equal to given state values
       int[] firstStartState = actionsAtTick.get(0).getStartState();
       int[] secondEndState = actionsAtTick.get(1).getEndState();
       int newActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
@@ -337,10 +359,10 @@ public class AnimationModelImpl implements AnimationModel {
     Shape givenShape = this.getShapeByName(name);
     ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
     ArrayList<Integer> firstLastActions = givenShape.getExtemeActionIndices();
+    //if keyframe inserted in middle of existing motion split action into two actions
     if (actionsAtTick.size() == 1
             && t != actionsAtTick.get(0).getStartTick()
             && t != actionsAtTick.get(0).getEndTick()) {
-      //split action into two actions
       int[] newState = new int[8];
       newState[0] = t;
       int[] startState = actionsAtTick.get(0).getStartState();
@@ -354,24 +376,24 @@ public class AnimationModelImpl implements AnimationModel {
       this.addShapeAction(givenShape, oldActIndex, false, startState, newState);
       this.addShapeAction(givenShape, oldActIndex, false, newState, endState);
     }
+    //if shape has no actions, add new action from tick to tick as no existing actions
     else if (actionsAtTick.size() == 0 && givenShape.getActions().size() == 0) {
-      //add new action from tick to tick as no existing actions
       IAction emptyAct = new Action(t,t);
       this.addAction(name, emptyAct);
     }
+    //if keyframe comes before first keyframe, add new keyframe and create new motion with first
+    //keyframe copying state of existing keyframe
     else if (actionsAtTick.size() == 0
             && t < givenShape.getActions().get(firstLastActions.get(0)).getStartTick()) {
-      //add new keyframe and create new motion with first keyframe copying state of
-      //existing keyframe
       int[] startingState = givenShape.getActions().get(firstLastActions.get(0)).getStartState();
       int[] keyFrameState = startingState.clone();
       keyFrameState[0] = t;
       this.addShapeAction(givenShape,0, false, keyFrameState, startingState);
     }
+    //if keyframe comes after last keyframe, add new keyframe and create new motion with last
+    //keyframe copying state of existing keyframe
     else if (actionsAtTick.size() == 0
             && t > givenShape.getActions().get(firstLastActions.get(1)).getEndTick()) {
-      //add new keyframe and create new motion with last keyframe copying state of
-      //existing keyframe
       int[] endingState = givenShape.getActions().get(firstLastActions.get(1)).getEndState();
       int[] keyFrameState = endingState.clone();
       keyFrameState[0] = t;
@@ -405,14 +427,21 @@ public class AnimationModelImpl implements AnimationModel {
     this.maxY = maxY;
   }
 
-  private ArrayList<IAction> getShapeActionsAtTick(String name, int tick) {
-    Shape givenShape = shapes.get(name);
-    if (givenShape == null) {
-      throw new IllegalArgumentException("Invalid Shape Name");
-    }
-    return givenShape.getActionsAtTick(tick);
-  }
-
+  /**
+   * Helper method for inserting, editing, and removing keyFrames. Takes the start and end states
+   * of a new action as integer arrays, creates the action associated with the two states,
+   * and adds the created action at the specified index of the specified
+   * shape's list of actions. The new action may either be inserted into the list at the index,
+   * shifting all following indices, or replace the action that exists at the given index.
+   *
+   * @param shape The name of the shape
+   * @param actionIndex the index of list of actions at which the action should be added
+   * @param replace boolean deciding whether the new action should be added at the given index
+   *                or if it should replace the action that currently exists at that index
+   * @param startState an integer array containing all of the start state values
+   * @param endState an integer array containing all the end state values
+   *
+   */
   private void addShapeAction(Shape shape, int actionIndex, boolean replace,
                                  int[] startState, int[] endState) {
     IAction newAction = new Action(startState[0],endState[0],
@@ -432,6 +461,16 @@ public class AnimationModelImpl implements AnimationModel {
 
   }
 
+  /**
+   * Helper method for inserting, editing, and removing keyFrames. Looks up the shape name in the
+   * model's map of shapes. If the name is found, it returns the shape. If the shape name does not
+   * exist in the shapes map and exception is thrown specifying that the given shape name is
+   * invalid.
+   *
+   * @param name The name of the shape
+   * @throws IllegalArgumentException if the given shape name does not exist in the model shapes map
+   *
+   */
   private Shape getShapeByName(String name) {
     Shape namedShape = shapes.get(name);
     if (namedShape == null) {
