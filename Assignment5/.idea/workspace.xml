@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98b85c3f-28b8-44a7-a9a4-d17e40a411a2" name="Default" comment="added base removeKeyFrame and tests">
+    <list default="true" id="98b85c3f-28b8-44a7-a9a4-d17e40a411a2" name="Default" comment="added fully functioning removeKeyFrame method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/artifacts/Excellence_jar/Excellence.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/artifacts/Excellence_jar/Excellence.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AbstractShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AbstractShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AnimationModelImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/AnimationModelImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/Assignment5/cs3500/animator/model/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/Assignment5/AnimationModelImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/Assignment5/AnimationModelImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimationModelImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimationModelImplTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +32,9 @@
         <entry file="file://$PROJECT_DIR$/test/AnimationModelImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="41">
-              <caret line="477" column="22" lean-forward="true" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
+              <caret line="477" column="22" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12101#12102#0" expanded="true" />
-                <element signature="e#12145#12146#0" expanded="true" />
-                <element signature="e#12099#12100#0" expanded="true" />
-                <element signature="e#12117#12118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,22 +43,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="294" column="29" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
+            <state relative-caret-position="261">
+              <caret line="353" column="78" lean-forward="true" selection-start-line="353" selection-start-column="78" selection-end-line="353" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8721#8722#0" expanded="true" />
-                <element signature="e#8743#8744#0" expanded="true" />
-                <element signature="e#8780#8781#0" expanded="true" />
-                <element signature="e#8808#8809#0" expanded="true" />
-                <element signature="e#8834#8835#0" expanded="true" />
-                <element signature="e#8855#8856#0" expanded="true" />
-                <element signature="e#8890#8891#0" expanded="true" />
-                <element signature="e#8916#8917#0" expanded="true" />
-                <element signature="e#8942#8943#0" expanded="true" />
-                <element signature="e#8963#8964#0" expanded="true" />
-                <element signature="e#8998#8999#0" expanded="true" />
-                <element signature="e#9024#9025#0" expanded="true" />
+                <element signature="e#12197#12198#0" expanded="true" />
+                <element signature="e#12219#12220#0" expanded="true" />
+                <element signature="e#12256#12257#0" expanded="true" />
+                <element signature="e#12284#12285#0" expanded="true" />
+                <element signature="e#12310#12311#0" expanded="true" />
+                <element signature="e#12331#12332#0" expanded="true" />
+                <element signature="e#12366#12367#0" expanded="true" />
+                <element signature="e#12392#12393#0" expanded="true" />
+                <element signature="e#12418#12419#0" expanded="true" />
+                <element signature="e#12439#12440#0" expanded="true" />
+                <element signature="e#12474#12475#0" expanded="true" />
+                <element signature="e#12500#12501#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Shape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="96" column="55" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+            <state relative-caret-position="296">
+              <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -84,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4454">
-              <caret line="285" column="12" lean-forward="true" selection-start-line="285" selection-start-column="12" selection-end-line="285" selection-end-column="12" />
+            <state relative-caret-position="142">
+              <caret line="111" column="19" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -93,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Action.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="149" column="3" selection-start-line="149" selection-start-column="3" selection-end-line="149" selection-end-column="3" />
+            <state relative-caret-position="-1013">
+              <caret line="71" column="66" lean-forward="true" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -102,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="109">
+              <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,9 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkOverlap</find>
-      <find>addAction</find>
-      <find>testModel</find>
       <find>start</find>
       <find>apply</find>
       <find>Color</find>
@@ -153,6 +142,9 @@
       <find>getstartst</find>
       <find>get</find>
       <find>getShapes</find>
+      <find>addA</find>
+      <find>remov</find>
+      <find>removeA</find>
     </findStrings>
     <replaceStrings>
       <replace>end</replace>
@@ -205,17 +197,17 @@
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/Rectangle.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/Ellipse.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/util/AnimationBuilder.java" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/VisualWithControls.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/Excellence.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/model/Shape.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/Action.java" />
         <option value="$PROJECT_DIR$/test/AnimationModelImplTest.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/model/Shape.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" />
       </list>
     </option>
@@ -238,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,6 +280,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -296,7 +288,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/alexperez/Desktop/Everything/School Stuff/Spring 2019/OOD/OOD-Assignments/Assignment5/src/cs3500/animator/view/TextRepresentation.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553727348741" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553727460742" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -621,38 +613,45 @@
       <option name="project" value="LOCAL" />
       <updated>1553720859957</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added fully functioning removeKeyFrame method">
+      <created>1553727376045</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1553727376045</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 33m 02s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 55m 51s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 35m 36s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 22h 47m 25s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 36m 11s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 23h 09m 56s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 44m 32s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 23h 34m 55s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 46m 22s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 23h 41m 31s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 47m 33s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 23h 42m 51s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 48m 32s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 23h 44m 01s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 52m 07s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 23h 55m 13s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 52m 53s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.28 at 00h 54m 07s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnimationModelImplTest_(1) - 2019.03.27 at 18h 54m 03s.xml">
+    <history-entry file="AnimationModelImplTest_(1) - 2019.03.28 at 01h 13m 34s.xml">
       <configuration name="AnimationModelImplTest (1)" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -672,14 +671,14 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25113463" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2549168" />
       <window_info id="Structure" order="1" weight="0.24959612" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287483" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
@@ -687,11 +686,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49676898" weight="0.32733223" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49676898" weight="0.32569557" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3287483" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.503231" side_tool="true" weight="0.3287483" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32737276" />
-      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24959612" />
@@ -702,6 +700,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32956383" />
+      <window_info anchor="right" id="Maven" order="10" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28756058" />
@@ -749,7 +748,8 @@
     <MESSAGE value="Most up-to-date with some Javadoc" />
     <MESSAGE value="100% of the functionality is 80% functional" />
     <MESSAGE value="added base removeKeyFrame and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added base removeKeyFrame and tests" />
+    <MESSAGE value="added fully functioning removeKeyFrame method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added fully functioning removeKeyFrame method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -955,69 +955,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java">
+    <entry file="file://$PROJECT_DIR$/test/AnimationModelImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        <state relative-caret-position="41">
+          <caret line="477" column="22" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Action.java">
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="149" column="3" selection-start-line="149" selection-start-column="3" selection-end-line="149" selection-end-column="3" />
+        <state relative-caret-position="109">
+          <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Shape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="96" column="55" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+        <state relative-caret-position="296">
+          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1013">
+          <caret line="71" column="66" lean-forward="true" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4454">
-          <caret line="285" column="12" lean-forward="true" selection-start-line="285" selection-start-column="12" selection-end-line="285" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/AnimationModelImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="477" column="22" lean-forward="true" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12101#12102#0" expanded="true" />
-            <element signature="e#12145#12146#0" expanded="true" />
-            <element signature="e#12099#12100#0" expanded="true" />
-            <element signature="e#12117#12118#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="111" column="19" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="294" column="29" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
+        <state relative-caret-position="261">
+          <caret line="353" column="78" lean-forward="true" selection-start-line="353" selection-start-column="78" selection-end-line="353" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8721#8722#0" expanded="true" />
-            <element signature="e#8743#8744#0" expanded="true" />
-            <element signature="e#8780#8781#0" expanded="true" />
-            <element signature="e#8808#8809#0" expanded="true" />
-            <element signature="e#8834#8835#0" expanded="true" />
-            <element signature="e#8855#8856#0" expanded="true" />
-            <element signature="e#8890#8891#0" expanded="true" />
-            <element signature="e#8916#8917#0" expanded="true" />
-            <element signature="e#8942#8943#0" expanded="true" />
-            <element signature="e#8963#8964#0" expanded="true" />
-            <element signature="e#8998#8999#0" expanded="true" />
-            <element signature="e#9024#9025#0" expanded="true" />
+            <element signature="e#12197#12198#0" expanded="true" />
+            <element signature="e#12219#12220#0" expanded="true" />
+            <element signature="e#12256#12257#0" expanded="true" />
+            <element signature="e#12284#12285#0" expanded="true" />
+            <element signature="e#12310#12311#0" expanded="true" />
+            <element signature="e#12331#12332#0" expanded="true" />
+            <element signature="e#12366#12367#0" expanded="true" />
+            <element signature="e#12392#12393#0" expanded="true" />
+            <element signature="e#12418#12419#0" expanded="true" />
+            <element signature="e#12439#12440#0" expanded="true" />
+            <element signature="e#12474#12475#0" expanded="true" />
+            <element signature="e#12500#12501#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -134,9 +134,22 @@ public class AnimationModelImpl implements AnimationModel {
     @Override
     public AnimationBuilder<AnimationModel> addKeyframe(String name, int t, int x, int y,
                                                         int w, int h, int r, int g, int b) {
-      throw new UnsupportedOperationException("Operation not used for building frames");
+      try {
+        this.model.editKeyFrame(name, t, x, y, w, h, r, g, b);
+      } catch (Exception e) {
+        throw new UnsupportedOperationException(e.getMessage());
+      }
+      return this;
     }
 
+    public AnimationBuilder<AnimationModel> insertKeyFrame(String name, int t) {
+      try {
+        this.model.insertKeyFrame(name, t);
+      } catch (Exception e) {
+        throw new UnsupportedOperationException(e.getMessage());
+      }
+      return this;
+    }
     /**
      * Removes the keyframe from the given shape at the given tick. If keyframe is bordered by a
      * single motion, that motions is removed from the list of motions. If keyframe is bordered by
@@ -150,7 +163,7 @@ public class AnimationModelImpl implements AnimationModel {
      */
     public AnimationBuilder<AnimationModel> removeKeyframe(String name, int t) {
       try {
-        model.removeKeyFrame(name, t);
+        this.model.removeKeyFrame(name, t);
       } catch (Exception e) {
         throw new UnsupportedOperationException(e.getMessage());
       }
@@ -267,46 +280,99 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public void removeKeyFrame(String name, int t) {
-    Shape givenShape = shapes.get(name);
-    int firstActIndex;
-    int lastActIndex;
-    if (givenShape == null) {
-      throw new IllegalArgumentException("Invalid Shape Name");
-    }
+    Shape givenShape = this.getShapeByName(name);
     ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
     if (actionsAtTick.size() == 0) {
       throw new IllegalArgumentException("Given Tick Not a Keyframe");
     }
-    if (actionsAtTick.size() == 1) {
-      givenShape.removeAction(actionsAtTick.get(0));
+    else if (actionsAtTick.size() == 1 && (t == actionsAtTick.get(0).getStartTick()
+            || t == actionsAtTick.get(0).getEndTick())) {
+      this.removeAction(name,actionsAtTick.get(0));
     }
     else if (actionsAtTick.size() == 2) {
-      //check which action of list comes first and assign indices accordingly
-      if (actionsAtTick.get(0).getEndTick() == t) {
-        firstActIndex = 0;
-        lastActIndex = 1;
-      }
-      else {
-        firstActIndex = 1;
-        lastActIndex = 0;
-      }
       //merge two bordering actions into one action by making new action with start state of first
       //and end state of second, removing the first action and replacing the second action with
       //the new merged action
-      int[] combinedStartState = actionsAtTick.get(firstActIndex).getStartState();
-      int[] combinedEndState = actionsAtTick.get(lastActIndex).getEndState();
-      givenShape.removeAction(actionsAtTick.get(firstActIndex));
-      int combinedActIndex = givenShape.getActions().indexOf(actionsAtTick.get(lastActIndex));
-      IAction combinedAct = new Action(combinedStartState[0],combinedEndState[0],
-              combinedStartState[1], combinedEndState[1],
-              combinedStartState[2], combinedEndState[2],
-              combinedStartState[3], combinedEndState[3],
-              combinedStartState[4], combinedEndState[4],
-              combinedStartState[5], combinedEndState[5],
-              combinedStartState[6], combinedEndState[6],
-              combinedStartState[7], combinedEndState[7]);
-      givenShape.getActions().set(combinedActIndex, combinedAct);
+      int[] combinedStartState = actionsAtTick.get(0).getStartState();
+      int[] combinedEndState = actionsAtTick.get(1).getEndState();
+      this.removeAction(name,actionsAtTick.get(0));
+      int combinedActIndex = givenShape.getActions().indexOf(actionsAtTick.get(1));
+      this.addShapeAction(givenShape, combinedActIndex, true, combinedStartState, combinedEndState);
     }
+  }
+
+  @Override
+  public void editKeyFrame(String name, int t, int x, int y, int w, int h, int r, int g, int b) {
+    Shape givenShape = this.getShapeByName(name);
+    ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
+    int[] givenState = new int[] {t,x,y,h,w,r,g,b};
+    if (actionsAtTick.size() == 1 && t == actionsAtTick.get(0).getStartTick()) {
+      //edit action so that start state is equal to given state values
+      int[] actEndState = actionsAtTick.get(0).getEndState();
+      int newActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
+      this.addShapeAction(givenShape, newActIndex, true, givenState, actEndState);
+    }
+    else if (actionsAtTick.size() == 1 && t == actionsAtTick.get(0).getEndTick()) {
+      //edit action so that end state is equal to given state values
+      int[] actStartState = actionsAtTick.get(0).getStartState();
+      int newActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
+      this.addShapeAction(givenShape, newActIndex, true, actStartState, givenState);
+    }
+    else if (actionsAtTick.size() == 2) {
+      //edit both actions so that state at given tick is equal to given state values
+      int[] firstStartState = actionsAtTick.get(0).getStartState();
+      int[] secondEndState = actionsAtTick.get(1).getEndState();
+      int newActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
+      this.addShapeAction(givenShape, newActIndex, true, firstStartState, givenState);
+      this.addShapeAction(givenShape, newActIndex, true, givenState, secondEndState);
+    }
+    else {
+      throw new IllegalArgumentException("No KeyFrame Exists at Given Tick Value");
+    }
+  }
+
+  @Override
+  public void insertKeyFrame(String name, int t) {
+    Shape givenShape = this.getShapeByName(name);
+    ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
+    ArrayList<Integer> firstLastActions = givenShape.getExtemeActionIndices();
+    if (actionsAtTick.size() == 1
+            && t != actionsAtTick.get(0).getStartTick()
+            && t != actionsAtTick.get(0).getEndTick()) {
+      //split action into two actions
+      int[] newState = new int[8];
+      newState[0] = t;
+      int[] startState = actionsAtTick.get(0).getStartState();
+      int[] endState = actionsAtTick.get(0).getEndState();
+      for (int i = 1; i < startState.length; i++) {
+        newState[i] = (newState[0] - startState[0])
+                * ((endState[i] - startState[i]) / (endState[0] - startState[0]));
+      }
+      int oldActIndex = givenShape.getActions().indexOf(actionsAtTick.get(0));
+      this.removeAction(name,actionsAtTick.get(0));
+      this.addShapeAction(givenShape, oldActIndex, false, startState, newState);
+      this.addShapeAction(givenShape, oldActIndex, false, newState, endState);
+    }
+    else if (actionsAtTick.size() == 0 && givenShape.getActions().size() == 0) {
+      //add new action from tick to tick as no existing actions
+      IAction emptyAct = new Action(t,t);
+      this.addAction(name, emptyAct);
+    }
+    else if (actionsAtTick.size() == 0
+            && t < givenShape.getActions().get(firstLastActions.get(0)).getStartTick()) {
+      //add new keyframe and create new motion with first keyframe copying state of
+      //existing keyframe
+      int[] startingState = givenShape.getActions().get(firstLastActions.get(0)).getStartState();
+      this.addShapeAction(givenShape,0, false, startingState, startingState);
+    }
+    else if (actionsAtTick.size() == 0
+            && t > givenShape.getActions().get(firstLastActions.get(1)).getEndTick()) {
+      //add new keyframe and create new motion with last keyframe copying state of
+      //existing keyframe
+      int[] endingState = givenShape.getActions().get(firstLastActions.get(1)).getEndState();
+      this.addShapeAction(givenShape,0, false, endingState, endingState);
+    }
+
   }
 
   public int getWidth() {
@@ -331,5 +397,40 @@ public class AnimationModelImpl implements AnimationModel {
 
   public void setMaxY(int maxY) {
     this.maxY = maxY;
+  }
+
+  private ArrayList<IAction> getShapeActionsAtTick(String name, int tick) {
+    Shape givenShape = shapes.get(name);
+    if (givenShape == null) {
+      throw new IllegalArgumentException("Invalid Shape Name");
+    }
+    return givenShape.getActionsAtTick(tick);
+  }
+
+  private void addShapeAction(Shape shape, int actionIndex, boolean replace,
+                                 int[] startState, int[] endState) {
+    IAction newAction = new Action(startState[0],endState[0],
+            startState[1], endState[1],
+            startState[2], endState[2],
+            startState[3], endState[3],
+            startState[4], endState[4],
+            startState[5], endState[5],
+            startState[6], endState[6],
+            startState[7], endState[7]);
+    if (replace) {
+      shape.getActions().set(actionIndex, newAction);
+    }
+    else {
+      shape.getActions().add(actionIndex, newAction);
+    }
+
+  }
+
+  private Shape getShapeByName(String name) {
+    Shape namedShape = shapes.get(name);
+    if (namedShape == null) {
+      throw new IllegalArgumentException("Invalid Shape Name");
+    }
+    return namedShape;
   }
 }

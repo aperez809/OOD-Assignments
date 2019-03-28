@@ -3,6 +3,7 @@ package cs3500.animator.model;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Abstract class that generally represents any type of Shape that can be placed
@@ -290,11 +291,41 @@ public abstract class AbstractShape implements Shape {
   public ArrayList<IAction> getActionsAtTick(int t){
     ArrayList<IAction> associatedActions = new ArrayList<>();
     for (IAction action : actions) {
-      if (t == action.getStartTick() || t == action.getEndTick()) {
+      if (t == action.getStartTick() || t == action.getEndTick()
+      || (t > action.getStartTick() && t < action.getEndTick())) {
         associatedActions.add(action);
       }
     }
+    //sorts the associated actions list based on start tick
+    if (associatedActions.size() == 2
+            && associatedActions.get(0).getStartTick() > associatedActions.get(1).getStartTick()) {
+      Collections.swap(associatedActions,0,1);
+    }
     return associatedActions;
+  }
+
+  @Override
+  public ArrayList<Integer> getExtemeActionIndices() {
+    int numActions = this.getActions().size();
+    ArrayList<Integer> extremeIndices = new ArrayList<>();
+    if (numActions == 0) {
+      return extremeIndices;
+    }
+    int minIndex = 0;
+    int maxIndex = 0;
+    int minTick = 0;
+    int maxTick = 0;
+    for (int i = 0; i < numActions; i++) {
+      if (this.getActions().get(i).getStartTick() <= minTick) {
+        minIndex = i;
+      }
+      if (this.getActions().get(i).getStartTick() >= maxTick) {
+        maxIndex = i;
+      }
+    }
+    extremeIndices.add(0,minIndex);
+    extremeIndices.add(1,maxIndex);
+    return extremeIndices;
   }
 }
 
