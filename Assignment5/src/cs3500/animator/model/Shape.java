@@ -2,6 +2,7 @@ package cs3500.animator.model;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Represents the functionality of a Shape on the canvas.
@@ -94,7 +95,17 @@ public interface Shape {
    * shared by multiple actions. Returns one action if tick is in middle of motion or tick is
    * start or end of list of actions.
    *
+   * @param t tick value
    * @return list of actions associated with given tick
    */
   ArrayList<IAction> getActionsAtTick(int t);
+
+  /**
+   * Get the indices of the action(s) occurring at the first and last ticks of the shape's actions.
+   * Will return two different indices if shape has multiple associated actions, or two of the same
+   * index if only one action, or null if no actions.
+   *
+   * @return arraylist of action indices
+   */
+  ArrayList<Integer> getExtemeActionIndices();
 }

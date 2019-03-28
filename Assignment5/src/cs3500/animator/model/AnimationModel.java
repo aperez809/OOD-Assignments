@@ -114,6 +114,44 @@ public interface AnimationModel {
    */
   void removeKeyFrame(String name, int t);
 
+  /**
+   * Edits the keyframe of the given shape at the given tick with the given state by modifying the
+   * shape's state at the existing keyframe. This method does not add new keyframes, but rather
+   * alters the state values of keyframes that already exist.
+   *
+   * @param name The name of the shape
+   * @param t    The time for this keyframe
+   * @param x    The x-position of the shape
+   * @param y    The y-position of the shape
+   * @param w    The width of the shape
+   * @param h    The height of the shape
+   * @param r    The red color-value of the shape
+   * @param g    The green color-value of the shape
+   * @param b    The blue color-value of the shape
+   * @throws UnsupportedOperationException if keyframe does not exist at given tick for given shape
+   */
+  void editKeyFrame(String name, int t, int x, int y,
+                   int w, int h, int r, int g, int b);
+
+  /**
+   * Adds the keyframe to the given shape at the given tick by adding a new motion to the shape's
+   * list of motions, splitting the motion that the tick tweens. The state of the keyframe is
+   * determined by calculating the intermediate state between the two nearest tick frames. This
+   * method does not edit the state of the shape, but places a keyframe that can later be modified
+   * to modify the actions of the shape. Adding a keyframe at a tick where a keyframe already exists
+   * does nothing, adding a keyframe before the first keyframe creates a new motion between it and
+   * the previous first keyframe, adding a keyframe after the last keyframe creates a new motion
+   * between the previous last keyframe and it, adding a keyframe to a shape with no motions creates
+   * a new action with both the start and end states being 0. Once a second keyframe is added,
+   * these two keyframes will create a full motion.
+   *
+   * @param name The name of the shape
+   * @param t    The time for this keyframe
+   * @throws UnsupportedOperationException if attempting to add keyframe at invalid tick value
+   *           or invalid shape name
+   */
+  void insertKeyFrame(String name, int t);
+
   int getWidth();
 
   int getHeight();

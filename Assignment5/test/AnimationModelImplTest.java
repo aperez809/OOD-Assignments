@@ -655,4 +655,74 @@ public class AnimationModelImplTest {
     assertArrayEquals(combinedEndState,
                     testModel.getShapes().get(rectIndex).getActions().get(1).getEndState());
   }
+
+  @Test
+  public void testInsertKeyFrameMiddleOfAction() {
+    Shape rectX = testModel.getShapes().get(1);
+    String rectXName = rectX.getShapeName();
+    int rectIndex = testModel.getShapes().indexOf(rectX);
+    assertEquals(1,testModel.getShapes().get(rectIndex).getActions().size());
+    testModel.insertKeyFrame(rectXName, 5);
+    assertEquals(2,testModel.getShapes().get(rectIndex).getActions().size());
+  }
+
+  @Test
+  public void testInsertKeyFrameAfterAllAction() {
+    testModel.insertKeyFrame("rectangle", 40);
+  }
+
+  @Test
+  public void testInsertKeyFrameNoActions() {
+    this.noActionModelSetUp();
+    testModelX.insertKeyFrame("rectX", 10);
+  }
+
+  @Test
+  public void testInsertKeyFrameBeforeAllAction() {
+    IAction colorX = new Action(
+            10, 20,
+            350, 350,
+            350, 350,
+            200, 200,
+            200, 200,
+            100, 150,
+            100, 150,
+            100, 150);
+    testModel.addAction("rectangle", colorX);
+    testModel.removeKeyFrame("rectangle",0);
+    testModel.insertKeyFrame("rectangle", 0);
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testEditKeyFrameNonExistant() {
+    testModel.editKeyFrame("rectangle",5,
+            200, 200, 300,300,100,100,100);
+  }
+
+  @Test
+  public void testEditKeyFrameBeginningOfAction() {
+    testModel.editKeyFrame("rectangle",0,
+            800, 800, 300,300,100,100,100);
+  }
+
+  @Test
+  public void testEditKeyFrameEndOfAction() {
+    testModel.editKeyFrame("rectangle",10,
+            800, 800, 300,300,100,100,100);
+  }
+
+  @Test
+  public void testInsertAndEditKeyFrame() {
+    testModel.insertKeyFrame("rectangle", 40);
+    testModel.editKeyFrame("rectangle",40,
+            800, 800, 300,300,100,100,100);
+  }
+
+  @Test
+  public void testInsertEditRemoveKeyFrame() {
+    testModel.insertKeyFrame("rectangle", 40);
+    testModel.editKeyFrame("rectangle",40,
+            800, 800, 300,300,100,100,100);
+    testModel.removeKeyFrame("rectangle", 40);
+  }
 }
