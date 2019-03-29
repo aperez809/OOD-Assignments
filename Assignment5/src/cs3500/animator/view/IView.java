@@ -5,6 +5,7 @@ import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 /**
@@ -99,4 +100,8 @@ public interface IView {
   String getSelectedItem();
 
   void toggleDeleteShapeOptions();
+
+  ArrayList<String> getShapeToAdd();
+
+  void getShapeToDelete();
 }

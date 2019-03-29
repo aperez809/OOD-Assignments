@@ -244,5 +244,10 @@ public class TextRepresentation implements IView {
   public void toggleDeleteShapeOptions() {
     throw new UnsupportedOperationException("Only for EditorView class");
   }
+
+  @Override
+  public ArrayList<String> getShapeToAdd() {
+    return null;
+  }
 }
 

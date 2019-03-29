@@ -337,4 +337,9 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   public void toggleDeleteShapeOptions() {
     throw new UnsupportedOperationException("Only for EditorView class");
   }
+
+  @Override
+  public ArrayList<String> getShapeToAdd() {
+    return null;
+  }
 }

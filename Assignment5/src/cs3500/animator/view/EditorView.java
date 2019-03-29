@@ -4,16 +4,14 @@ import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JList;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EditorView extends AnimationPanelView implements ActionListener {
+
   //Utility booleans that are swapped every time a button is pressed
   //i.e. true to false and false to true
   private boolean isPaused;
@@ -21,6 +19,14 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private boolean willLoop;
   private boolean areAddShapeOptionsShown;
   private boolean areDeleteShapeOptionsShown;
+
+  private DefaultListModel shapesModel;
+  //private JList shapesList;
+  private JComboBox shapesList;
+
+  private JScrollPane shapesScroller;
+
+
 
   //Final tick of animation
   private int maxTick;
@@ -34,11 +40,13 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private JButton addShapeOptionsButton;
   private JButton deleteShapeOptionsButton;
 
+  private JTextField newShapeName;
+  private JComboBox newShapeType;
+  private JPanel newShapeInputPanel;
+
   //Clickable Shape types list
   //TODO: Capture selected element in a string after clicking submit button
-  private JList<String> shapeTypesList;
-  private JList<String> allShapesList;
-  private JButton submitShapeSelection;
+  private JButton submitButton;
 
   //Text input boxes for providing shape attributes with a submit button that will add the shape a
   //first is for dimensions (height and width)
@@ -46,13 +54,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   //TODO: Decide if shape motions should be in 9 separate boxes (1 for name and 8 for
   //TODO: pairs of start and end vals) or a long string of space delimited vals
   //TODO: (then call str.split() on long string)
+  //TODO: calls addShape in model, sets shapes in view to model.getShapes(), and restarts animation
   private JTextField addedShapeDimsInput;
   private JTextField addedShapeMotionsInput;
-  private JButton submitShapeAttrInputs; //calls addShape in model, sets shapes in view to model.getShapes(), and restarts animation
-
-
-  //TODO:
-
+  private JPanel shapesListPanel;
 
   public EditorView(ArrayList<Shape> shapes, int speed, boolean willLoop) {
     super(shapes, speed);
@@ -87,42 +92,69 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     this.deleteShapeOptionsButton = new JButton(
             "Remove Shape");
 
-    this.shapeTypesList = new JList(new String[] {"Rect", "Oval"});
-    this.allShapesList = new JList(this.getShapeNamesAsArray());
-
-    this.addedShapeMotionsInput = new JTextField(16);
+    this.newShapeName = new JTextField("Shape Name", 10);
+    this.addedShapeMotionsInput = new JTextField("t1 t2 x1 x2 y1 y2 h1 h2 w1 w2 " +
+            "r1 r2 g1 g2 b1 b2",
+            "t1 t2 x1 x2 y1 y2 h1 h2 w1 w2 r1 r2 g1 g2 b1 b2".length());
     this.addedShapeDimsInput = new JTextField("Input shape's dims as 'H W'", 16);
 
+    this.submitButton = new JButton("Submit");
 
 
-    this.add(playPauseButton);
+    JLabel newShapeNameLabel = new JLabel("Shape Name:");
+    JLabel newShapeTypeLabel = new JLabel("Shape Type:");
+    String[] shapeOptions = {"Rectangle", "Ellipse"};
+
+    newShapeType = new JComboBox(shapeOptions);
+    newShapeInputPanel = new JPanel();
+    add(newShapeInputPanel);
+    newShapeInputPanel.add(newShapeNameLabel);
+    newShapeInputPanel.add(newShapeName);
+    newShapeInputPanel.add(newShapeTypeLabel);
+    newShapeInputPanel.add(newShapeType);
+    newShapeInputPanel.add(submitButton);
+    newShapeInputPanel.setVisible(false);
+    submitButton.setActionCommand("submit");
+
+    shapesListPanel = new JPanel();
+    shapesModel = new DefaultListModel();
+    shapesList = new JComboBox(getShapeNamesAsArray());
+    shapesScroller = new JScrollPane(shapesList);
+    shapesList.setName("Shapes");
+    shapesListPanel.add(shapesList);
+    shapesListPanel.add(shapesScroller);
+    add(shapesListPanel);
+    shapesListPanel.add(submitButton);
+    shapesListPanel.setVisible(false);
+
+
+
+    add(playPauseButton);
     playPauseButton.setActionCommand("playPause");
 
-    this.add(reverseButton);
+    add(reverseButton);
     reverseButton.setActionCommand("reverse");
 
-    this.add(loopingButton);
+    add(loopingButton);
     loopingButton.setActionCommand("loop");
 
-    this.add(speedUpButton);
+    add(speedUpButton);
     speedUpButton.setActionCommand("faster");
 
-    this.add(slowDownButton);
+    add(slowDownButton);
     slowDownButton.setActionCommand("slower");
 
-    this.add(addShapeOptionsButton);
+    add(addShapeOptionsButton);
     addShapeOptionsButton.setActionCommand("addShapes");
 
-    this.add(deleteShapeOptionsButton);
+    add(deleteShapeOptionsButton);
     deleteShapeOptionsButton.setActionCommand("deleteShapes");
 
-    this.add(shapeTypesList);
-    shapeTypesList.setVisible(false);
 
-    this.add(addedShapeDimsInput);
+    add(addedShapeDimsInput);
     addedShapeDimsInput.setVisible(false);
 
-    this.add(addedShapeMotionsInput);
+    add(addedShapeMotionsInput);
     addedShapeMotionsInput.setVisible(false);
   }
 
@@ -132,14 +164,14 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     if (isPaused) {
         return;
       }
-      for (Shape s : this.shapes) {
+      for (Shape s : shapes) {
         for (IAction a : s.getActions()) {
           if (currTick >= a.getStartTick() && currTick <= a.getEndTick()) {
             executeMove(s, a);
           }
         }
       }
-      this.repaint();
+      repaint();
       if (isReversed) {
         if (currTick <= 0) {
           currTick = 0;
@@ -174,18 +206,16 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     slowDownButton.addActionListener(listener);
     addShapeOptionsButton.addActionListener(listener);
     deleteShapeOptionsButton.addActionListener(listener);
-    allShapesList.addListSelectionListener(listener);
-    shapeTypesList.addListSelectionListener(listener);
   }
 
   @Override
   public void flipPause() {
-    this.isPaused = !this.isPaused;
+    isPaused = !isPaused;
   }
 
   @Override
   public void flipReverse() {
-    this.isReversed = !this.isReversed;
+    isReversed = !isReversed;
     if (isReversed) {
       reverseButton.setText("Rewinding");
     } else {
@@ -195,7 +225,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
   @Override
   public void flipLooping() {
-    this.willLoop = !this.willLoop;
+    willLoop = !willLoop;
     loopingButton.setText(String.format("Looping: %s", willLoop));
   }
 
@@ -221,15 +251,29 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
   public void toggleAddShapeOptions() {
     areAddShapeOptionsShown = !areAddShapeOptionsShown;
-    shapeTypesList.setVisible(areAddShapeOptionsShown);
-    addedShapeDimsInput.setVisible(areAddShapeOptionsShown);
-    addedShapeMotionsInput.setVisible(areAddShapeOptionsShown);
+    newShapeInputPanel.setVisible(areAddShapeOptionsShown);
+  }
+
+  public ArrayList<String> getShapeToAdd() {
+    ArrayList<String> temp = new ArrayList<>();
+    if (newShapeName.getText().length() > 0) {
+      temp.add(newShapeName.getText());
+    }
+    else {
+      temp.add(null);
+    }
+    temp.add(newShapeName.getSelectedText());
+    return temp;
   }
 
   @Override
   public void toggleDeleteShapeOptions() {
     areDeleteShapeOptionsShown = !areDeleteShapeOptionsShown;
-    allShapesList.setVisible(areDeleteShapeOptionsShown);
+    shapesListPanel.setVisible(areDeleteShapeOptionsShown);
+  }
+
+  public String getShapeToDelete() {
+    return (String) shapesList.getSelectedItem();
   }
 
   public boolean isPaused() {
@@ -246,7 +290,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
   @Override
   public void addActionListener(ExcellenceController excellenceController) {
-    this.t.addActionListener(excellenceController);
+    t.addActionListener(excellenceController);
     playPauseButton.addActionListener(excellenceController);
     reverseButton.addActionListener(excellenceController);
     loopingButton.addActionListener(excellenceController);
@@ -254,19 +298,13 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     slowDownButton.addActionListener(excellenceController);
     addShapeOptionsButton.addActionListener(excellenceController);
     deleteShapeOptionsButton.addActionListener(excellenceController);
-
-    allShapesList.addListSelectionListener(excellenceController);
-    shapeTypesList.addListSelectionListener(excellenceController);
   }
 
-  public String getSelectedItem() {
-    return shapeTypesList.getSelectedValue();
-  }
 
   public String[] getShapeNamesAsArray() {
-    ArrayList<String> tempNames = new ArrayList<String>();
+    ArrayList<String> tempNames = new ArrayList<>();
 
-    for (Shape s : this.shapes) {
+    for (Shape s : shapes) {
       tempNames.add(s.getShapeName());
       System.out.println(s.getShapeName());
     }

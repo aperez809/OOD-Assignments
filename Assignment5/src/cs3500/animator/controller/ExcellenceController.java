@@ -3,6 +3,7 @@ package cs3500.animator.controller;
 import cs3500.animator.model.AnimationModel;
 import cs3500.animator.view.IView;
 
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
@@ -61,12 +62,20 @@ public final class ExcellenceController implements ActionListener, ListSelection
         case "addShapes":
           panel.flipPause();
           panel.toggleAddShapeOptions();
-          //TODO: Add logic to listen for shape-related inputs
+          if (e.getActionCommand().equals("submit")) {
+            panel.getShapeToAdd();
+            //TODO: Add logic to listen for shape-related inputs
+          }
           break;
 
         case "deleteShapes":
           panel.flipPause();
           panel.toggleDeleteShapeOptions();
+          if (e.getActionCommand().equals("submit")) {
+            panel.getShapeToDelete();
+            //TODO: Add logic to listen for shape-related inputs
+          }
+
           //TODO: Add logic to listen for shape choice to delete
           break;
 
@@ -91,6 +100,6 @@ public final class ExcellenceController implements ActionListener, ListSelection
 
   @Override
   public void valueChanged(ListSelectionEvent e) {
-
+    JList changedList = (JList) e.getSource();
   }
 }

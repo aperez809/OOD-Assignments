@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 
@@ -234,5 +235,10 @@ public class AnimationGraphicsView extends JFrame implements IView {
   @Override
   public void toggleDeleteShapeOptions() {
     throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public ArrayList<String> getShapeToAdd() {
+    return null;
   }
 }
