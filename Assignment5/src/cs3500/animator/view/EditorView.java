@@ -1,13 +1,15 @@
 package cs3500.animator.view;
 
+import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class EditorView extends AnimationPanelView {
+public class EditorView extends AnimationPanelView implements ActionListener {
   private boolean isPaused;
   private boolean isReversed;
   private boolean willLoop;
@@ -24,7 +26,6 @@ public class EditorView extends AnimationPanelView {
     this.isPaused = false;
     this.isReversed = false;
     this.willLoop = willLoop;
-    this.maxTick = this.getMaxTick();
     this.playPauseButton = new JButton(
             "Play/Pause",
             new ImageIcon("resources/playpause.png"));
@@ -47,72 +48,24 @@ public class EditorView extends AnimationPanelView {
 
 
     this.add(playPauseButton);
-    playPauseButton.addActionListener(this);
     playPauseButton.setActionCommand("playPause");
 
     this.add(reverseButton);
-    reverseButton.addActionListener(this);
     reverseButton.setActionCommand("reverse");
 
     this.add(loopingButton);
-    loopingButton.addActionListener(this);
     loopingButton.setActionCommand("loop");
-
     this.add(speedUpButton);
-    speedUpButton.addActionListener(this);
     speedUpButton.setActionCommand("faster");
 
     this.add(slowDownButton);
-    slowDownButton.addActionListener(this);
     slowDownButton.setActionCommand("slower");
   }
 
 
-  public int getMaxTick() {
-    int currMax = 0;
-
-    for (Shape s: this.shapes) {
-      for (IAction a: s.getActions()) {
-        if (a.getEndTick() > currMax) {
-          currMax = a.getEndTick();
-        }
-      }
-    }
-    return currMax;
-  }
-
-
-
   @Override
   public void actionPerformed(ActionEvent e) {
-    if (e.getActionCommand() != null) {
-      if (e.getActionCommand().equals("playPause")) {
-        isPaused = !isPaused;
-      } else if (e.getActionCommand().equals("reverse")) {
-        isReversed = !isReversed;
-      } else if (e.getActionCommand().equals("loop")) {
-        willLoop = !willLoop;
-        loopingButton.setText(String.format("Looping: %s", willLoop));
-      }
-      else if (e.getActionCommand().equals("faster")) {
-        if (t.getDelay() - 50 <= 50) {
-          t.setDelay(50);
-        }
-        else {
-          t.setDelay(t.getDelay() - 50);
-        }
-      }
-      else if (e.getActionCommand().equals("slower")) {
-        if (t.getDelay() + 50 >= 1000){
-          t.setDelay(1000);
-        }
-        else {
-          t.setDelay(t.getDelay() + 50);
-        }
-      }
-    }
-    else {
-      if (isPaused) {
+    if (isPaused) {
         return;
       }
       for (Shape s : this.shapes) {
@@ -135,6 +88,7 @@ public class EditorView extends AnimationPanelView {
         currTick++;
       }
       if (currTick >= maxTick && willLoop) {
+
         currTick = 0;
         repaint();
 
@@ -143,7 +97,75 @@ public class EditorView extends AnimationPanelView {
         currTick = maxTick;
         repaint();
       }
+      maxTick = getMaxTick();
       System.out.println(currTick);
     }
+
+  @Override
+  public void setActionListener(ExcellenceController listener) {
+    playPauseButton.addActionListener(listener);
+    reverseButton.addActionListener(listener);
+    loopingButton.addActionListener(listener);
+    speedUpButton.addActionListener(listener);
+    slowDownButton.addActionListener(listener);
+  }
+
+  @Override
+  public void flipPause() {
+    this.isPaused = !this.isPaused;
+  }
+
+  @Override
+  public void flipReverse() {
+    this.isReversed = !this.isReversed;
+  }
+
+  @Override
+  public void flipLooping() {
+    this.willLoop = !this.willLoop;
+    loopingButton.setText(String.format("Looping: %s", willLoop));
+  }
+
+  @Override
+  public void speedUp() {
+    if (t.getDelay() - 50 <= 20) {
+      t.setDelay(20);
+    }
+    else {
+      t.setDelay(t.getDelay() - 50);
+    }
+  }
+
+  @Override
+  public void slowDown() {
+    if (t.getDelay() + 50 >= 1000){
+      t.setDelay(1000);
+    }
+    else {
+      t.setDelay(t.getDelay() + 50);
+    }
+  }
+
+  public boolean isPaused() {
+    return isPaused;
+  }
+
+  public boolean isReversed() {
+    return isReversed;
+  }
+
+  public boolean isWillLoop() {
+    return willLoop;
+  }
+
+  @Override
+  public void addActionListener(ExcellenceController excellenceController) {
+    this.t.addActionListener(excellenceController);
+    playPauseButton.addActionListener(excellenceController);
+    reverseButton.addActionListener(excellenceController);
+    loopingButton.addActionListener(excellenceController);
+    speedUpButton.addActionListener(excellenceController);
+    slowDownButton.addActionListener(excellenceController);
+
   }
 }

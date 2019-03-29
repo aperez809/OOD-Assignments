@@ -3,7 +3,6 @@ package cs3500.animator.model;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashMap;
 
 import cs3500.animator.model.util.AnimationBuilder;
 
@@ -287,6 +286,11 @@ public class AnimationModelImpl implements AnimationModel {
     }
     return temp;
   }
+
+
+
+
+
 
   public int getHeight() {
     return height;

@@ -1,5 +1,9 @@
 package cs3500.animator.view;
 
+import cs3500.animator.controller.ExcellenceController;
+import cs3500.animator.model.IAction;
+import cs3500.animator.model.Shape;
+
 import java.io.IOException;
 import java.util.function.Consumer;
 
@@ -60,4 +64,33 @@ public interface IView {
    * @param panel AnimationPanelView to add to the JFrame
    */
   void add(AnimationPanelView panel);
+
+  void setActionListener(ExcellenceController listener);
+
+  void flipPause();
+  void flipReverse();
+  void flipLooping();
+  void speedUp();
+  void slowDown();
+  boolean isPaused();
+  boolean isReversed();
+  boolean isWillLoop();
+
+  int getCurrTick();
+
+  void executeMove(Shape s, IAction a);
+
+  void repaint();
+
+  void setCurrTick(int i);
+
+  int getMaxTick();
+
+  void setMaxTick(int newMax);
+
+  void startTimer();
+
+  IView getPanel();
+
+  void addActionListener(ExcellenceController excellenceController);
 }

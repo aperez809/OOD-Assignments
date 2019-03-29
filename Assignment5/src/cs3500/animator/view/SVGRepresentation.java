@@ -1,5 +1,6 @@
 package cs3500.animator.view;
 
+import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
@@ -202,4 +203,101 @@ public class SVGRepresentation implements IView, ActionListener {
     throw new UnsupportedOperationException("Only for Visual Representations");
   }
 
+  @Override
+  public void setActionListener(ExcellenceController listener) {
+    return;
+  }
+
+  @Override
+  public void flipPause() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void flipReverse() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void flipLooping() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void speedUp() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void slowDown() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public boolean isPaused() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isReversed() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isWillLoop() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public int getCurrTick() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void executeMove(Shape s, IAction a) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void repaint() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void setCurrTick(int i) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public int getMaxTick() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public IView getPanel() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void startTimer() {
+    return;
+  }
+
+  @Override
+  public void setMaxTick(int newMax) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void addActionListener(ExcellenceController excellenceController) {
+    return;
+  }
 }
