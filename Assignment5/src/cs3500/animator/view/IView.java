@@ -93,4 +93,10 @@ public interface IView {
   IView getPanel();
 
   void addActionListener(ExcellenceController excellenceController);
+
+  void toggleAddShapeOptions();
+
+  String getSelectedItem();
+
+  void toggleDeleteShapeOptions();
 }

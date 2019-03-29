@@ -53,6 +53,11 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   }
 
   @Override
+  public void toggleAddShapeOptions() {
+    return;
+  }
+
+  @Override
   public void paintComponent(Graphics g) {
     Graphics2D twoDimG = (Graphics2D) g;
     super.paintComponent(twoDimG);
@@ -321,5 +326,15 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   @Override
   public void addActionListener(ExcellenceController excellenceController) {
     this.t.addActionListener(excellenceController);
+  }
+
+  @Override
+  public String getSelectedItem() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void toggleDeleteShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
   }
 }

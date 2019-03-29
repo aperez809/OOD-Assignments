@@ -229,5 +229,20 @@ public class TextRepresentation implements IView {
   public void addActionListener(ExcellenceController excellenceController) {
     return;
   }
+
+  @Override
+  public void toggleAddShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public String getSelectedItem() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void toggleDeleteShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
 }
 

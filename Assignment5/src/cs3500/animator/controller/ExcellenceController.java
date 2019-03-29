@@ -2,6 +2,9 @@ package cs3500.animator.controller;
 
 import cs3500.animator.model.AnimationModel;
 import cs3500.animator.view.IView;
+
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +13,7 @@ import java.awt.event.ActionListener;
  * A pseudo-controller for our EasyAnimator that displays the correct type of animation based
  * on text inputs.
  */
-public final class ExcellenceController implements ActionListener {
+public final class ExcellenceController implements ActionListener, ListSelectionListener {
   private AnimationModel model;
   private IView view;
   private IView panel;
@@ -55,11 +58,16 @@ public final class ExcellenceController implements ActionListener {
           panel.slowDown();
           break;
 
-        case "addShape":
-
+        case "addShapes":
+          panel.flipPause();
+          panel.toggleAddShapeOptions();
+          //TODO: Add logic to listen for shape-related inputs
           break;
 
-        case "deleteShape":
+        case "deleteShapes":
+          panel.flipPause();
+          panel.toggleDeleteShapeOptions();
+          //TODO: Add logic to listen for shape choice to delete
           break;
 
         case "addKey":
@@ -79,5 +87,10 @@ public final class ExcellenceController implements ActionListener {
 
   public void makeVisible() {
     this.view.makeVisible();
+  }
+
+  @Override
+  public void valueChanged(ListSelectionEvent e) {
+
   }
 }

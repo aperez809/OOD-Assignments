@@ -217,7 +217,22 @@ public class AnimationGraphicsView extends JFrame implements IView {
   }
 
   @Override
+  public void toggleAddShapeOptions() {
+    return;
+  }
+
+  @Override
   public void addActionListener(ExcellenceController excellenceController) {
     this.panel.addActionListener(excellenceController);
+  }
+
+  @Override
+  public String getSelectedItem() {
+    return null;
+  }
+
+  @Override
+  public void toggleDeleteShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
   }
 }
