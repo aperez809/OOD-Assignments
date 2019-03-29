@@ -2,9 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 import cs3500.animator.model.Action;
 import cs3500.animator.model.AnimationModel;
 import cs3500.animator.model.AnimationModelImpl;
@@ -90,7 +89,7 @@ public class AnimationModelImplTest {
 
 
     testModel = new AnimationModelImpl(new StringBuilder(),
-            new TreeMap<>(),
+            new LinkedHashMap<>(),
             500, 500,
             500, 500);
     testModel.addShape(rect);
@@ -119,7 +118,7 @@ public class AnimationModelImplTest {
 
 
     testModelX = new AnimationModelImpl(new StringBuilder(),
-            new TreeMap<>(),
+            new LinkedHashMap<>(),
             500, 500,
             500, 500);
     testModelX.addShape(rectX);

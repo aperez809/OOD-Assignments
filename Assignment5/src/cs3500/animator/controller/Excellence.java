@@ -1,8 +1,14 @@
-package cs3500.animator.view;
+package cs3500.animator.controller;
 
 import cs3500.animator.model.AnimationModel;
 import cs3500.animator.model.AnimationModelImpl;
 import cs3500.animator.model.util.AnimationReader;
+import cs3500.animator.view.AnimationGraphicsView;
+import cs3500.animator.view.AnimationPanelView;
+import cs3500.animator.view.EditorView;
+import cs3500.animator.view.IView;
+import cs3500.animator.view.SVGRepresentation;
+import cs3500.animator.view.TextRepresentation;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import java.io.BufferedWriter;
@@ -13,18 +19,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
-/**
- * A pseudo-controller for our EasyAnimator that displays the correct type of animation based
- * on text inputs.
- */
-public final class Excellence {
+public class Excellence {
 
-  /**
-   * Takes in command line arguments, parses them, and displays the correct type of
-   * animation with the correct attributes. If it fails, it displays a JOptionPane error message.
-   */
   public static void main(String[] args) throws IOException {
     AnimationModel model;
+    IView view = null;
     Readable file;
     Appendable output;
 
@@ -48,10 +47,11 @@ public final class Excellence {
             new AnimationModelImpl.Builder(
                     new AnimationModelImpl()));
 
+
     switch (cla.get("-view")) {
       case "text":
         output = System.out;
-        IView view = new TextRepresentation(
+        view = new TextRepresentation(
                 model.getShapes(),
                 model.getMaxX(),
                 model.getMaxY(),
@@ -66,13 +66,13 @@ public final class Excellence {
           File f = new File(cla.get("-out"));
           FileWriter fw = new FileWriter(f);
           BufferedWriter bw = new BufferedWriter(fw);
-          IView svg = new SVGRepresentation(model.getShapes(),
+          view = new SVGRepresentation(model.getShapes(),
                   model.getWidth(),
                   model.getHeight(),
                   Integer.valueOf(cla.get("-speed")));
-          svg.createAnimOutput();
-          System.out.println(svg.getOutput().toString());
-          bw.append(svg.getOutput().toString());
+          view.createAnimOutput();
+          System.out.println(view.getOutput().toString());
+          bw.append(view.getOutput().toString());
           bw.close();
           return;
         }
@@ -82,19 +82,28 @@ public final class Excellence {
         break;
 
       case "visual":
-        //AnimationPanelView panel = new AnimationPanelView(model.getShapes(),
-                 //Integer.valueOf(cla.get("-speed")));
-        AnimationPanelView panel = new EditorView(model.getShapes(),
-                Integer.valueOf(cla.get("-speed")), true);
-        IView gui = new AnimationGraphicsView(panel, model.getMaxX(), model.getMaxY(),
+        IView visPanel = new AnimationPanelView(model.getShapes(),
+                Integer.valueOf(cla.get("-speed")));
+
+        view = new AnimationGraphicsView(visPanel, model.getMaxX(), model.getMaxY(),
                 model.getWidth(),
                 model.getHeight());
-        gui.makeVisible();
+        break;
+
+      case "edit":
+        AnimationPanelView editPanel = new EditorView(model.getShapes(),
+                Integer.valueOf(cla.get("-speed")), true);
+        view = new AnimationGraphicsView(editPanel, model.getMaxX(), model.getMaxY(),
+                model.getWidth(),
+                model.getHeight());
         break;
       default:
         showError("unrecognized/incorrect animation type specified");
         break;
     }
+
+    ExcellenceController controller = new ExcellenceController(model, view);
+    controller.makeVisible();
   }
 
   private static void showError(String error) {
@@ -129,7 +138,15 @@ public final class Excellence {
 
   private static HashMap<String, String> argsToHM(String[] args) {
     HashMap<String, String> temp = new HashMap<>();
-    for (int i = 0; i < args.length; i++) {
+    int startVal;
+    if (args.length % 2 == 0) {
+      startVal = 0;
+    }
+    else {
+      startVal = 1;
+    }
+
+    for (int i = startVal; i < args.length; i++) {
       temp.put(args[i], args[i + 1]);
       i++;
     }

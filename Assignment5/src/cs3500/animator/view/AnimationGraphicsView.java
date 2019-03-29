@@ -1,11 +1,15 @@
 package cs3500.animator.view;
 
+import cs3500.animator.controller.ExcellenceController;
+import cs3500.animator.model.IAction;
+import cs3500.animator.model.Shape;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 
@@ -22,6 +26,8 @@ public class AnimationGraphicsView extends JFrame implements IView {
   private int maxY;
   private int height;
   private int width;
+  private IView panel;
+
 
   /**
    * Constructs an object that contains all the pieces needed to create the animation.
@@ -34,7 +40,7 @@ public class AnimationGraphicsView extends JFrame implements IView {
    * @param width width of the canvas
    * @param height height of the canvas
    */
-  public AnimationGraphicsView(AnimationPanelView shapeAnimPanel,
+  public AnimationGraphicsView(IView shapeAnimPanel,
                                int maxX,
                                int maxY,
                                int width,
@@ -44,8 +50,8 @@ public class AnimationGraphicsView extends JFrame implements IView {
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setLayout(new BorderLayout());
     this.setBounds(maxX, maxY, width, height);
-    AnimationPanelView panel = shapeAnimPanel;
-    JScrollPane scrollPane = new JScrollPane(panel);
+    panel = shapeAnimPanel;
+    JScrollPane scrollPane = new JScrollPane((Component) panel);
     scrollPane.setPreferredSize(new Dimension(width + 20, height + 20));
     this.add(scrollPane, BorderLayout.CENTER);
 
@@ -123,5 +129,116 @@ public class AnimationGraphicsView extends JFrame implements IView {
   @Override
   public void add(AnimationPanelView panel) {
     throw new UnsupportedOperationException("Not yet supported");
+  }
+
+  @Override
+  public void startTimer() {
+    this.panel.startTimer();
+  }
+
+  @Override
+  public IView getPanel() {
+    return this.panel;
+  }
+
+  @Override
+  public void flipPause() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void flipReverse() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void flipLooping() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void speedUp() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void slowDown() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public boolean isPaused() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isReversed() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isWillLoop() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public int getCurrTick() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void executeMove(Shape s, IAction a) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void setCurrTick(int i) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public int getMaxTick() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void setMaxTick(int newMax) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void setActionListener(ExcellenceController listener) {
+    this.panel.setActionListener(listener);
+  }
+
+  @Override
+  public void toggleAddShapeOptions() {
+    return;
+  }
+
+  @Override
+  public void addActionListener(ExcellenceController excellenceController) {
+    this.panel.addActionListener(excellenceController);
+  }
+
+  @Override
+  public String getSelectedItem() {
+    return null;
+  }
+
+  @Override
+  public void toggleDeleteShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public ArrayList<String> getShapeToAdd() {
+    return null;
   }
 }

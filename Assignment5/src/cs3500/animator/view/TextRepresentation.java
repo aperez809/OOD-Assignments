@@ -1,8 +1,11 @@
 
 package cs3500.animator.view;
 
+import cs3500.animator.controller.ExcellenceController;
+import cs3500.animator.model.IAction;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -19,6 +22,11 @@ public class TextRepresentation implements IView {
   private int maxY;
   private int width;
   private int height;
+
+  @Override
+  public void setActionListener(ExcellenceController listener) {
+    return;
+  }
 
   /**
    * Constructs the TextRepresentation object that will handle all shapes and their actions in
@@ -127,6 +135,119 @@ public class TextRepresentation implements IView {
   @Override
   public void add(AnimationPanelView panel) {
     throw new UnsupportedOperationException("Only for Visual Representations");
+  }
+
+  @Override
+  public void flipPause() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void flipReverse() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void flipLooping() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void speedUp() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void slowDown() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public boolean isPaused() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isReversed() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isWillLoop() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public int getCurrTick() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void executeMove(Shape s, IAction a) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void repaint() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public void setCurrTick(int i) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+
+  }
+
+  @Override
+  public int getMaxTick() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void startTimer() {
+    return;
+  }
+
+  @Override
+  public void setMaxTick(int newMax) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public IView getPanel() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void addActionListener(ExcellenceController excellenceController) {
+    return;
+  }
+
+  @Override
+  public void toggleAddShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public String getSelectedItem() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void toggleDeleteShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public ArrayList<String> getShapeToAdd() {
+    return null;
   }
 }
 

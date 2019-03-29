@@ -1,5 +1,6 @@
 package cs3500.animator.view;
 
+import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.Ellipse;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Location;
@@ -25,7 +26,10 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
 
   protected ArrayList<Shape> shapes;
   protected int currTick;
+  protected int maxTick;
   protected Timer t;
+
+
 
 
   /**
@@ -44,7 +48,13 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     this.setBackground(Color.WHITE);
     this.t = new Timer(tickSpeed, this);
     this.currTick = 0;
+    this.maxTick = getMaxTick();
     t.start();
+  }
+
+  @Override
+  public void toggleAddShapeOptions() {
+    return;
   }
 
   @Override
@@ -54,12 +64,23 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
 
     for (Shape s : this.shapes) {
       twoDimG.setColor(s.getColor());
+      Integer currMin = null;
+      Integer currMax = null;
+      for (IAction a : s.getActions()) {
 
-      if (s instanceof Rectangle) {
-        twoDimG.fillRect(s.getCoords().getX(), s.getCoords().getY(), s.getWidth(), s.getHeight());
-      }
-      else if (s instanceof Ellipse) {
-        twoDimG.fillOval(s.getCoords().getX(), s.getCoords().getY(), s.getWidth(), s.getHeight());
+        if (currMax == null || a.getEndTick() > currMax) {
+          currMax = a.getEndTick();
+        }
+        if (currMin == null || a.getStartTick() < currMin) {
+          currMin = a.getStartTick();
+        }
+        if (currMin <= currTick && currMax >= currTick) {
+          if (s instanceof Rectangle) {
+            twoDimG.fillRect(s.getCoords().getX(), s.getCoords().getY(), s.getWidth(), s.getHeight());
+          } else if (s instanceof Ellipse) {
+            twoDimG.fillOval(s.getCoords().getX(), s.getCoords().getY(), s.getWidth(), s.getHeight());
+          }
+        }
       }
     }
   }
@@ -74,11 +95,18 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
       }
     }
     this.repaint();
-    currTick++;
+    if (currTick >= getMaxTick()) {
+      currTick = getMaxTick();
+    }
+    else {
+      currTick++;
+    }
+
     System.out.println(currTick);
   }
 
-  protected void executeMove(Shape s, IAction a) {
+
+  public void executeMove(Shape s, IAction a) {
 
     int[] start = a.getStartState();
     int[] end = a.getEndState();
@@ -209,7 +237,109 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     throw new UnsupportedOperationException("Only for AnimationGraphicsView class");
   }
 
-  public void setTimerSpeed(int newSpeed) {
-    t.setDelay(1000/newSpeed);
+  @Override
+  public void setCurrTick(int i) {
+    currTick = i;
+  }
+
+  @Override
+  public int getCurrTick() {
+    return currTick;
+  }
+
+  @Override
+  public void flipPause() {
+    return;
+  }
+
+  @Override
+  public void flipReverse() {
+    return;
+
+  }
+
+  @Override
+  public void flipLooping() {
+    return;
+
+  }
+
+  @Override
+  public void speedUp() {
+    return;
+
+  }
+
+  @Override
+  public void slowDown() {
+    return;
+
+  }
+
+  @Override
+  public boolean isPaused() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isReversed() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public boolean isWillLoop() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void setActionListener(ExcellenceController listener) {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void setMaxTick(int newMax) {
+    return;
+  }
+
+  public void startTimer() {
+    this.t.start();
+  }
+
+  @Override
+  public IView getPanel() {
+    return this;
+  }
+
+  @Override
+  public int getMaxTick() {
+    int currMax = 0;
+    for (Shape s: this.shapes) {
+      for (IAction a : s.getActions()) {
+        if (a.getEndTick() > currMax) {
+          currMax = a.getEndTick();
+        }
+      }
+    }
+    return currMax;
+  }
+
+  @Override
+  public void addActionListener(ExcellenceController excellenceController) {
+    this.t.addActionListener(excellenceController);
+  }
+
+  @Override
+  public String getSelectedItem() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public void toggleDeleteShapeOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
+  public ArrayList<String> getShapeToAdd() {
+    return null;
   }
 }
