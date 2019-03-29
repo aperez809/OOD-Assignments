@@ -72,20 +72,55 @@ public final class ExcellenceController implements ActionListener, ListSelection
           panel.flipPause();
           panel.toggleDeleteShapeOptions();
           if (e.getActionCommand().equals("submit")) {
-            panel.getShapeToDelete();
+            //panel.getShapeToDelete();
             //TODO: Add logic to listen for shape-related inputs
           }
 
           //TODO: Add logic to listen for shape choice to delete
           break;
 
-        case "addKey":
+        case "modifyKeyFrame":
+          panel.flipPause();
+          panel.toggleModifyKeyFrameOptions();
           break;
 
-        case "deleteKey":
+        case "exitKeyFramePanel":
+          System.out.println("Exit Key Frame Panel");
+          panel.flipPause();
+          panel.toggleModifyKeyFrameOptions();
           break;
 
-        case "editKey":
+        case "addKeyFrame":
+          System.out.println("addKeyFrame");
+          //TODO: Add logic to listen for shape name and tick value to insert keyframe at
+          try {
+            model.insertKeyFrame("",0);
+          }
+          catch (Exception addException) {
+            System.out.println(addException);
+          }
+          break;
+
+        case "editKeyFrame":
+          System.out.println("editKeyFrame");
+          //TODO: Add logic to listen for shape name and new state for shape
+          try {
+            model.editKeyFrame("",0, 0,0,0,0,0,0,0);
+          }
+          catch (Exception editException) {
+            System.out.println(editException);
+          }
+          break;
+
+        case "removeKeyFrame":
+          System.out.println("removeKeyFrame");
+          //TODO: Add logic to listen for shape name and tick to delete keyframe at
+          try {
+            model.removeKeyFrame("",0);
+          }
+          catch (Exception removeException) {
+            System.out.println(removeException);
+          }
           break;
 
         default:

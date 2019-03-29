@@ -97,11 +97,13 @@ public interface IView {
 
   void toggleAddShapeOptions();
 
+  void toggleModifyKeyFrameOptions();
+
   String getSelectedItem();
 
   void toggleDeleteShapeOptions();
 
   ArrayList<String> getShapeToAdd();
 
-  void getShapeToDelete();
+  //void getShapeToDelete();
 }

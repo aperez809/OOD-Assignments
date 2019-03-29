@@ -236,6 +236,11 @@ public class TextRepresentation implements IView {
   }
 
   @Override
+  public void toggleModifyKeyFrameOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
   public String getSelectedItem() {
     throw new UnsupportedOperationException("Only for EditorView class");
   }

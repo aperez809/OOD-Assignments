@@ -223,6 +223,11 @@ public class AnimationGraphicsView extends JFrame implements IView {
   }
 
   @Override
+  public void toggleModifyKeyFrameOptions() {
+    return;
+  }
+
+  @Override
   public void addActionListener(ExcellenceController excellenceController) {
     this.panel.addActionListener(excellenceController);
   }

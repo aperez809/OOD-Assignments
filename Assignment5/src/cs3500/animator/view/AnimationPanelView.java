@@ -58,6 +58,11 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   }
 
   @Override
+  public void toggleModifyKeyFrameOptions() {
+    return;
+  }
+
+  @Override
   public void paintComponent(Graphics g) {
     Graphics2D twoDimG = (Graphics2D) g;
     super.paintComponent(twoDimG);

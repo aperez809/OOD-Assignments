@@ -19,6 +19,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private boolean willLoop;
   private boolean areAddShapeOptionsShown;
   private boolean areDeleteShapeOptionsShown;
+  private boolean areModifyKeyFrameOptionsShown;
 
   private DefaultListModel shapesModel;
   //private JList shapesList;
@@ -40,9 +41,25 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private JButton addShapeOptionsButton;
   private JButton deleteShapeOptionsButton;
 
+  private JButton modifyKeyFrameButton;
+  private JButton exitKeyFramesButton;
+
   private JTextField newShapeName;
   private JComboBox newShapeType;
   private JPanel newShapeInputPanel;
+
+  private JTextField tickValueText;
+  private JTextField xValueText;
+  private JTextField yValueText;
+  private JTextField widthValueText;
+  private JTextField heightValueText;
+  private JTextField redValueText;
+  private JTextField greenValueText;
+  private JTextField blueValueText;
+
+  private JComboBox keyShapeType;
+  private JComboBox keyFrameOpType;
+  private JPanel modifyKeyFramePanel;
 
   //Clickable Shape types list
   //TODO: Capture selected element in a string after clicking submit button
@@ -65,6 +82,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     this.isReversed = false;
     this.willLoop = willLoop;
     this.areAddShapeOptionsShown = false;
+    this.areModifyKeyFrameOptionsShown = false;
     this.areDeleteShapeOptionsShown = false;
     this.playPauseButton = new JButton(
             "Play/Pause",
@@ -100,10 +118,36 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
     this.submitButton = new JButton("Submit");
 
+    this.modifyKeyFrameButton = new JButton("Modify KeyFrames");
+    this.exitKeyFramesButton = new JButton("Exit");
+    this.tickValueText = new JTextField("", 2);
+    this.xValueText = new JTextField("", 2);
+    this.yValueText = new JTextField("", 2);
+    this.widthValueText = new JTextField("", 2);
+    this.heightValueText = new JTextField("", 2);
+    this.redValueText = new JTextField("", 2);
+    this.greenValueText = new JTextField("", 2);
+    this.blueValueText = new JTextField("", 2);
+
+
+
+
 
     JLabel newShapeNameLabel = new JLabel("Shape Name:");
     JLabel newShapeTypeLabel = new JLabel("Shape Type:");
+
+    JLabel tickValueLabel = new JLabel("Tick:");
+    JLabel xValLabel = new JLabel("x-val:");
+    JLabel yValLabel = new JLabel("y-val:");
+    JLabel widthLabel = new JLabel("width:");
+    JLabel heightLabel = new JLabel("height:");
+    JLabel redLabel = new JLabel("red-val:");
+    JLabel greenLabel = new JLabel("green-val:");
+    JLabel blueLabel = new JLabel("blue-val:");
+
     String[] shapeOptions = {"Rectangle", "Ellipse"};
+    JLabel keyFrameOptionsLabel = new JLabel("KeyFrame Operations:");
+    String[] keyFrameOptions = {"Add", "Edit", "Remove"};
 
     newShapeType = new JComboBox(shapeOptions);
     newShapeInputPanel = new JPanel();
@@ -128,6 +172,38 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     shapesListPanel.setVisible(false);
 
 
+    //keyframe Panel
+    keyFrameOpType = new JComboBox(keyFrameOptions);
+    keyShapeType = new JComboBox(shapeOptions);
+    modifyKeyFramePanel = new JPanel();
+    add(modifyKeyFramePanel);
+    modifyKeyFramePanel.add(keyFrameOptionsLabel);
+    modifyKeyFramePanel.add(keyFrameOpType);
+    modifyKeyFramePanel.add(shapesList);
+    modifyKeyFramePanel.add(shapesScroller);
+
+    modifyKeyFramePanel.add(tickValueLabel);
+    modifyKeyFramePanel.add(tickValueText);
+    modifyKeyFramePanel.add(xValLabel);
+    modifyKeyFramePanel.add(xValueText);
+    modifyKeyFramePanel.add(yValLabel);
+    modifyKeyFramePanel.add(yValueText);
+    modifyKeyFramePanel.add(widthLabel);
+    modifyKeyFramePanel.add(widthValueText);
+    modifyKeyFramePanel.add(heightLabel);
+    modifyKeyFramePanel.add(heightValueText);
+    modifyKeyFramePanel.add(redLabel);
+    modifyKeyFramePanel.add(redValueText);
+    modifyKeyFramePanel.add(greenLabel);
+    modifyKeyFramePanel.add(greenValueText);
+    modifyKeyFramePanel.add(blueLabel);
+    modifyKeyFramePanel.add(blueValueText);
+
+    modifyKeyFramePanel.add(exitKeyFramesButton);
+    exitKeyFramesButton.setActionCommand("exitKeyFramePanel");
+
+    modifyKeyFramePanel.setVisible(false);
+
 
     add(playPauseButton);
     playPauseButton.setActionCommand("playPause");
@@ -150,6 +226,8 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     add(deleteShapeOptionsButton);
     deleteShapeOptionsButton.setActionCommand("deleteShapes");
 
+    add(modifyKeyFrameButton);
+    modifyKeyFrameButton.setActionCommand("modifyKeyFrame");
 
     add(addedShapeDimsInput);
     addedShapeDimsInput.setVisible(false);
@@ -206,6 +284,8 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     slowDownButton.addActionListener(listener);
     addShapeOptionsButton.addActionListener(listener);
     deleteShapeOptionsButton.addActionListener(listener);
+    modifyKeyFrameButton.addActionListener(listener);
+    exitKeyFramesButton.addActionListener(listener);
   }
 
   @Override
@@ -254,6 +334,11 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     newShapeInputPanel.setVisible(areAddShapeOptionsShown);
   }
 
+  public void toggleModifyKeyFrameOptions() {
+    areModifyKeyFrameOptionsShown = !areModifyKeyFrameOptionsShown;
+    modifyKeyFramePanel.setVisible(areModifyKeyFrameOptionsShown);
+  }
+
   public ArrayList<String> getShapeToAdd() {
     ArrayList<String> temp = new ArrayList<>();
     if (newShapeName.getText().length() > 0) {
@@ -298,6 +383,8 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     slowDownButton.addActionListener(excellenceController);
     addShapeOptionsButton.addActionListener(excellenceController);
     deleteShapeOptionsButton.addActionListener(excellenceController);
+    modifyKeyFrameButton.addActionListener(excellenceController);
+    exitKeyFramesButton.addActionListener(excellenceController);
   }
 
 

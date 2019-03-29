@@ -302,6 +302,11 @@ public class SVGRepresentation implements IView, ActionListener {
   }
 
   @Override
+  public void toggleModifyKeyFrameOptions() {
+    throw new UnsupportedOperationException("Only for EditorView class");
+  }
+
+  @Override
   public void addActionListener(ExcellenceController excellenceController) {
     return;
   }
