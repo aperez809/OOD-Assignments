@@ -1,6 +1,7 @@
 package cs3500.animator.controller;
 
 import cs3500.animator.model.AnimationModel;
+import cs3500.animator.model.Shape;
 import cs3500.animator.view.IView;
 
 import javax.swing.*;
@@ -18,6 +19,7 @@ public final class ExcellenceController implements ActionListener, ListSelection
   private AnimationModel model;
   private IView view;
   private IView panel;
+  private SubmitFrame submitType;
 
   public ExcellenceController(AnimationModel model, IView view) {
     if (model == null || view == null) {
@@ -26,6 +28,7 @@ public final class ExcellenceController implements ActionListener, ListSelection
     this.model = model;
     this.view = view;
     this.view.addActionListener(this);
+    this.submitType = SubmitFrame.NONE;
     try {
       this.panel = this.view.getPanel();
     }
@@ -34,11 +37,15 @@ public final class ExcellenceController implements ActionListener, ListSelection
     }
   }
 
+  private enum SubmitFrame {
+    ADDSHAPE, REMOVESHAPE, MODIFYKEYFRAME, NONE
+  }
+
   @Override
   public void actionPerformed(ActionEvent e) {
-    if (e.getActionCommand() != null) {
-      switch (e.getActionCommand()) {
-
+    String action = e.getActionCommand();
+    if (action != null) {
+      switch (action) {
         case "playPause":
           panel.flipPause();
           break;
@@ -62,32 +69,31 @@ public final class ExcellenceController implements ActionListener, ListSelection
         case "addShapes":
           panel.flipPause();
           panel.toggleAddShapeOptions();
-          if (e.getActionCommand().equals("submit")) {
-            panel.getShapeToAdd();
-            //TODO: Add logic to listen for shape-related inputs
-          }
+          submitType = SubmitFrame.ADDSHAPE;
           break;
 
         case "deleteShapes":
           panel.flipPause();
           panel.toggleDeleteShapeOptions();
-          if (e.getActionCommand().equals("submit")) {
-            //panel.getShapeToDelete();
-            //TODO: Add logic to listen for shape-related inputs
-          }
-
-          //TODO: Add logic to listen for shape choice to delete
+          submitType = SubmitFrame.REMOVESHAPE;
           break;
 
         case "modifyKeyFrame":
           panel.flipPause();
           panel.toggleModifyKeyFrameOptions();
+          submitType = SubmitFrame.MODIFYKEYFRAME;
           break;
 
         case "exitKeyFramePanel":
-          System.out.println("Exit Key Frame Panel");
           panel.flipPause();
           panel.toggleModifyKeyFrameOptions();
+          submitType = SubmitFrame.NONE;
+          break;
+
+        case "exitNewShape":
+          panel.flipPause();
+          panel.toggleAddShapeOptions();
+          submitType = SubmitFrame.NONE;
           break;
 
         case "addKeyFrame":
@@ -123,9 +129,49 @@ public final class ExcellenceController implements ActionListener, ListSelection
           }
           break;
 
+        case "submit":
+          if (submitType == SubmitFrame.ADDSHAPE) {
+            try {
+              String shapeName = panel.getShapeToAdd().get(0);
+            }
+            catch(Exception except) {
+              throw new IllegalArgumentException(except.toString());
+            }
+            int[] shapeState = panel.getShapeState();
+            //TODO: Add logic to listen for shape-related inputs
+          }
+          else if (submitType == SubmitFrame.REMOVESHAPE) {
+            String removeshapeName = panel.getSelectedShape();
+            model.removeShape(removeshapeName);
+          }
+          else if (submitType == SubmitFrame.MODIFYKEYFRAME) {
+            String editshapeName = panel.getkeyFrameSelectedShape();
+            String keyFrameOp = panel.getSelectedKeyFrameOp();
+            this.keyFrameHandler(editshapeName,keyFrameOp);
+          }
+          break;
+
         default:
           break;
       }
+    }
+  }
+
+  public void keyFrameHandler(String shapeName, String operation) {
+    int[] stateVals = panel.getNewStateValues();
+    switch (operation) {
+      case "Remove":
+        model.removeKeyFrame(shapeName,stateVals[0]);
+        break;
+      case "Edit":
+        model.editKeyFrame(shapeName,stateVals[0],stateVals[1],
+                stateVals[2],stateVals[3],stateVals[4],stateVals[5],stateVals[6],stateVals[7]);
+        break;
+      case "Add":
+        model.insertKeyFrame(shapeName,stateVals[0]);
+        break;
+      default:
+        break;
     }
   }
 

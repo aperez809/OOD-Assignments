@@ -347,4 +347,29 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   public ArrayList<String> getShapeToAdd() {
     return null;
   }
+
+  @Override
+  public String getSelectedShape() {
+    return null;
+  }
+
+  @Override
+  public String getSelectedKeyFrameOp() {
+    return null;
+  }
+
+  @Override
+  public int[] getNewStateValues() {
+    return null;
+  }
+
+  @Override
+  public int[] getShapeState() {
+    return null;
+  }
+
+  @Override
+  public String getkeyFrameSelectedShape() {
+    return null;
+  }
 }

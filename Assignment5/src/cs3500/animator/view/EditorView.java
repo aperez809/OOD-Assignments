@@ -4,6 +4,7 @@ import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
+import javax.naming.OperationNotSupportedException;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,8 +25,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private DefaultListModel shapesModel;
   //private JList shapesList;
   private JComboBox shapesList;
+  private JComboBox modifyshapesList;
 
   private JScrollPane shapesScroller;
+  private JScrollPane modifyshapesScroller;
 
 
 
@@ -43,6 +46,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
   private JButton modifyKeyFrameButton;
   private JButton exitKeyFramesButton;
+  private JButton exitNewShapeButton;
 
   private JTextField newShapeName;
   private JComboBox newShapeType;
@@ -57,6 +61,14 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private JTextField greenValueText;
   private JTextField blueValueText;
 
+  private JTextField newshapexValueText;
+  private JTextField newshapeyValueText;
+  private JTextField newshapewidthValueText;
+  private JTextField newshapeheightValueText;
+  private JTextField newshaperedValueText;
+  private JTextField newshapegreenValueText;
+  private JTextField newshapeblueValueText;
+
   private JComboBox keyShapeType;
   private JComboBox keyFrameOpType;
   private JPanel modifyKeyFramePanel;
@@ -64,6 +76,8 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   //Clickable Shape types list
   //TODO: Capture selected element in a string after clicking submit button
   private JButton submitButton;
+  private JButton keyFramesubmitButton;
+  private JButton newshapesubmitButton;
 
   //Text input boxes for providing shape attributes with a submit button that will add the shape a
   //first is for dimensions (height and width)
@@ -117,19 +131,28 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     this.addedShapeDimsInput = new JTextField("Input shape's dims as 'H W'", 16);
 
     this.submitButton = new JButton("Submit");
+    this.keyFramesubmitButton = new JButton("Submit");
+    this.newshapesubmitButton = new JButton("Submit");
 
     this.modifyKeyFrameButton = new JButton("Modify KeyFrames");
     this.exitKeyFramesButton = new JButton("Exit");
-    this.tickValueText = new JTextField("", 2);
-    this.xValueText = new JTextField("", 2);
-    this.yValueText = new JTextField("", 2);
-    this.widthValueText = new JTextField("", 2);
-    this.heightValueText = new JTextField("", 2);
-    this.redValueText = new JTextField("", 2);
-    this.greenValueText = new JTextField("", 2);
-    this.blueValueText = new JTextField("", 2);
+    this.exitNewShapeButton = new JButton("Exit");
+    this.tickValueText = new JTextField("0", 2);
+    this.xValueText = new JTextField("0", 2);
+    this.yValueText = new JTextField("0", 2);
+    this.widthValueText = new JTextField("0", 2);
+    this.heightValueText = new JTextField("0", 2);
+    this.redValueText = new JTextField("0", 2);
+    this.greenValueText = new JTextField("0", 2);
+    this.blueValueText = new JTextField("0", 2);
 
-
+    this.newshapexValueText = new JTextField("0", 2);
+    this.newshapeyValueText = new JTextField("0", 2);
+    this.newshapewidthValueText = new JTextField("0", 2);
+    this.newshapeheightValueText = new JTextField("0", 2);
+    this.newshaperedValueText = new JTextField("0", 2);
+    this.newshapegreenValueText = new JTextField("0", 2);
+    this.newshapeblueValueText = new JTextField("0", 2);
 
 
 
@@ -145,7 +168,16 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     JLabel greenLabel = new JLabel("green-val:");
     JLabel blueLabel = new JLabel("blue-val:");
 
+    JLabel newshapexValLabel = new JLabel("x-val:");
+    JLabel newshapeyValLabel = new JLabel("y-val:");
+    JLabel newshapewidthLabel = new JLabel("width:");
+    JLabel newshapeheightLabel = new JLabel("height:");
+    JLabel newshaperedLabel = new JLabel("red-val:");
+    JLabel newshapegreenLabel = new JLabel("green-val:");
+    JLabel newshapeblueLabel = new JLabel("blue-val:");
+
     String[] shapeOptions = {"Rectangle", "Ellipse"};
+    String[] modifyshapeOptions = {"Rectangle", "Ellipse"};
     JLabel keyFrameOptionsLabel = new JLabel("KeyFrame Operations:");
     String[] keyFrameOptions = {"Add", "Edit", "Remove"};
 
@@ -156,9 +188,25 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     newShapeInputPanel.add(newShapeName);
     newShapeInputPanel.add(newShapeTypeLabel);
     newShapeInputPanel.add(newShapeType);
-    newShapeInputPanel.add(submitButton);
+    newShapeInputPanel.add(newshapexValLabel);
+    newShapeInputPanel.add(newshapexValueText);
+    newShapeInputPanel.add(newshapeyValLabel);
+    newShapeInputPanel.add(newshapeyValueText);
+    newShapeInputPanel.add(newshapewidthLabel);
+    newShapeInputPanel.add(newshapewidthValueText);
+    newShapeInputPanel.add(newshapeheightLabel);
+    newShapeInputPanel.add(newshapeheightValueText);
+    newShapeInputPanel.add(newshaperedLabel);
+    newShapeInputPanel.add(newshaperedValueText);
+    newShapeInputPanel.add(newshapegreenLabel);
+    newShapeInputPanel.add(newshapegreenValueText);
+    newShapeInputPanel.add(newshapeblueLabel);
+    newShapeInputPanel.add(newshapeblueValueText);
+    newShapeInputPanel.add(newshapesubmitButton);
     newShapeInputPanel.setVisible(false);
-    submitButton.setActionCommand("submit");
+    newshapesubmitButton.setActionCommand("submit");
+    newShapeInputPanel.add(exitNewShapeButton);
+    exitNewShapeButton.setActionCommand("exitNewShape");
 
     shapesListPanel = new JPanel();
     shapesModel = new DefaultListModel();
@@ -174,14 +222,18 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
     //keyframe Panel
     keyFrameOpType = new JComboBox(keyFrameOptions);
-    keyShapeType = new JComboBox(shapeOptions);
+    keyShapeType = new JComboBox(modifyshapeOptions);
     modifyKeyFramePanel = new JPanel();
     add(modifyKeyFramePanel);
+    modifyshapesList = new JComboBox(getShapeNamesAsArray());
+    modifyshapesScroller = new JScrollPane(modifyshapesList);
+    modifyshapesList.setName("Shapes");
+    modifyKeyFramePanel.add(modifyshapesList);
+    modifyKeyFramePanel.add(modifyshapesScroller);
     modifyKeyFramePanel.add(keyFrameOptionsLabel);
     modifyKeyFramePanel.add(keyFrameOpType);
-    modifyKeyFramePanel.add(shapesList);
-    modifyKeyFramePanel.add(shapesScroller);
-
+    modifyKeyFramePanel.add(modifyshapesList);
+    modifyKeyFramePanel.add(modifyshapesScroller);
     modifyKeyFramePanel.add(tickValueLabel);
     modifyKeyFramePanel.add(tickValueText);
     modifyKeyFramePanel.add(xValLabel);
@@ -198,10 +250,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     modifyKeyFramePanel.add(greenValueText);
     modifyKeyFramePanel.add(blueLabel);
     modifyKeyFramePanel.add(blueValueText);
-
+    modifyKeyFramePanel.add(keyFramesubmitButton);
+    keyFramesubmitButton.setActionCommand("submit");
     modifyKeyFramePanel.add(exitKeyFramesButton);
     exitKeyFramesButton.setActionCommand("exitKeyFramePanel");
-
     modifyKeyFramePanel.setVisible(false);
 
 
@@ -286,6 +338,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     deleteShapeOptionsButton.addActionListener(listener);
     modifyKeyFrameButton.addActionListener(listener);
     exitKeyFramesButton.addActionListener(listener);
+    exitNewShapeButton.addActionListener(listener);
+    submitButton.addActionListener(listener);
+    keyFramesubmitButton.addActionListener(listener);
+    newshapesubmitButton.addActionListener(listener);
   }
 
   @Override
@@ -357,8 +413,52 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     shapesListPanel.setVisible(areDeleteShapeOptionsShown);
   }
 
-  public String getShapeToDelete() {
+  public String getSelectedShape() {
     return (String) shapesList.getSelectedItem();
+  }
+
+  public String getkeyFrameSelectedShape() {
+    return (String) modifyshapesList.getSelectedItem();
+  }
+
+  public String getSelectedKeyFrameOp() {
+    return (String) keyFrameOpType.getSelectedItem();
+  }
+
+  public int[] getNewStateValues() {
+    int tick = parseStateVal(tickValueText.getText());
+    int xval = parseStateVal(xValueText.getText());
+    int yval = parseStateVal(yValueText.getText());
+    int width = parseStateVal(widthValueText.getText());
+    int height = parseStateVal(heightValueText.getText());
+    int redval = parseStateVal(redValueText.getText());
+    int greenval = parseStateVal(greenValueText.getText());
+    int blueval = parseStateVal(blueValueText.getText());
+    int[] newState = {tick,xval,yval,width,height,redval,greenval,blueval};
+    return newState;
+  }
+
+  public int[] getShapeState() {
+    int xval = parseStateVal(newshapexValueText.getText());
+    int yval = parseStateVal(newshapeyValueText.getText());
+    int width = parseStateVal(newshapewidthValueText.getText());
+    int height = parseStateVal(newshapeheightValueText.getText());
+    int redval = parseStateVal(newshaperedValueText.getText());
+    int greenval = parseStateVal(newshapegreenValueText.getText());
+    int blueval = parseStateVal(newshapeblueValueText.getText());
+    int[] shapeState = {xval,yval,width,height,redval,greenval,blueval};
+    return shapeState;
+  }
+
+  private int parseStateVal(String val) {
+    int parsedVal;
+    try {
+      parsedVal = Integer.parseInt(val);
+    }
+    catch (NumberFormatException n) {
+      throw new NumberFormatException("Invalid State Values");
+    }
+    return parsedVal;
   }
 
   public boolean isPaused() {
@@ -385,6 +485,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     deleteShapeOptionsButton.addActionListener(excellenceController);
     modifyKeyFrameButton.addActionListener(excellenceController);
     exitKeyFramesButton.addActionListener(excellenceController);
+    exitNewShapeButton.addActionListener(excellenceController);
+    submitButton.addActionListener(excellenceController);
+    keyFramesubmitButton.addActionListener(excellenceController);
+    newshapesubmitButton.addActionListener(excellenceController);
   }
 
 

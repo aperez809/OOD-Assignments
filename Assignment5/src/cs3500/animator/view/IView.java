@@ -105,5 +105,15 @@ public interface IView {
 
   ArrayList<String> getShapeToAdd();
 
+  String getSelectedShape();
+
+  String getSelectedKeyFrameOp();
+
+  int[] getNewStateValues();
+
+  int[] getShapeState();
+
+  String getkeyFrameSelectedShape();
+
   //void getShapeToDelete();
 }
