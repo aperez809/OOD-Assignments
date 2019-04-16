@@ -157,7 +157,7 @@ public class AnimationModelImplTest {
     assertEquals(100, r.getPosition().getY());
     assertEquals(a1, r.getActions());
     assertEquals("rect1", r.getShapeName());
-    assertEquals(Color.BLUE, r.getColor());
+    assertEquals(new ColorAdapter(Color.BLUE), r.getColor());
   }
 
   @Test
@@ -170,7 +170,7 @@ public class AnimationModelImplTest {
     assertEquals(100, o.getPosition().getY());
     assertEquals(a2, o.getActions());
     assertEquals("ellipse1", o.getShapeName());
-    assertEquals(Color.BLUE, o.getColor());
+    assertEquals(new ColorAdapter(Color.BLUE), o.getColor());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -212,7 +212,7 @@ public class AnimationModelImplTest {
     Shape curr = testModel.getShapes().get(0);
     curr.execute(a2);
 
-    assertEquals(new Color(50,50,50), curr.getColor());
+    assertEquals(new ColorAdapter(new Color(50,50,50)), curr.getColor());
   }
 
   @Test
@@ -404,10 +404,10 @@ public class AnimationModelImplTest {
 
   @Test
   public void testGetAnimState() {
-    assertEquals("Motion ellipse 0 300 300 200 200 100 100 100 "
-                    + "     10 300 300 200 200 50 50 50    \n"
-                    + "Motion rectangle 0 300 300 200 200 100 100 100"
-                    + "      10 350 350 200 200 100 100 100    \n",
+    assertEquals("Motion rectangle 0 300 300 200 200 100 100 100      " +
+                    "10 350 350 200 200 100 100 100    \n" +
+                    "Motion ellipse 0 300 300 200 200 100 100 100      " +
+                    "10 300 300 200 200 50 50 50    \n",
             testModel.getAnimState());
   }
 
@@ -492,7 +492,7 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     testModel.addAction(rectXName, colorX);
     int rectIndex = testModel.getShapes().indexOf(rectX);
@@ -517,7 +517,7 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     int rectIndex = testModel.getShapes().indexOf(rectX);
     testModel.addAction(rectXName, colorX);
@@ -541,7 +541,7 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     int rectIndex = testModel.getShapes().indexOf(rectX);
     testModel.addAction(rectXName, colorX);
@@ -565,7 +565,7 @@ public class AnimationModelImplTest {
             100, 150,
             100, 150,
             100, 150);
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     int rectIndex = testModel.getShapes().indexOf(rectX);
     testModel.addAction(rectXName, colorX);
@@ -598,7 +598,7 @@ public class AnimationModelImplTest {
             150, 150,
             150, 150,
             150, 150);
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     int rectIndex = testModel.getShapes().indexOf(rectX);
     testModel.addAction(rectXName, colorX);
@@ -637,7 +637,7 @@ public class AnimationModelImplTest {
             150, 150,
             150, 150,
             150, 150);
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     int rectIndex = testModel.getShapes().indexOf(rectX);
     testModel.addAction(rectXName, colorX);
@@ -658,7 +658,7 @@ public class AnimationModelImplTest {
 
   @Test
   public void testInsertKeyFrameMiddleOfAction() {
-    Shape rectX = testModel.getShapes().get(1);
+    Shape rectX = testModel.getShapes().get(0);
     String rectXName = rectX.getShapeName();
     int rectIndex = testModel.getShapes().indexOf(rectX);
     assertEquals(1,testModel.getShapes().get(rectIndex).getActions().size());

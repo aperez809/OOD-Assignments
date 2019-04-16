@@ -15,7 +15,7 @@ public abstract class AbstractShape implements Shape {
   private int height;
   private int width;
   private Location coords;
-  private ColorAdapter color;
+  protected ColorAdapter color;
   protected StringBuilder trackedState;
   private ArrayList<IAction> actions;
   private String shapeName;
@@ -149,7 +149,7 @@ public abstract class AbstractShape implements Shape {
    */
   public int getH() {
     //return height;
-    return this.getSize().getH();
+    return this.height;
   }
 
   /**
@@ -167,7 +167,7 @@ public abstract class AbstractShape implements Shape {
    */
   public int getW() {
     //return width;
-    return this.getSize().getW();
+    return this.width;
   }
 
   /**

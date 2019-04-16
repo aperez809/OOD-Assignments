@@ -1,5 +1,7 @@
 package cs3500.animator.provider.model;
 
+import apple.laf.JRSUIConstants;
+
 public class SizeAdapter {
 
   private int height;
@@ -16,5 +18,16 @@ public class SizeAdapter {
 
   public int getW() {
     return this.width;
+  }
+
+  public boolean equals(Object o) {
+    if (!(o instanceof SizeAdapter)) {
+      return false;
+    }
+
+    SizeAdapter other = (SizeAdapter) o;
+
+    return this.height == other.height
+            && this.width == other.width;
   }
 }

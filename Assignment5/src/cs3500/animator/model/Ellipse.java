@@ -67,11 +67,11 @@ public class Ellipse extends AbstractShape {
 
   @Override
   public void setColor(Color color) {
-    this.setColor(color);
+    this.color = new ColorAdapter(color);
   }
 
   @Override
   public SizeAdapter getSize() {
-    return this.getSize();
+    return new SizeAdapter(this.getH(), this.getW());
   }
 }

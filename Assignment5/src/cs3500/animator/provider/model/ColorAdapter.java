@@ -21,4 +21,14 @@ public class ColorAdapter {
   public int getB() {
     return c.getBlue();
   }
+
+  public boolean equals(Object o) {
+    if (!(o instanceof ColorAdapter)) {
+      return false;
+    }
+
+    ColorAdapter other = (ColorAdapter) o;
+
+    return this.c.equals(other.c);
+  }
 }

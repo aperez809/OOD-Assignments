@@ -68,11 +68,11 @@ public class Rectangle extends AbstractShape {
 
   @Override
   public SizeAdapter getSize() {
-    return this.getSize();
+    return new SizeAdapter(this.getH(), this.getW());
   }
 
   @Override
   public void setColor(Color color) {
-    this.setColor(color);
+    this.color = new ColorAdapter(color);
   }
 }
