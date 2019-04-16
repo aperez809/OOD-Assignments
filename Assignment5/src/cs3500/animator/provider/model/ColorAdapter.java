@@ -1,6 +1,7 @@
 package cs3500.animator.provider.model;
 
 import java.awt.Color;
+import java.util.Objects;
 
 public class ColorAdapter {
 
@@ -30,5 +31,10 @@ public class ColorAdapter {
     ColorAdapter other = (ColorAdapter) o;
 
     return this.c.equals(other.c);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.c);
   }
 }

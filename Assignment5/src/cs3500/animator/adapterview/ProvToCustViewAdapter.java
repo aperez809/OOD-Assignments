@@ -1,4 +1,4 @@
-package cs3500.animator.adapterView;
+package cs3500.animator.adapterview;
 
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;

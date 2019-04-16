@@ -1,5 +1,7 @@
 package cs3500.animator.provider.model;
 
+import java.util.Objects;
+
 public class SizeAdapter {
 
   private int height;
@@ -27,5 +29,10 @@ public class SizeAdapter {
 
     return this.height == other.height
             && this.width == other.width;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.height, this.width);
   }
 }

@@ -22,7 +22,8 @@ public class Rectangle extends AbstractShape {
    * @param coords position of Rectangle on canvas
    * @param color color of Rectangle
    */
-  public Rectangle(int height, int width, Location coords, ColorAdapter color, ArrayList<IAction> actions,
+  public Rectangle(int height, int width, Location coords, ColorAdapter color,
+                   ArrayList<IAction> actions,
                    String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
