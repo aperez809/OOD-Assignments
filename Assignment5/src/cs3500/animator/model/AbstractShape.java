@@ -1,5 +1,7 @@
 package cs3500.animator.model;
 
+import cs3500.animator.provider.model.ColorAdapter;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +15,7 @@ public abstract class AbstractShape implements Shape {
   private int height;
   private int width;
   private Location coords;
-  private Color color;
+  private ColorAdapter color;
   protected StringBuilder trackedState;
   private ArrayList<IAction> actions;
   private String shapeName;
@@ -32,7 +34,7 @@ public abstract class AbstractShape implements Shape {
   public AbstractShape(int height,
                        int width,
                        Location coords,
-                       Color color,
+                       ColorAdapter color,
                        ArrayList<IAction> actions,
                        String shapeName) {
     if (height < 1 || width < 1) {
@@ -57,10 +59,10 @@ public abstract class AbstractShape implements Shape {
     this.height = other.height;
     this.width = other.width;
     this.coords = new Location(other.getPosition().getX(), other.getPosition().getY());
-    this.color = new Color(
-            other.getColor().getRed(),
-            other.getColor().getGreen(),
-            other.getColor().getBlue());
+    this.color = new ColorAdapter(new Color(
+            other.getColor().getR(),
+            other.getColor().getG(),
+            other.getColor().getB()));
 
     this.trackedState = new StringBuilder();
     this.actions = cloneActions(this.getActions());
@@ -135,9 +137,9 @@ public abstract class AbstractShape implements Shape {
             this.coords.getY(),
             this.width,
             this.height,
-            this.color.getRed(),
-            this.color.getGreen(),
-            this.color.getBlue()));
+            this.color.getR(),
+            this.color.getG(),
+            this.color.getB()));
   }
 
   /**
@@ -146,7 +148,8 @@ public abstract class AbstractShape implements Shape {
    * @return height as an int
    */
   public int getH() {
-    return height;
+    //return height;
+    return this.getSize().getH();
   }
 
   /**
@@ -163,7 +166,8 @@ public abstract class AbstractShape implements Shape {
    * @return int representing width
    */
   public int getW() {
-    return width;
+    //return width;
+    return this.getSize().getW();
   }
 
   /**
@@ -199,7 +203,7 @@ public abstract class AbstractShape implements Shape {
    *
    * @return Color object representing this Shape's color
    */
-  public Color getColor() {
+  public ColorAdapter getColor() {
     return color;
   }
 
@@ -208,7 +212,7 @@ public abstract class AbstractShape implements Shape {
    *
    * @param color Color object
    */
-  public void setColor(Color color) {
+  public void setColor(ColorAdapter color) {
     this.color = color;
   }
 
@@ -332,20 +336,15 @@ public abstract class AbstractShape implements Shape {
 
 
   public int getR() {
-    return this.color.getRed();
+    return this.color.getR();
   }
 
   public int getG() {
-    return this.color.getGreen();
+    return this.color.getG();
   }
 
   public int getB() {
-    return this.color.getBlue();
-  }
-
-  @Override
-  public int[] getSize() {
-    return new int[] {this.height, this.width};
+    return this.color.getB();
   }
 }
 

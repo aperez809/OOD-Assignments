@@ -1,5 +1,8 @@
 package cs3500.animator.model;
 
+import cs3500.animator.provider.model.ColorAdapter;
+import cs3500.animator.provider.model.SizeAdapter;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -19,7 +22,7 @@ public class Rectangle extends AbstractShape {
    * @param coords position of Rectangle on canvas
    * @param color color of Rectangle
    */
-  public Rectangle(int height, int width, Location coords, Color color, ArrayList<IAction> actions,
+  public Rectangle(int height, int width, Location coords, ColorAdapter color, ArrayList<IAction> actions,
                    String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
@@ -30,8 +33,8 @@ public class Rectangle extends AbstractShape {
             this.getH(),
             this.getW(),
             new Location(this.getPosition().getX(), this.getPosition().getY()),
-            new Color(this.getColor().getRed(), this.getColor().getBlue(),
-                    this.getColor().getGreen()),
+            new ColorAdapter(new Color(this.getColor().getR(), this.getColor().getB(),
+                    this.getColor().getG())),
             cloneActions(this.getActions()),
             this.getShapeName());
   }
@@ -61,5 +64,15 @@ public class Rectangle extends AbstractShape {
   @Override
   public String getShapeType() {
     return "rectangle";
+  }
+
+  @Override
+  public SizeAdapter getSize() {
+    return this.getSize();
+  }
+
+  @Override
+  public void setColor(Color color) {
+    this.setColor(color);
   }
 }
