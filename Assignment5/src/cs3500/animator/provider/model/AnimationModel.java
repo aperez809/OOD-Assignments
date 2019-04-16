@@ -1,6 +1,5 @@
-package cs3500.animator.provider.view;
+package cs3500.animator.provider.model;
 
-import cs3500.animator.model.helper.Transition;
 import cs3500.animator.model.Shape;
 import java.util.List;
 

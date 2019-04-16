@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import cs3500.animator.model.util.AnimationBuilder;
+import cs3500.animator.provider.model.ColorAdapter;
 
 /**
  * Represents the cs3500.animator.model for an Animation program.
@@ -81,7 +82,7 @@ public class AnimationModelImpl implements AnimationModel {
                   new Ellipse(1,
                           1,
                           new Location(0,0),
-                          new Color(0,0,0),
+                          new ColorAdapter(new Color(0,0,0)),
                           new ArrayList<>(),
                           name));
           break;
@@ -91,7 +92,7 @@ public class AnimationModelImpl implements AnimationModel {
                   new Rectangle(1,
                           1,
                           new Location(0,0),
-                          new Color(0,0,0),
+                          new ColorAdapter(new Color(0,0,0)),
                           new ArrayList<>(),
                           name));
           break;
@@ -302,7 +303,7 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public void removeKeyFrame(String name, int t) {
-    Shape givenShape = this.getShapeByName(name);
+    Shape givenShape = this.getShape(name);
     ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
     if (actionsAtTick.size() == 0) {
       throw new IllegalArgumentException("Given Tick Not a Keyframe");
@@ -327,7 +328,7 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public void editKeyFrame(String name, int t, int x, int y, int w, int h, int r, int g, int b) {
-    Shape givenShape = this.getShapeByName(name);
+    Shape givenShape = this.getShape(name);
     ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
     int[] givenState = new int[] {t,x,y,h,w,r,g,b};
     //if keyframe is first state of existing action, edit action so that start state
@@ -360,7 +361,7 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public void insertKeyFrame(String name, int t) {
-    Shape givenShape = this.getShapeByName(name);
+    Shape givenShape = this.getShape(name);
     ArrayList<IAction> actionsAtTick = givenShape.getActionsAtTick(t);
     ArrayList<Integer> firstLastActions = givenShape.getExtemeActionIndices();
     //if keyframe inserted in middle of existing motion split action into two actions
@@ -475,11 +476,13 @@ public class AnimationModelImpl implements AnimationModel {
    * @throws IllegalArgumentException if the given shape name does not exist in the model shapes map
    *
    */
-  private Shape getShapeByName(String name) {
+  private Shape getShape(String name) {
     Shape namedShape = shapes.get(name);
     if (namedShape == null) {
       throw new IllegalArgumentException("Invalid Shape Name");
     }
     return namedShape;
   }
+
+
 }

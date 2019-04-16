@@ -1,5 +1,8 @@
 package cs3500.animator.model;
 
+import cs3500.animator.provider.model.ColorAdapter;
+import cs3500.animator.provider.model.SizeAdapter;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -18,7 +21,7 @@ public class Ellipse extends AbstractShape {
    * @param coords position of Ellipse on canvas
    * @param color color of Ellipse
    */
-  public Ellipse(int height, int width, Location coords, Color color, ArrayList<IAction> actions,
+  public Ellipse(int height, int width, Location coords, ColorAdapter color, ArrayList<IAction> actions,
                  String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
@@ -29,8 +32,8 @@ public class Ellipse extends AbstractShape {
             this.getH(),
             this.getW(),
             new Location(this.getPosition().getX(), this.getPosition().getY()),
-            new Color(this.getColor().getRed(), this.getColor().getBlue(),
-                    this.getColor().getGreen()),
+            new ColorAdapter(new Color(this.getColor().getR(), this.getColor().getB(),
+                    this.getColor().getG())),
             cloneActions(this.getActions()),
             this.getShapeName());
   }
@@ -60,5 +63,15 @@ public class Ellipse extends AbstractShape {
   @Override
   public String getShapeType() {
     return "ellipse";
+  }
+
+  @Override
+  public void setColor(Color color) {
+    this.setColor(color);
+  }
+
+  @Override
+  public SizeAdapter getSize() {
+    return this.getSize();
   }
 }

@@ -1,5 +1,8 @@
 package cs3500.animator.model;
 
+import cs3500.animator.provider.model.ColorAdapter;
+import cs3500.animator.provider.model.SizeAdapter;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,13 +61,6 @@ public interface Shape {
   Location getPosition();
 
   /**
-   * Gets the color of this Shape object.
-   *
-   * @return Color object representing this Shape's color
-   */
-  Color getColor();
-
-  /**
    * Get the width of this Shape object.
    *
    * @return int representing width
@@ -117,6 +113,14 @@ public interface Shape {
    */
   String getShapeType();
 
-  int[] getSize();
+  SizeAdapter getSize();
+
+
+  /**
+   * Gets the color of this Shape object.
+   *
+   * @return Color object representing this Shape's color
+   */
+  ColorAdapter getColor();
 
 }

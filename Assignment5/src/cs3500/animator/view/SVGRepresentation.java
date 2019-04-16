@@ -74,9 +74,9 @@ public class SVGRepresentation implements IView, ActionListener {
               s.getPosition().getY(),
                       s.getW(),
                       s.getH(),
-                      s.getColor().getRed(),
-                      s.getColor().getGreen(),
-                      s.getColor().getBlue()));
+                      s.getColor().getR(),
+                      s.getColor().getG(),
+                      s.getColor().getB()));
 
       for (IAction a : s.getActions()) {
         createMoveLine(a);
@@ -204,7 +204,7 @@ public class SVGRepresentation implements IView, ActionListener {
   }
 
   @Override
-  public void setActionListener(ExcellenceController listener) {
+  public void setActionListener(ActionListener listener) {
     return;
   }
 
@@ -307,7 +307,7 @@ public class SVGRepresentation implements IView, ActionListener {
   }
 
   @Override
-  public void addActionListener(ExcellenceController excellenceController) {
+  public void addActionListener(ActionListener excellenceController) {
     return;
   }
 
