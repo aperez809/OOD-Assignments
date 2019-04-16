@@ -1,7 +1,5 @@
 package cs3500.animator.provider.model;
 
-import apple.laf.JRSUIConstants;
-
 public class SizeAdapter {
 
   private int height;

@@ -101,6 +101,10 @@ public class AnimationModelImplTest {
 
   }
 
+  /**
+   * Set up method, creating a model with multiple shapes, but no associated actions. Used for
+   * testing.
+   */
   public void noActionModelSetUp() {
     //example Shape objects
     Shape rectX = new Rectangle(
@@ -669,12 +673,17 @@ public class AnimationModelImplTest {
   @Test
   public void testInsertKeyFrameAfterAllAction() {
     testModel.insertKeyFrame("rectangle", 40);
+    int[] finalState = new int[] {40,350,350,200,200,100,100,100};
+    assertArrayEquals(finalState,
+            testModel.getShapes().get(0).getActionsAtTick(40).get(0).getEndState());
   }
 
   @Test
   public void testInsertKeyFrameNoActions() {
     this.noActionModelSetUp();
     testModelX.insertKeyFrame("rectX", 10);
+    assertEquals(1,
+            testModel.getShapes().get(0).getActions().size());
   }
 
   @Test
@@ -691,6 +700,9 @@ public class AnimationModelImplTest {
     testModel.addAction("rectangle", colorX);
     testModel.removeKeyFrame("rectangle",0);
     testModel.insertKeyFrame("rectangle", 0);
+    int[] startState = new int[] {0,350,350,200,200,100,100,100};
+    assertArrayEquals(startState,
+            testModel.getShapes().get(0).getActionsAtTick(00).get(0).getStartState());
   }
 
   @Test (expected = IllegalArgumentException.class)
@@ -703,12 +715,18 @@ public class AnimationModelImplTest {
   public void testEditKeyFrameBeginningOfAction() {
     testModel.editKeyFrame("rectangle",0,
             800, 800, 300,300,100,100,100);
+    int[] startState = new int[] {0,800,800,300,300,100,100,100};
+    assertArrayEquals(startState,
+            testModel.getShapes().get(0).getActionsAtTick(00).get(0).getStartState());
   }
 
   @Test
   public void testEditKeyFrameEndOfAction() {
     testModel.editKeyFrame("rectangle",10,
             800, 800, 300,300,100,100,100);
+    int[] finalState = new int[] {10,800,800,300,300,100,100,100};
+    assertArrayEquals(finalState,
+            testModel.getShapes().get(0).getActionsAtTick(10).get(0).getEndState());
   }
 
   @Test
@@ -716,13 +734,19 @@ public class AnimationModelImplTest {
     testModel.insertKeyFrame("rectangle", 40);
     testModel.editKeyFrame("rectangle",40,
             800, 800, 300,300,100,100,100);
+    int[] finalState = new int[] {40,800,800,300,300,100,100,100};
+    assertArrayEquals(finalState,
+            testModel.getShapes().get(0).getActionsAtTick(40).get(0).getEndState());
   }
 
   @Test
   public void testInsertEditRemoveKeyFrame() {
+    Shape startingRect = testModel.getShapes().get(0);
     testModel.insertKeyFrame("rectangle", 40);
     testModel.editKeyFrame("rectangle",40,
             800, 800, 300,300,100,100,100);
     testModel.removeKeyFrame("rectangle", 40);
+    assertArrayEquals(startingRect.getActions().get(0).getStartState(),
+            testModel.getShapes().get(0).getActions().get(0).getStartState());
   }
 }
