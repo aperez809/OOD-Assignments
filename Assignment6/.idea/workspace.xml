@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b85c3f-28b8-44a7-a9a4-d17e40a411a2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Assignment5/target/production/Assignment5/model/AbstractShape.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Assignment5/target/production/Assignment5/model/AnimationModel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Assignment5/target/production/Assignment5/model/AnimationModelImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Assignment5/target/production/Assignment5/model/Rectangle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Assignment5/target/production/Assignment5/model/Shape.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Assignment5/target/test/Assignment5/AnimationModelImplTest.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Assignment5/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/AbstractShape.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/AbstractShape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/Action.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/AnimationModel.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/AnimationModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/AnimationModelImpl.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/AnimationModelImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/ChangeColor.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/ChangeColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/ChangeDims.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/ChangeDims.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/IAction.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/IAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/Move.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/Move.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/Oval.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/Oval.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/Rectangle.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/Rectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/model/Shape.java" afterPath="$PROJECT_DIR$/../Assignment5/src/model/Shape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/test/AnimationModelImplTest.java" afterPath="$PROJECT_DIR$/../Assignment5/test/AnimationModelImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment5/src/cs3500/animator/view/TextRepresentation.java" afterPath="$PROJECT_DIR$/../Assignment5/src/cs3500/animator/view/TextRepresentation.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,7 +17,7 @@
       <file leaf-file-name="AnimationModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/AnimationModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="390">
               <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,7 +39,7 @@
       <file leaf-file-name="AnimationModelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="195">
               <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,7 +51,7 @@
       <file leaf-file-name="AnimationBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/util/AnimationBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
+            <state relative-caret-position="30">
               <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
@@ -78,7 +61,7 @@
       <file leaf-file-name="Oval.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Oval.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state relative-caret-position="375">
               <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,7 +73,7 @@
       <file leaf-file-name="Rectangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Rectangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="390">
               <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -125,7 +108,7 @@
       <file leaf-file-name="AbstractShape.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/AbstractShape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
+            <state relative-caret-position="1890">
               <caret line="143" column="48" lean-forward="false" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -221,6 +204,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,9 +235,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,6 +396,7 @@
       <workItem from="1552590477651" duration="63000" />
       <workItem from="1552590659030" duration="1734000" />
       <workItem from="1552924758199" duration="78000" />
+      <workItem from="1554822102825" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="getting up to date">
       <created>1551385822856</created>
@@ -499,11 +483,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33099000" />
+    <option name="totallyTimeSpent" value="33115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -517,7 +500,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36672053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36672053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -628,9 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,13 +660,7 @@
     <entry file="file://$PROJECT_DIR$/src/model/Triangle.java" />
     <entry file="file://$PROJECT_DIR$/src/model/Circle.java" />
     <entry file="file://$PROJECT_DIR$/src/model/RGB.java" />
-    <entry file="jar://$USER_HOME$/Downloads/javalib.jar!/javalib/impworld/MyTimer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/javalib.jar!/javalib/impworld/MyTimer.class" />
     <entry file="file://$PROJECT_DIR$/src/model/ChangeColor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -799,9 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="78" column="46" lean-forward="true" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -926,7 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="390">
           <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -936,7 +907,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/util/AnimationBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
+        <state relative-caret-position="30">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
         </state>
@@ -946,15 +917,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3194">
           <caret line="246" column="0" lean-forward="false" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Oval.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="375">
           <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -964,7 +932,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/AnimationModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="390">
           <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -974,7 +942,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="195">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -984,7 +952,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/AbstractShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
+        <state relative-caret-position="1890">
           <caret line="143" column="48" lean-forward="false" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />

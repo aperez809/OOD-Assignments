@@ -253,6 +253,7 @@ public class TextRepresentation implements IView {
   @Override
   public ArrayList<String> getShapeToAdd() {
     return null;
+    this.shapes.remove
   }
 
   @Override

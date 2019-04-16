@@ -56,7 +56,7 @@ public abstract class AbstractShape implements Shape {
   public AbstractShape(AbstractShape other) {
     this.height = other.height;
     this.width = other.width;
-    this.coords = new Location(other.getCoords().getX(), other.getCoords().getY());
+    this.coords = new Location(other.getPosition().getX(), other.getPosition().getY());
     this.color = new Color(
             other.getColor().getRed(),
             other.getColor().getGreen(),
@@ -145,7 +145,7 @@ public abstract class AbstractShape implements Shape {
    *
    * @return height as an int
    */
-  public int getHeight() {
+  public int getH() {
     return height;
   }
 
@@ -162,7 +162,7 @@ public abstract class AbstractShape implements Shape {
    *
    * @return int representing width
    */
-  public int getWidth() {
+  public int getW() {
     return width;
   }
 
@@ -180,7 +180,7 @@ public abstract class AbstractShape implements Shape {
    *
    * @return coordinates as a Location object
    */
-  public Location getCoords() {
+  public Location getPosition() {
     return new Location(this.coords.getX(), this.coords.getY());
   }
 
@@ -326,6 +326,26 @@ public abstract class AbstractShape implements Shape {
     extremeIndices.add(0,minIndex);
     extremeIndices.add(1,maxIndex);
     return extremeIndices;
+  }
+
+  public abstract String getShapeType();
+
+
+  public int getR() {
+    return this.color.getRed();
+  }
+
+  public int getG() {
+    return this.color.getGreen();
+  }
+
+  public int getB() {
+    return this.color.getBlue();
+  }
+
+  @Override
+  public int[] getSize() {
+    return new int[] {this.height, this.width};
   }
 }
 

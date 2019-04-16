@@ -27,9 +27,9 @@ public class Rectangle extends AbstractShape {
   @Override
   public Shape cloneShape() {
     return new Rectangle(
-            this.getHeight(),
-            this.getWidth(),
-            new Location(this.getCoords().getX(), this.getCoords().getY()),
+            this.getH(),
+            this.getW(),
+            new Location(this.getPosition().getX(), this.getPosition().getY()),
             new Color(this.getColor().getRed(), this.getColor().getBlue(),
                     this.getColor().getGreen()),
             cloneActions(this.getActions()),
@@ -44,9 +44,9 @@ public class Rectangle extends AbstractShape {
     }
 
     Rectangle other = (Rectangle) o;
-    return this.getHeight() == other.getHeight()
-            && this.getWidth() == other.getWidth()
-            && this.getCoords().equals(other.getCoords())
+    return this.getH() == other.getH()
+            && this.getW() == other.getW()
+            && this.getPosition().equals(other.getPosition())
             && this.getColor().equals(other.getColor())
             && this.getShapeName().equals(other.getShapeName());
   }
@@ -54,7 +54,12 @@ public class Rectangle extends AbstractShape {
   @Override
   public int hashCode() {
     return Objects.hash(
-            this.getHeight(), this.getWidth(), this.getCoords(), this.getColor(),
+            this.getH(), this.getW(), this.getPosition(), this.getColor(),
             this.getShapeName());
+  }
+
+  @Override
+  public String getShapeType() {
+    return "rectangle";
   }
 }

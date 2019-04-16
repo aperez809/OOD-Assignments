@@ -150,10 +150,10 @@ public class AnimationModelImplTest {
   public void testSuccessfullyMakeRect() {
     Shape r = new Rectangle(100,100,
             new Location(100,100), Color.BLUE, a1, "rect1");
-    assertEquals(100, r.getHeight());
-    assertEquals(100, r.getWidth());
-    assertEquals(100, r.getCoords().getX());
-    assertEquals(100, r.getCoords().getY());
+    assertEquals(100, r.getH());
+    assertEquals(100, r.getW());
+    assertEquals(100, r.getPosition().getX());
+    assertEquals(100, r.getPosition().getY());
     assertEquals(a1, r.getActions());
     assertEquals("rect1", r.getShapeName());
     assertEquals(Color.BLUE, r.getColor());
@@ -163,10 +163,10 @@ public class AnimationModelImplTest {
   public void testSuccessfullyMakeOval() {
     Shape o = new Ellipse(100,100,
             new Location(100,100), Color.BLUE, a2, "ellipse1");
-    assertEquals(100, o.getHeight());
-    assertEquals(100, o.getWidth());
-    assertEquals(100, o.getCoords().getX());
-    assertEquals(100, o.getCoords().getY());
+    assertEquals(100, o.getH());
+    assertEquals(100, o.getW());
+    assertEquals(100, o.getPosition().getX());
+    assertEquals(100, o.getPosition().getY());
     assertEquals(a2, o.getActions());
     assertEquals("ellipse1", o.getShapeName());
     assertEquals(Color.BLUE, o.getColor());
@@ -203,7 +203,7 @@ public class AnimationModelImplTest {
     Shape curr = testModel.getShapes().get(0);
     curr.execute(a1);
 
-    assertEquals(new Location(350,350), curr.getCoords());
+    assertEquals(new Location(350,350), curr.getPosition());
   }
 
   @Test
@@ -219,8 +219,8 @@ public class AnimationModelImplTest {
     Shape curr = testModel.getShapes().get(0);
     curr.execute(a3);
 
-    assertEquals(100, curr.getHeight());
-    assertEquals(100, curr.getWidth());
+    assertEquals(100, curr.getH());
+    assertEquals(100, curr.getW());
   }
 
   @Test

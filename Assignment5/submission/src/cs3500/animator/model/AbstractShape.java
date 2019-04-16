@@ -51,7 +51,7 @@ public abstract class AbstractShape implements Shape {
   public AbstractShape(AbstractShape other) {
     this.height = other.height;
     this.width = other.width;
-    this.coords = new Location(other.getCoords().getX(), other.getCoords().getY());
+    this.coords = new Location(other.getPosition().getX(), other.getPosition().getY());
     this.color = new Color(
             other.getColor().getRed(),
             other.getColor().getGreen(),

@@ -1,11 +1,7 @@
 package cs3500.animator.view;
 
-import cs3500.animator.controller.ExcellenceController;
-import cs3500.animator.model.Ellipse;
-import cs3500.animator.model.IAction;
-import cs3500.animator.model.Location;
-import cs3500.animator.model.Rectangle;
-import cs3500.animator.model.Shape;
+import cs3500.animator.model.*;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -81,9 +77,9 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
         }
         if (currMin <= currTick && currMax >= currTick) {
           if (s instanceof Rectangle) {
-            twoDimG.fillRect(s.getCoords().getX(), s.getCoords().getY(), s.getWidth(), s.getHeight());
+            twoDimG.fillRect(s.getPosition().getX(), s.getPosition().getY(), s.getW(), s.getH());
           } else if (s instanceof Ellipse) {
-            twoDimG.fillOval(s.getCoords().getX(), s.getCoords().getY(), s.getWidth(), s.getHeight());
+            twoDimG.fillOval(s.getPosition().getX(), s.getPosition().getY(), s.getW(), s.getH());
           }
         }
       }
@@ -121,12 +117,12 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     }
 
     s.setCoords(new Location(
-            jumpOrAnimate(s.getCoords().getX(), start[1], end[1], divisor),
-            jumpOrAnimate(s.getCoords().getY(), start[2], end[2], divisor)));
+            jumpOrAnimate(s.getPosition().getX(), start[1], end[1], divisor),
+            jumpOrAnimate(s.getPosition().getY(), start[2], end[2], divisor)));
 
-    s.setHeight(jumpOrAnimate(s.getHeight(), start[3], end[3], divisor));
+    s.setHeight(jumpOrAnimate(s.getH(), start[3], end[3], divisor));
 
-    s.setWidth(jumpOrAnimate(s.getWidth(), start[4], end[4], divisor));
+    s.setWidth(jumpOrAnimate(s.getW(), start[4], end[4], divisor));
 
     s.setColor(
             new Color(
@@ -297,7 +293,7 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   }
 
   @Override
-  public void setActionListener(ExcellenceController listener) {
+  public void setActionListener(ActionListener listener) {
     throw new UnsupportedOperationException("Only for EditorView class");
   }
 
@@ -329,7 +325,7 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
   }
 
   @Override
-  public void addActionListener(ExcellenceController excellenceController) {
+  public void addActionListener(ActionListener excellenceController) {
     this.t.addActionListener(excellenceController);
   }
 

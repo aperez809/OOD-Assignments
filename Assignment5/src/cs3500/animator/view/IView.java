@@ -1,9 +1,11 @@
 package cs3500.animator.view;
 
 import cs3500.animator.controller.ExcellenceController;
+import cs3500.animator.model.Action;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -66,7 +68,7 @@ public interface IView {
    */
   void add(AnimationPanelView panel);
 
-  void setActionListener(ExcellenceController listener);
+  void setActionListener(ActionListener listener);
 
   void flipPause();
   void flipReverse();
@@ -93,7 +95,7 @@ public interface IView {
 
   IView getPanel();
 
-  void addActionListener(ExcellenceController excellenceController);
+  void addActionListener(ActionListener excellenceController);
 
   void toggleAddShapeOptions();
 

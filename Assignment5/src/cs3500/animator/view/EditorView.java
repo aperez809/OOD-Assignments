@@ -1,6 +1,7 @@
 package cs3500.animator.view;
 
 import cs3500.animator.controller.ExcellenceController;
+import cs3500.animator.controller.IAnimControl;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
@@ -328,7 +329,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     }
 
   @Override
-  public void setActionListener(ExcellenceController listener) {
+  public void setActionListener(ActionListener listener) {
     playPauseButton.addActionListener(listener);
     reverseButton.addActionListener(listener);
     loopingButton.addActionListener(listener);
@@ -474,7 +475,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   }
 
   @Override
-  public void addActionListener(ExcellenceController excellenceController) {
+  public void addActionListener(ActionListener excellenceController) {
     t.addActionListener(excellenceController);
     playPauseButton.addActionListener(excellenceController);
     reverseButton.addActionListener(excellenceController);

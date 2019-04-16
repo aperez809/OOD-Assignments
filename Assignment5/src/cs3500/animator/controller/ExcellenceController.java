@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
  * A pseudo-controller for our EasyAnimator that displays the correct type of animation based
  * on text inputs.
  */
-public final class ExcellenceController implements ActionListener, ListSelectionListener {
+public final class ExcellenceController implements IAnimControl, ActionListener, ListSelectionListener {
   private AnimationModel model;
   private IView view;
   private IView panel;

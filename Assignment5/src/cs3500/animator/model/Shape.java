@@ -55,7 +55,7 @@ public interface Shape {
    *
    * @return coordinates as a Location object
    */
-  Location getCoords();
+  Location getPosition();
 
   /**
    * Gets the color of this Shape object.
@@ -69,14 +69,14 @@ public interface Shape {
    *
    * @return int representing width
    */
-  int getWidth();
+  int getW();
 
   /**
    * Get the height of this Shape.
    *
    * @return height as an int
    */
-  int getHeight();
+  int getH();
 
   boolean checkOverlap(IAction a);
 
@@ -108,4 +108,15 @@ public interface Shape {
    * @return arraylist of action indices
    */
   ArrayList<Integer> getExtemeActionIndices();
+
+
+  /**
+   * Get the type of the given shape (i.e. rectangle or ellipse)
+   *
+   * @return String value with name of shape type
+   */
+  String getShapeType();
+
+  int[] getSize();
+
 }

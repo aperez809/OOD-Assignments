@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -213,7 +214,7 @@ public class AnimationGraphicsView extends JFrame implements IView {
   }
 
   @Override
-  public void setActionListener(ExcellenceController listener) {
+  public void setActionListener(ActionListener listener) {
     this.panel.setActionListener(listener);
   }
 
@@ -228,7 +229,7 @@ public class AnimationGraphicsView extends JFrame implements IView {
   }
 
   @Override
-  public void addActionListener(ExcellenceController excellenceController) {
+  public void addActionListener(ActionListener excellenceController) {
     this.panel.addActionListener(excellenceController);
   }
 
