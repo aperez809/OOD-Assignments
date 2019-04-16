@@ -1,4 +1,4 @@
-package cs3500.animator.adapterController;
+package cs3500.animator.adaptercontroller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

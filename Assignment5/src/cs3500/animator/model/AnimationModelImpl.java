@@ -325,7 +325,8 @@ public class AnimationModelImpl implements AnimationModel, cs3500.animator.provi
       int[] combinedEndState = actionsAtTick.get(1).getEndState();
       this.removeAction(name,actionsAtTick.get(0));
       int combinedActIndex = givenShape.getActions().indexOf(actionsAtTick.get(1));
-      this.addShapeAction(givenShape, combinedActIndex, true, combinedStartState, combinedEndState);
+      this.addShapeAction(givenShape, combinedActIndex, true, combinedStartState,
+              combinedEndState);
     }
   }
 
@@ -527,6 +528,6 @@ public class AnimationModelImpl implements AnimationModel, cs3500.animator.provi
 
   @Override
   public void deleteKeyFrame(String name, int t) {
-
+    this.removeKeyFrame(name, t);
   }
 }
