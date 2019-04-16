@@ -109,7 +109,7 @@ public interface AnimationController {
   void toggleLoop();
 
   /**
-   * Get the speed of the animation
+   * Get the speed of the animation.
    * @return the number of ticks per second
    */
   int getSpeed();
@@ -127,7 +127,7 @@ public interface AnimationController {
   boolean getLoop();
 
   /**
-   * Return whether the animation is playing
+   * Return whether the animation is playing.
    * @return true if the animation is playing
    */
   boolean getPlaying();

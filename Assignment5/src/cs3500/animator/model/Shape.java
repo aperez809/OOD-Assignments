@@ -2,7 +2,6 @@ package cs3500.animator.model;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Represents the functionality of a Shape on the canvas.

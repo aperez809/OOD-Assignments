@@ -1,7 +1,5 @@
 package cs3500.animator.view;
 
-import cs3500.animator.model.*;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -13,6 +11,12 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
+
+import cs3500.animator.model.Ellipse;
+import cs3500.animator.model.IAction;
+import cs3500.animator.model.Location;
+import cs3500.animator.model.Rectangle;
+import cs3500.animator.model.Shape;
 
 /**
  * Represents the pieces of an animation that actually contain images. Handles all the lower-level
@@ -106,9 +110,15 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     System.out.println(currTick);
   }
 
-
+  /**
+   * Takes shape and action, using the start and end state of the given action to modify the given
+   * shape so its state (whether intermediate or final) is represented within the shape's
+   * attributes.
+   *
+   * @param s shape whose move is being executed
+   * @param a tick action to be executed on given shape
+   */
   public void executeMove(Shape s, IAction a) {
-
     int[] start = a.getStartState();
     int[] end = a.getEndState();
     int divisor = end[0] - start[0];

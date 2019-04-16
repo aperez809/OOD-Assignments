@@ -1,13 +1,15 @@
 package cs3500.animator.view;
 
-import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
-import java.awt.*;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,17 +1,27 @@
 package cs3500.animator.view;
 
-import cs3500.animator.controller.ExcellenceController;
-import cs3500.animator.controller.IAnimControl;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
-import javax.naming.OperationNotSupportedException;
-import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+/**
+ * Implementation of Animation View allowing for the user to interact with the view and edit the
+ * animation using the provided view screen options.
+ */
 public class EditorView extends AnimationPanelView implements ActionListener {
 
   //Utility booleans that are swapped every time a button is pressed
@@ -23,13 +33,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private boolean areDeleteShapeOptionsShown;
   private boolean areModifyKeyFrameOptionsShown;
 
-  private DefaultListModel shapesModel;
   //private JList shapesList;
   private JComboBox shapesList;
   private JComboBox modifyshapesList;
 
-  private JScrollPane shapesScroller;
-  private JScrollPane modifyshapesScroller;
 
 
 
@@ -50,7 +57,6 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private JButton exitNewShapeButton;
 
   private JTextField newShapeName;
-  private JComboBox newShapeType;
   private JPanel newShapeInputPanel;
 
   private JTextField tickValueText;
@@ -70,7 +76,6 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   private JTextField newshapegreenValueText;
   private JTextField newshapeblueValueText;
 
-  private JComboBox keyShapeType;
   private JComboBox keyFrameOpType;
   private JPanel modifyKeyFramePanel;
 
@@ -87,10 +92,12 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   //TODO: pairs of start and end vals) or a long string of space delimited vals
   //TODO: (then call str.split() on long string)
   //TODO: calls addShape in model, sets shapes in view to model.getShapes(), and restarts animation
-  private JTextField addedShapeDimsInput;
-  private JTextField addedShapeMotionsInput;
   private JPanel shapesListPanel;
 
+  /**
+   * Constructor for Editor View, taking in a list of shapes, speed, and whether or not the
+   * animation will loop. Assigns all further variables to default values.
+   */
   public EditorView(ArrayList<Shape> shapes, int speed, boolean willLoop) {
     super(shapes, speed);
     this.isPaused = false;
@@ -126,10 +133,10 @@ public class EditorView extends AnimationPanelView implements ActionListener {
             "Remove Shape");
 
     this.newShapeName = new JTextField("Shape Name", 10);
-    this.addedShapeMotionsInput = new JTextField("t1 t2 x1 x2 y1 y2 h1 h2 w1 w2 " +
-            "r1 r2 g1 g2 b1 b2",
+    JTextField addedShapeMotionsInput = new JTextField("t1 t2 x1 x2 y1 y2 h1 h2 w1 w2 "
+            + "r1 r2 g1 g2 b1 b2",
             "t1 t2 x1 x2 y1 y2 h1 h2 w1 w2 r1 r2 g1 g2 b1 b2".length());
-    this.addedShapeDimsInput = new JTextField("Input shape's dims as 'H W'", 16);
+    JTextField addedShapeDimsInput = new JTextField("Input shape's dims as 'H W'", 16);
 
     this.submitButton = new JButton("Submit");
     this.keyFramesubmitButton = new JButton("Submit");
@@ -182,7 +189,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     JLabel keyFrameOptionsLabel = new JLabel("KeyFrame Operations:");
     String[] keyFrameOptions = {"Add", "Edit", "Remove"};
 
-    newShapeType = new JComboBox(shapeOptions);
+    JComboBox newShapeType = new JComboBox(shapeOptions);
     newShapeInputPanel = new JPanel();
     add(newShapeInputPanel);
     newShapeInputPanel.add(newShapeNameLabel);
@@ -210,9 +217,9 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     exitNewShapeButton.setActionCommand("exitNewShape");
 
     shapesListPanel = new JPanel();
-    shapesModel = new DefaultListModel();
+    DefaultListModel shapesModel = new DefaultListModel();
     shapesList = new JComboBox(getShapeNamesAsArray());
-    shapesScroller = new JScrollPane(shapesList);
+    JScrollPane shapesScroller = new JScrollPane(shapesList);
     shapesList.setName("Shapes");
     shapesListPanel.add(shapesList);
     shapesListPanel.add(shapesScroller);
@@ -223,11 +230,11 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
     //keyframe Panel
     keyFrameOpType = new JComboBox(keyFrameOptions);
-    keyShapeType = new JComboBox(modifyshapeOptions);
+    JComboBox keyShapeType = new JComboBox(modifyshapeOptions);
     modifyKeyFramePanel = new JPanel();
     add(modifyKeyFramePanel);
     modifyshapesList = new JComboBox(getShapeNamesAsArray());
-    modifyshapesScroller = new JScrollPane(modifyshapesList);
+    JScrollPane modifyshapesScroller = new JScrollPane(modifyshapesList);
     modifyshapesList.setName("Shapes");
     modifyKeyFramePanel.add(modifyshapesList);
     modifyKeyFramePanel.add(modifyshapesScroller);
@@ -293,40 +300,40 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     if (isPaused) {
-        return;
-      }
-      for (Shape s : shapes) {
-        for (IAction a : s.getActions()) {
-          if (currTick >= a.getStartTick() && currTick <= a.getEndTick()) {
-            executeMove(s, a);
-          }
-        }
-      }
-      repaint();
-      if (isReversed) {
-        if (currTick <= 0) {
-          currTick = 0;
-        }
-        else {
-          currTick--;
-        }
-
-      } else {
-        currTick++;
-      }
-      if (currTick >= maxTick && willLoop) {
-
-        currTick = 0;
-        repaint();
-
-      }
-      else if (currTick >= maxTick & !willLoop) {
-        currTick = maxTick;
-        repaint();
-      }
-      maxTick = getMaxTick();
-      System.out.println(currTick);
+      return;
     }
+    for (Shape s : shapes) {
+      for (IAction a : s.getActions()) {
+        if (currTick >= a.getStartTick() && currTick <= a.getEndTick()) {
+          executeMove(s, a);
+        }
+      }
+    }
+    repaint();
+    if (isReversed) {
+      if (currTick <= 0) {
+        currTick = 0;
+      }
+      else {
+        currTick--;
+      }
+
+    } else {
+      currTick++;
+    }
+    if (currTick >= maxTick && willLoop) {
+
+      currTick = 0;
+      repaint();
+
+    }
+    else if (currTick >= maxTick & !willLoop) {
+      currTick = maxTick;
+      repaint();
+    }
+    maxTick = getMaxTick();
+    System.out.println(currTick);
+  }
 
   @Override
   public void setActionListener(ActionListener listener) {
@@ -378,7 +385,7 @@ public class EditorView extends AnimationPanelView implements ActionListener {
 
   @Override
   public void slowDown() {
-    if (t.getDelay() + 50 >= 1000){
+    if (t.getDelay() + 50 >= 1000) {
       t.setDelay(1000);
     }
     else {
@@ -426,6 +433,12 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     return (String) keyFrameOpType.getSelectedItem();
   }
 
+  /**
+   * Method gathering all of the user-defined values from the shape editor panel on the view and
+   * compiling all values into one array, to be utilized easier in other methods. Used when user
+   * is modifying an existing shape.
+   * @return array representation of the new state of the shape
+   */
   public int[] getNewStateValues() {
     int tick = parseStateVal(tickValueText.getText());
     int xval = parseStateVal(xValueText.getText());
@@ -439,6 +452,12 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     return newState;
   }
 
+  /**
+   * Method gathering all of the user-defined values from the shape creator panel on the view and
+   * compiling all values into one array, to be utilized easier in other methods. Used when user is
+   * defining a new shape.
+   * @return array representation of the state of the new shape
+   */
   public int[] getShapeState() {
     int xval = parseStateVal(newshapexValueText.getText());
     int yval = parseStateVal(newshapeyValueText.getText());
@@ -493,6 +512,11 @@ public class EditorView extends AnimationPanelView implements ActionListener {
   }
 
 
+  /**
+   * Method used to provide the user with options of shapes to modify. Returns an array of strings
+   * representing all the shapes in the animation.
+   * @return array of strings of shape names
+   */
   public String[] getShapeNamesAsArray() {
     ArrayList<String> tempNames = new ArrayList<>();
 

@@ -1,10 +1,9 @@
 package cs3500.animator.controller;
 
 import cs3500.animator.model.AnimationModel;
-import cs3500.animator.model.Shape;
 import cs3500.animator.view.IView;
 
-import javax.swing.*;
+import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
@@ -15,12 +14,17 @@ import java.awt.event.ActionListener;
  * A pseudo-controller for our EasyAnimator that displays the correct type of animation based
  * on text inputs.
  */
-public final class ExcellenceController implements IAnimControl, ActionListener, ListSelectionListener {
+public final class ExcellenceController implements IAnimControl, ActionListener,
+        ListSelectionListener {
   private AnimationModel model;
   private IView view;
   private IView panel;
   private SubmitFrame submitType;
 
+  /**
+   * Constructor for Excellence Controller, taking in an Animation and View and first checking
+   * that neither are null.
+   */
   public ExcellenceController(AnimationModel model, IView view) {
     if (model == null || view == null) {
       throw new IllegalArgumentException("Neither model nor view can be null.");
@@ -134,7 +138,7 @@ public final class ExcellenceController implements IAnimControl, ActionListener,
             try {
               String shapeName = panel.getShapeToAdd().get(0);
             }
-            catch(Exception except) {
+            catch (Exception except) {
               throw new IllegalArgumentException(except.toString());
             }
             int[] shapeState = panel.getShapeState();
@@ -156,7 +160,11 @@ public final class ExcellenceController implements IAnimControl, ActionListener,
       }
     }
   }
-
+  /**
+   * Helper method for handling modification of keyframes in the edit view. Given the shape name
+   * and desired keyframe operation to be performed on said shape and calls the respective
+   * model methods to make the desired modifications.
+   */
   public void keyFrameHandler(String shapeName, String operation) {
     int[] stateVals = panel.getNewStateValues();
     switch (operation) {

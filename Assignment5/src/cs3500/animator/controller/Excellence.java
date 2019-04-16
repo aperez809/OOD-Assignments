@@ -19,8 +19,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * Excellence class containing the main method which the user may use to start the application,
+ * allowing user to decide which type of view to utilize by passing in command line arguments.
+ */
 public class Excellence {
 
+  /**
+   * Main class used to run the entire application. Allows for user selection of view type and
+   * instantiates the model and controller, so all three may be used in the program's execution.
+   */
   public static void main(String[] args) throws IOException {
     AnimationModel model;
     IView view = null;

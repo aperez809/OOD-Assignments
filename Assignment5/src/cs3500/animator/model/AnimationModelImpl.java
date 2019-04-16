@@ -147,12 +147,12 @@ public class AnimationModelImpl implements AnimationModel {
      * list of motions, splitting the motion that the tick tweens. The state of the keyframe is
      * determined by calculating the intermediate state between the two nearest tick frames. This
      * method does not edit the state of the shape, but places a keyframe that can later be modified
-     * to modify the actions of the shape. Adding a keyframe at a tick where a keyframe already exists
-     * does nothing, adding a keyframe before the first keyframe creates a new motion between it and
-     * the previous first keyframe, adding a keyframe after the last keyframe creates a new motion
-     * between the previous last keyframe and it, adding a keyframe to a shape with no motions creates
-     * a new action with both the start and end states being 0. Once a second keyframe is added,
-     * these two keyframes will create a full motion.
+     * to modify the actions of the shape. Adding a keyframe at a tick where a keyframe already
+     * exists does nothing, adding a keyframe before the first keyframe creates a new motion
+     * between it and the previous first keyframe, adding a keyframe after the last keyframe
+     * creates a new motion between the previous last keyframe and it, adding a keyframe to a shape
+     * with no motions creates a new action with both the start and end states being 0. Once a
+     * second keyframe is added, these two keyframes will create a full motion.
      *
      * @param name The name of the shape
      * @param t    The time for this keyframe
@@ -167,6 +167,7 @@ public class AnimationModelImpl implements AnimationModel {
       }
       return this;
     }
+
     /**
      * Removes the keyframe from the given shape at the given tick. If keyframe is bordered by a
      * single motion, that motions is removed from the list of motions. If keyframe is bordered by
