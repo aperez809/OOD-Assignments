@@ -6,11 +6,13 @@ import java.util.LinkedHashMap;
 
 import cs3500.animator.model.util.AnimationBuilder;
 import cs3500.animator.provider.model.ColorAdapter;
+import cs3500.animator.provider.model.Transition;
+import cs3500.animator.provider.model.TransitionToActionAdapter;
 
 /**
  * Represents the cs3500.animator.model for an Animation program.
  */
-public class AnimationModelImpl implements AnimationModel {
+public class AnimationModelImpl implements AnimationModel, cs3500.animator.provider.model.AnimationModel {
   private StringBuilder trackedState;
   private LinkedHashMap<String, Shape> shapes;
   private int height;
@@ -477,7 +479,7 @@ public class AnimationModelImpl implements AnimationModel {
    * @throws IllegalArgumentException if the given shape name does not exist in the model shapes map
    *
    */
-  private Shape getShape(String name) {
+  public Shape getShape(String name) {
     Shape namedShape = shapes.get(name);
     if (namedShape == null) {
       throw new IllegalArgumentException("Invalid Shape Name");
@@ -485,5 +487,46 @@ public class AnimationModelImpl implements AnimationModel {
     return namedShape;
   }
 
+  @Override
+  public void addShape(Shape... sh) {
+    for (Shape s: sh) {
+      this.addShape(s);
+    }
+  }
 
+  @Override
+  public void addTransition(String name, Transition t) {
+    IAction tmp = new TransitionToActionAdapter(t).getTransAsAction();
+    this.shapes.get(name).addAction(tmp);
+  }
+
+  @Override
+  public void tick() {
+
+  }
+
+  @Override
+  public boolean canTick() {
+    return false;
+  }
+
+  @Override
+  public int getCurrentTick() {
+    return 0;
+  }
+
+  @Override
+  public void reset() {
+
+  }
+
+  @Override
+  public void addKeyFrame(String name, int t, int x, int y, int w, int h, int r, int g, int b) {
+    //Already implemented in builder
+  }
+
+  @Override
+  public void deleteKeyFrame(String name, int t) {
+
+  }
 }

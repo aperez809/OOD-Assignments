@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a45d158-ea62-4182-90d4-a9204fb7e72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/animator/provider/model/ColorAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/animator/provider/model/SizeAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/animator/provider/model/Transition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/animator/provider/model/TransitionToActionAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cs3500/animator/provider/view/AnimationModel.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/provider/model/AnimationModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Ellipse.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Ellipse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Rectangle.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Rectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/model/Shape.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/model/Shape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/view/SVGRepresentation.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/SVGRepresentation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" afterPath="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/AnimationModelImplTest.java" afterPath="$PROJECT_DIR$/test/AnimationModelImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,10 +32,66 @@
       <file leaf-file-name="AnimationModelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="486" column="0" lean-forward="false" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="521" column="0" lean-forward="false" selection-start-line="521" selection-start-column="0" selection-end-line="521" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1555439907308" expanded="true" signature="6706:7326" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="7406:7591" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="7642:7834" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="7887:8046" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="8050:8303" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="8364:8557" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="8622:8818" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="8822:8948" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="8992:9184" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="9188:9324" ph="/**...*/" />
+                <marker date="1555439907308" expanded="false" signature="9389:9396" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="9418:9422" ph=" }" />
+                <marker date="1555439907308" expanded="true" signature="9426:9522" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="9573:9723" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="9728:9906" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="9981:10162" ph="{...}" />
+                <marker date="1555439907308" expanded="false" signature="10193:10200" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="10214:10218" ph=" }" />
+                <marker date="1555439907308" expanded="false" signature="10255:10262" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="10283:10287" ph=" }" />
+                <marker date="1555439907308" expanded="true" signature="10350:11608" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="10585:10717" ph="//..." />
+                <marker date="1555439907308" expanded="true" signature="10922:11181" ph="//..." />
+                <marker date="1555439907308" expanded="true" signature="11718:13471" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="11891:12008" ph="//..." />
+                <marker date="1555439907308" expanded="true" signature="12324:12437" ph="//..." />
+                <marker date="1555439907308" expanded="true" signature="12762:12933" ph="//..." />
+                <marker date="1555439907308" expanded="true" signature="13534:15991" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="14893:15035" ph="//..." />
+                <marker date="1555439907308" expanded="true" signature="15430:15569" ph="//..." />
+                <marker date="1555439907308" expanded="false" signature="16016:16023" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="16036:16040" ph=" }" />
+                <marker date="1555439907308" expanded="false" signature="16075:16082" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="16101:16105" ph=" }" />
+                <marker date="1555439907308" expanded="false" signature="16129:16136" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="16148:16152" ph=" }" />
+                <marker date="1555439907308" expanded="false" signature="16185:16192" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="16209:16213" ph=" }" />
+                <marker date="1555439907308" expanded="false" signature="16237:16244" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="16256:16260" ph=" }" />
+                <marker date="1555439907308" expanded="false" signature="16293:16300" ph=" { " />
+                <marker date="1555439907308" expanded="false" signature="16317:16321" ph=" }" />
+                <marker date="1555439907308" expanded="true" signature="16325:17263" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="17408:17907" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="17911:18374" ph="/**...*/" />
+                <marker date="1555439907308" expanded="true" signature="18412:18581" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="18631:18690" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="18759:18877" ph="{...}" />
+                <marker date="1555439907308" expanded="true" signature="18912:18918" ph="{}" />
+                <marker date="1555439907308" expanded="true" signature="18958:18965" ph=" { " />
+                <marker date="1555439907308" expanded="true" signature="18978:18982" ph=" }" />
+                <marker date="1555439907308" expanded="true" signature="19025:19032" ph=" { " />
+                <marker date="1555439907308" expanded="true" signature="19041:19045" ph=" }" />
+                <marker date="1555439907308" expanded="true" signature="19081:19087" ph="{}" />
+                <marker date="1555439907308" expanded="true" signature="19196:19238" ph="{}" />
+                <marker date="1555439907308" expanded="true" signature="19301:19307" ph="{}" />
               </folding>
             </state>
           </provider>
@@ -53,53 +101,111 @@
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Shape.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="582">
-              <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-              <folding />
+              <caret line="121" column="5" lean-forward="false" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+              <folding>
+                <marker date="1555439906670" expanded="true" signature="188:253" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="282:441" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="489:599" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="640:732" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="764:854" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="888:974" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="1008:1119" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="1158:1254" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="1284:1375" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="1393:1472" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="1674:1999" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="2049:2358" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="2410:2539" ph="/**...*/" />
+                <marker date="1555439906670" expanded="true" signature="2595:2709" ph="/**...*/" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditorView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+              <folding>
+                <marker date="1555439974835" expanded="true" signature="18166:18445" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextRepresentation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/TextRepresentation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2992">
+              <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+              <folding>
+                <marker date="1555439907291" expanded="true" signature="278:513" ph="/**...*/" />
+                <marker date="1555439907291" expanded="false" signature="784:791" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="798:802" ph=" }" />
+                <marker date="1555439907291" expanded="true" signature="806:1194" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="1291:1455" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="1459:1555" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="1596:1681" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="1686:1821" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="1894:1979" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="1983:2213" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="2271:2356" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="2360:2412" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="2449:2534" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="2538:2749" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="2794:2879" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="2883:3145" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="3191:3642" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="3646:3850" ph="/**...*/" />
+                <marker date="1555439907291" expanded="true" signature="3907:3992" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4032:4112" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4154:4234" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4276:4356" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4394:4474" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4513:4593" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4635:4714" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4758:4837" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="4881:4960" ph="{...}" />
+                <marker date="1555439907291" expanded="false" signature="5000:5007" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="5076:5080" ph=" }" />
+                <marker date="1555439907291" expanded="true" signature="5140:5220" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="5258:5338" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="5385:5465" ph="{...}" />
+                <marker date="1555439907291" expanded="false" signature="5504:5511" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="5580:5584" ph=" }" />
+                <marker date="1555439907291" expanded="false" signature="5624:5631" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="5638:5642" ph=" }" />
+                <marker date="1555439907291" expanded="true" signature="5693:5772" ph="{...}" />
+                <marker date="1555439907291" expanded="false" signature="5811:5818" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="5887:5891" ph=" }" />
+                <marker date="1555439907291" expanded="false" signature="5973:5980" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="5987:5991" ph=" }" />
+                <marker date="1555439907291" expanded="true" signature="6043:6122" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="6180:6259" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="6307:6386" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="6441:6520" ph="{...}" />
+                <marker date="1555439907291" expanded="true" signature="6577:6656" ph="{...}" />
+                <marker date="1555439907291" expanded="false" signature="6704:6711" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="6723:6727" ph=" }" />
+                <marker date="1555439907291" expanded="false" signature="6780:6787" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="6799:6803" ph=" }" />
+                <marker date="1555439907291" expanded="false" signature="6851:6858" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="6870:6874" ph=" }" />
+                <marker date="1555439907291" expanded="false" signature="6918:6925" ph=" { " />
+                <marker date="1555439907291" expanded="false" signature="6937:6941" ph=" }" />
+                <marker date="1555439907291" expanded="true" signature="6997:7004" ph=" { " />
+                <marker date="1555439907291" expanded="true" signature="7016:7020" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="AnimationModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="78" column="5" lean-forward="false" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractShape.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4875">
-              <caret line="346" column="26" lean-forward="false" selection-start-line="346" selection-start-column="26" selection-end-line="346" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5237#5238#0" expanded="true" />
-                <element signature="e#5259#5260#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Action.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-535">
-              <caret line="71" column="66" lean-forward="true" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnimationModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/provider/model/AnimationModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="121">
+              <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,16 +213,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransitionToActionAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/provider/model/TransitionToActionAdapter.java">
+      <file leaf-file-name="IView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/IView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#232#233#0" expanded="true" />
-                <element signature="e#252#253#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1020">
+              <caret line="68" column="39" lean-forward="false" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,8 +226,8 @@
       <file leaf-file-name="ProvToCustControllerAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/adapterController/ProvToCustControllerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,8 +238,8 @@
       <file leaf-file-name="ProvToCustViewAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2260">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="38" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,12 +247,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Transition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/provider/model/Transition.java">
+      <file leaf-file-name="AnimationPanelView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="-2435">
+              <caret line="140" column="54" lean-forward="false" selection-start-line="140" selection-start-column="54" selection-end-line="140" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnimationModelImplTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/AnimationModelImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3835">
+              <caret line="427" column="52" lean-forward="false" selection-start-line="427" selection-start-column="52" selection-end-line="427" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,8 +282,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>submit</find>
-      <find>newShapeInpu</find>
       <find>getshapeto</find>
       <find>name</find>
       <find>shapesListPanel</find>
@@ -196,6 +310,8 @@
       <find>actionListen</find>
       <find>getColor</find>
       <find>getShape</find>
+      <find>addAc</find>
+      <find>getSpeed</find>
     </findStrings>
     <replaceStrings>
       <replace>pane;</replace>
@@ -217,7 +333,6 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModel.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/controller/Excellence.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/view/TextRepresentation.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/controller/IAnimControl.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/controller/ExcellenceController.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/provider/view/AnimationModel.java" />
@@ -227,8 +342,6 @@
         <option value="$PROJECT_DIR$/src/cs3500/animator/provider/view/VisualView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/view/IView.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustAdapter.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/adapterController/ProvToCustControllerAdapter.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/provider/model/ColorAdapter.java" />
@@ -238,11 +351,15 @@
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/Rectangle.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/model/Ellipse.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/provider/model/Transition.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/provider/model/TransitionToActionAdapter.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" />
         <option value="$PROJECT_DIR$/src/cs3500/animator/provider/model/AnimationModel.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/view/TextRepresentation.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java" />
+        <option value="$PROJECT_DIR$/test/AnimationModelImplTest.java" />
       </list>
     </option>
   </component>
@@ -392,6 +509,151 @@
       <recent name="$PROJECT_DIR$/src/cs3500/animator/provider/view" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/controller/Excellence.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/controller/ExcellenceController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/controller/IAnimControl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/model/AbstractShape.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/model/Shape.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/provider/view/AnimationController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/view/IView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/animator/view/TextRepresentation.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/vcs.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission.zip</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/resources/text-transcript.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/resources/toh-at-20.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/AbstractShape.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/Action.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/AnimationModel.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/AnimationModelImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/Ellipse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/IAction.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/Location.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/Rectangle.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/Shape.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/util/AnimationBuilder.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/model/util/AnimationReader.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/view/AnimationGraphicsView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/view/AnimationPanelView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/view/Excellence.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/view/IView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/view/SVGRepresentation.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/src/cs3500/animator/view/TextRepresentation.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/test/AnimationModelImplTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/test/SVGRepresentationTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/submission/test/TextRepresentationTest.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -539,7 +801,7 @@
       <option name="presentableId" value="Default" />
       <updated>1553892106845</updated>
       <workItem from="1555383714280" duration="350000" />
-      <workItem from="1555384444150" duration="8317000" />
+      <workItem from="1555384444150" duration="10877000" />
     </task>
     <task id="LOCAL-00003" summary="pulled from github">
       <created>1553892142426</created>
@@ -590,11 +852,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555431548794</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="let's get these style points">
+      <created>1555434311279</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555434311279</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31892000" />
+    <option name="totallyTimeSpent" value="34452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -611,6 +880,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -634,7 +904,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout>
@@ -728,13 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/AnimationModelImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buildings.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -787,25 +1049,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/excludeFromValidation.xml" />
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/Excellence.java" />
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/TextRepresentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3915">
-          <caret line="280" column="16" lean-forward="false" selection-start-line="280" selection-start-column="16" selection-end-line="280" selection-end-column="16" />
-          <folding>
-            <element signature="e#6701#6702#0" expanded="true" />
-            <element signature="e#6722#6723#0" expanded="true" />
-            <element signature="e#6777#6778#0" expanded="true" />
-            <element signature="e#6798#6799#0" expanded="true" />
-            <element signature="e#6848#6849#0" expanded="true" />
-            <element signature="e#6869#6870#0" expanded="true" />
-            <element signature="e#6915#6916#0" expanded="true" />
-            <element signature="e#6936#6937#0" expanded="true" />
-            <element signature="e#6994#6995#0" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/provider/view/VisualView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -830,14 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/IView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="70" column="39" lean-forward="false" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -943,32 +1178,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationGraphicsView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="66" column="15" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2172#2173#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1053,16 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/adapterController/ProvToCustControllerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-535">
@@ -1076,16 +1281,6 @@
         <state relative-caret-position="672">
           <caret line="74" column="3" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2260">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,28 +1304,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Shape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="486" column="0" lean-forward="false" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
+        <state relative-caret-position="582">
+          <caret line="121" column="5" lean-forward="false" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+          <folding>
+            <marker date="1555439906670" expanded="true" signature="188:253" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="282:441" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="489:599" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="640:732" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="764:854" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="888:974" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="1008:1119" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="1158:1254" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="1284:1375" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="1393:1472" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="1674:1999" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="2049:2358" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="2410:2539" ph="/**...*/" />
+            <marker date="1555439906670" expanded="true" signature="2595:2709" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/EditorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+          <folding>
+            <marker date="1555439974835" expanded="true" signature="18166:18445" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/provider/model/AnimationModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/Shape.java">
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="425">
+          <caret line="521" column="0" lean-forward="false" selection-start-line="521" selection-start-column="0" selection-end-line="521" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1555439907308" expanded="true" signature="6706:7326" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="7406:7591" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="7642:7834" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="7887:8046" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="8050:8303" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="8364:8557" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="8622:8818" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="8822:8948" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="8992:9184" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="9188:9324" ph="/**...*/" />
+            <marker date="1555439907308" expanded="false" signature="9389:9396" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="9418:9422" ph=" }" />
+            <marker date="1555439907308" expanded="true" signature="9426:9522" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="9573:9723" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="9728:9906" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="9981:10162" ph="{...}" />
+            <marker date="1555439907308" expanded="false" signature="10193:10200" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="10214:10218" ph=" }" />
+            <marker date="1555439907308" expanded="false" signature="10255:10262" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="10283:10287" ph=" }" />
+            <marker date="1555439907308" expanded="true" signature="10350:11608" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="10585:10717" ph="//..." />
+            <marker date="1555439907308" expanded="true" signature="10922:11181" ph="//..." />
+            <marker date="1555439907308" expanded="true" signature="11718:13471" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="11891:12008" ph="//..." />
+            <marker date="1555439907308" expanded="true" signature="12324:12437" ph="//..." />
+            <marker date="1555439907308" expanded="true" signature="12762:12933" ph="//..." />
+            <marker date="1555439907308" expanded="true" signature="13534:15991" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="14893:15035" ph="//..." />
+            <marker date="1555439907308" expanded="true" signature="15430:15569" ph="//..." />
+            <marker date="1555439907308" expanded="false" signature="16016:16023" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="16036:16040" ph=" }" />
+            <marker date="1555439907308" expanded="false" signature="16075:16082" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="16101:16105" ph=" }" />
+            <marker date="1555439907308" expanded="false" signature="16129:16136" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="16148:16152" ph=" }" />
+            <marker date="1555439907308" expanded="false" signature="16185:16192" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="16209:16213" ph=" }" />
+            <marker date="1555439907308" expanded="false" signature="16237:16244" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="16256:16260" ph=" }" />
+            <marker date="1555439907308" expanded="false" signature="16293:16300" ph=" { " />
+            <marker date="1555439907308" expanded="false" signature="16317:16321" ph=" }" />
+            <marker date="1555439907308" expanded="true" signature="16325:17263" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="17408:17907" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="17911:18374" ph="/**...*/" />
+            <marker date="1555439907308" expanded="true" signature="18412:18581" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="18631:18690" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="18759:18877" ph="{...}" />
+            <marker date="1555439907308" expanded="true" signature="18912:18918" ph="{}" />
+            <marker date="1555439907308" expanded="true" signature="18958:18965" ph=" { " />
+            <marker date="1555439907308" expanded="true" signature="18978:18982" ph=" }" />
+            <marker date="1555439907308" expanded="true" signature="19025:19032" ph=" { " />
+            <marker date="1555439907308" expanded="true" signature="19041:19045" ph=" }" />
+            <marker date="1555439907308" expanded="true" signature="19081:19087" ph="{}" />
+            <marker date="1555439907308" expanded="true" signature="19196:19238" ph="{}" />
+            <marker date="1555439907308" expanded="true" signature="19301:19307" ph="{}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/TextRepresentation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2992">
+          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <marker date="1555439907291" expanded="true" signature="278:513" ph="/**...*/" />
+            <marker date="1555439907291" expanded="false" signature="784:791" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="798:802" ph=" }" />
+            <marker date="1555439907291" expanded="true" signature="806:1194" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="1291:1455" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="1459:1555" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="1596:1681" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="1686:1821" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="1894:1979" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="1983:2213" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="2271:2356" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="2360:2412" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="2449:2534" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="2538:2749" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="2794:2879" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="2883:3145" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="3191:3642" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="3646:3850" ph="/**...*/" />
+            <marker date="1555439907291" expanded="true" signature="3907:3992" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4032:4112" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4154:4234" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4276:4356" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4394:4474" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4513:4593" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4635:4714" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4758:4837" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="4881:4960" ph="{...}" />
+            <marker date="1555439907291" expanded="false" signature="5000:5007" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="5076:5080" ph=" }" />
+            <marker date="1555439907291" expanded="true" signature="5140:5220" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="5258:5338" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="5385:5465" ph="{...}" />
+            <marker date="1555439907291" expanded="false" signature="5504:5511" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="5580:5584" ph=" }" />
+            <marker date="1555439907291" expanded="false" signature="5624:5631" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="5638:5642" ph=" }" />
+            <marker date="1555439907291" expanded="true" signature="5693:5772" ph="{...}" />
+            <marker date="1555439907291" expanded="false" signature="5811:5818" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="5887:5891" ph=" }" />
+            <marker date="1555439907291" expanded="false" signature="5973:5980" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="5987:5991" ph=" }" />
+            <marker date="1555439907291" expanded="true" signature="6043:6122" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="6180:6259" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="6307:6386" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="6441:6520" ph="{...}" />
+            <marker date="1555439907291" expanded="true" signature="6577:6656" ph="{...}" />
+            <marker date="1555439907291" expanded="false" signature="6704:6711" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="6723:6727" ph=" }" />
+            <marker date="1555439907291" expanded="false" signature="6780:6787" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="6799:6803" ph=" }" />
+            <marker date="1555439907291" expanded="false" signature="6851:6858" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="6870:6874" ph=" }" />
+            <marker date="1555439907291" expanded="false" signature="6918:6925" ph=" { " />
+            <marker date="1555439907291" expanded="false" signature="6937:6941" ph=" }" />
+            <marker date="1555439907291" expanded="true" signature="6997:7004" ph=" { " />
+            <marker date="1555439907291" expanded="true" signature="7016:7020" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/IView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="39" lean-forward="false" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/provider/model/AnimationModel.java">
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/adapterController/ProvToCustControllerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/adapterView/ProvToCustViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="38" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/animator/view/AnimationPanelView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2435">
+          <caret line="140" column="54" lean-forward="false" selection-start-line="140" selection-start-column="54" selection-end-line="140" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/AnimationModelImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3835">
+          <caret line="427" column="52" lean-forward="false" selection-start-line="427" selection-start-column="52" selection-end-line="427" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

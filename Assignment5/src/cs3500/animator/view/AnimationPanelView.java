@@ -68,7 +68,7 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
     super.paintComponent(twoDimG);
 
     for (Shape s : this.shapes) {
-      twoDimG.setColor(s.getColor());
+      twoDimG.setColor(new Color(s.getColor().getR(), s.getColor().getG(), s.getColor().getB()));
       Integer currMin = null;
       Integer currMax = null;
       for (IAction a : s.getActions()) {
@@ -136,9 +136,9 @@ public class AnimationPanelView extends JPanel implements IView, ActionListener 
 
     s.setColor(
             new Color(
-                    jumpOrAnimateRGB(s.getColor().getRed(), start[5], end[5], divisor),
-                    jumpOrAnimateRGB(s.getColor().getGreen(), start[6], end[6], divisor),
-                    jumpOrAnimateRGB(s.getColor().getBlue(), start[7], end[7], divisor)));
+                    jumpOrAnimateRGB(s.getColor().getR(), start[5], end[5], divisor),
+                    jumpOrAnimateRGB(s.getColor().getG(), start[6], end[6], divisor),
+                    jumpOrAnimateRGB(s.getColor().getB(), start[7], end[7], divisor)));
   }
 
   //determines if a Shape on the canvas needs to be instantly relocated or smoothly animated

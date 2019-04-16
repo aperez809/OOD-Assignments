@@ -1,3 +1,4 @@
+import cs3500.animator.provider.model.ColorAdapter;
 import org.junit.Before;
 import org.junit.Test;
 import java.awt.Color;
@@ -77,13 +78,13 @@ public class AnimationModelImplTest {
             200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rectangle");
     Shape ellipse = new Ellipse(200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "ellipse");
 
@@ -106,13 +107,13 @@ public class AnimationModelImplTest {
             200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rectX");
     Shape ellipseX = new Ellipse(200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "ellipseX");
 
@@ -131,13 +132,13 @@ public class AnimationModelImplTest {
             100,
             100,
             new Location(100,100),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "Rectangle");
     Shape ellipseAnim = new Ellipse(100,
             100,
             new Location(100,100),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "Ellipse");
     AnimationModel animModel = new AnimationModelImpl();
@@ -149,7 +150,7 @@ public class AnimationModelImplTest {
   @Test
   public void testSuccessfullyMakeRect() {
     Shape r = new Rectangle(100,100,
-            new Location(100,100), Color.BLUE, a1, "rect1");
+            new Location(100,100), new ColorAdapter(Color.BLUE), a1, "rect1");
     assertEquals(100, r.getH());
     assertEquals(100, r.getW());
     assertEquals(100, r.getPosition().getX());
@@ -162,7 +163,7 @@ public class AnimationModelImplTest {
   @Test
   public void testSuccessfullyMakeOval() {
     Shape o = new Ellipse(100,100,
-            new Location(100,100), Color.BLUE, a2, "ellipse1");
+            new Location(100,100), new ColorAdapter(Color.BLUE), a2, "ellipse1");
     assertEquals(100, o.getH());
     assertEquals(100, o.getW());
     assertEquals(100, o.getPosition().getX());
@@ -175,25 +176,25 @@ public class AnimationModelImplTest {
   @Test(expected = IllegalArgumentException.class)
   public void testBadRectZeroHeight() {
     Shape r = new Rectangle(0,100,
-            new Location(100,100), Color.RED, new ArrayList<>(), "test");
+            new Location(100,100), new ColorAdapter(Color.RED), new ArrayList<>(), "test");
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testBadOvalZeroWidth() {
     Shape o = new Ellipse(100,0,
-            new Location(100,100), Color.RED, new ArrayList<>(), "test");
+            new Location(100,100), new ColorAdapter(Color.RED), new ArrayList<>(), "test");
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testBadOvalZeroHeight() {
     Shape o = new Ellipse(0,100,
-            new Location(100,100), Color.RED, new ArrayList<>(), "test");
+            new Location(100,100), new ColorAdapter(Color.RED), new ArrayList<>(), "test");
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testBadRectZeroWidth() {
     Shape r = new Rectangle(100,0,
-            new Location(100,100), Color.RED, new ArrayList<>(), "test");
+            new Location(100,100), new ColorAdapter(Color.RED), new ArrayList<>(), "test");
   }
 
 
@@ -229,13 +230,13 @@ public class AnimationModelImplTest {
     Shape rect1 = new Rectangle(200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rect1");
     Shape rect2 = new Rectangle(100,
             100,
             new Location(100,100),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rect2");
     IAction move1 = new Action(0, 10,
@@ -278,19 +279,19 @@ public class AnimationModelImplTest {
     Shape rect1 = new Rectangle(200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rectang1");
     Shape rect2 = new Rectangle(10,
             10,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rectang2");
     Shape oval1 = new Ellipse(200,
             200,
             new Location(200,200),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "oval1");
     Collection<Shape> shapeList = new ArrayList<>();
@@ -418,13 +419,13 @@ public class AnimationModelImplTest {
             200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "rectangle"));
     temp.add(new Ellipse(200,
             200,
             new Location(300,300),
-            new Color(100,100,100),
+            new ColorAdapter(new Color(100,100,100)),
             new ArrayList<>(),
             "ellipse"));
     assertEquals(true, temp.containsAll(testModel.getShapes()));
