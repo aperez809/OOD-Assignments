@@ -12,7 +12,8 @@ import cs3500.animator.provider.model.TransitionToActionAdapter;
 /**
  * Represents the cs3500.animator.model for an Animation program.
  */
-public class AnimationModelImpl implements AnimationModel, cs3500.animator.provider.model.AnimationModel {
+public class AnimationModelImpl implements AnimationModel,
+        cs3500.animator.provider.model.AnimationModel {
   private StringBuilder trackedState;
   private LinkedHashMap<String, Shape> shapes;
   private int height;
@@ -199,6 +200,13 @@ public class AnimationModelImpl implements AnimationModel, cs3500.animator.provi
       throw new IllegalArgumentException("Shape already exists in cs3500.animator.model");
     }
     this.shapes.put(s.getShapeName(), s);
+  }
+
+  @Override
+  public void addShape(Shape... sh) {
+    for (Shape s: sh) {
+      this.addShape(s);
+    }
   }
 
   @Override
@@ -489,13 +497,6 @@ public class AnimationModelImpl implements AnimationModel, cs3500.animator.provi
   }
 
   @Override
-  public void addShape(Shape... sh) {
-    for (Shape s: sh) {
-      this.addShape(s);
-    }
-  }
-
-  @Override
   public void addTransition(String name, Transition t) {
     IAction tmp = new TransitionToActionAdapter(t).getTransAsAction();
     this.shapes.get(name).addAction(tmp);
@@ -503,7 +504,7 @@ public class AnimationModelImpl implements AnimationModel, cs3500.animator.provi
 
   @Override
   public void tick() {
-
+    throw new UnsupportedOperationException("Not compatible");
   }
 
   @Override
@@ -518,7 +519,7 @@ public class AnimationModelImpl implements AnimationModel, cs3500.animator.provi
 
   @Override
   public void reset() {
-
+    throw new UnsupportedOperationException("Not compatible");
   }
 
   @Override

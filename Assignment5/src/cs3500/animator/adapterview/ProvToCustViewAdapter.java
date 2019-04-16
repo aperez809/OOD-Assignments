@@ -6,12 +6,18 @@ import cs3500.animator.provider.view.AnimationView;
 import cs3500.animator.view.AnimationPanelView;
 import cs3500.animator.view.IView;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+
+/**
+ * View adapter class so that our model and implementation details will integrate with our
+ * provider's Editor View.
+ */
 public class ProvToCustViewAdapter implements IView {
 
   private cs3500.animator.provider.view.AnimationView prov;
@@ -20,13 +26,22 @@ public class ProvToCustViewAdapter implements IView {
   private JPanel panel;
   private Timer t;
   private int speed;
+  private int maxTick;
 
+
+  /**
+   * Constructs an instance of the ProvToCustViewAdapter class.
+   * @param prov provider view
+   * @param shapes list of shapes
+   * @param panel JPanel object
+   */
   public ProvToCustViewAdapter(AnimationView prov, ArrayList<Shape> shapes, JPanel panel) {
     this.prov = prov;
     this.currTick = currTick;
     this.shapes = shapes;
     this.panel = panel;
     this.t = new Timer(this.speed, null);
+    this.maxTick = getMaxTick();
   }
 
   /*
@@ -150,17 +165,17 @@ setOutputFile
 
   @Override
   public int getMaxTick() {
-    return 0;
+    return maxTick;
   }
 
   @Override
   public void setMaxTick(int newMax) {
-
+    maxTick = newMax;
   }
 
   @Override
   public void startTimer() {
-
+    t.start();
   }
 
   @Override

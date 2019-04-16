@@ -2,6 +2,11 @@ package cs3500.animator.provider.model;
 
 import java.util.Objects;
 
+
+/**
+ * Adapter class so that our Size implementation would integrate with our
+ * provider's Size implementation.
+ */
 public class SizeAdapter {
 
   private int height;
@@ -20,6 +25,7 @@ public class SizeAdapter {
     return this.width;
   }
 
+  @Override
   public boolean equals(Object o) {
     if (!(o instanceof SizeAdapter)) {
       return false;

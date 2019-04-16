@@ -21,7 +21,8 @@ public class Ellipse extends AbstractShape {
    * @param coords position of Ellipse on canvas
    * @param color color of Ellipse
    */
-  public Ellipse(int height, int width, Location coords, ColorAdapter color, ArrayList<IAction> actions,
+  public Ellipse(int height, int width, Location coords, ColorAdapter color,
+                 ArrayList<IAction> actions,
                  String shapeName) {
     super(height, width, coords, color, actions, shapeName);
   }
