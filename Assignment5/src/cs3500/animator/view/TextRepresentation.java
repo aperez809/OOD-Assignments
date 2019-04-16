@@ -1,7 +1,6 @@
 
 package cs3500.animator.view;
 
-import cs3500.animator.controller.ExcellenceController;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;

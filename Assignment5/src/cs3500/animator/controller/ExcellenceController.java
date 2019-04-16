@@ -160,13 +160,13 @@ public final class ExcellenceController implements IAnimControl, ActionListener,
       }
     }
   }
+
   /**
    * Helper method for handling modification of keyframes in the edit view. Given the shape name
    * and desired keyframe operation to be performed on said shape and calls the respective
    * model methods to make the desired modifications.
    */
   public void keyFrameHandler(String shapeName, String operation) {
-
     int[] stateVals = panel.getNewStateValues();
     switch (operation) {
       case "Remove":
