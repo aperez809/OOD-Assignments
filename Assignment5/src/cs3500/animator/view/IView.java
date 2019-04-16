@@ -1,7 +1,5 @@
 package cs3500.animator.view;
 
-import cs3500.animator.controller.ExcellenceController;
-import cs3500.animator.model.Action;
 import cs3500.animator.model.IAction;
 import cs3500.animator.model.Shape;
 
@@ -71,12 +69,19 @@ public interface IView {
   void setActionListener(ActionListener listener);
 
   void flipPause();
+
   void flipReverse();
+
   void flipLooping();
+
   void speedUp();
+
   void slowDown();
+
   boolean isPaused();
+
   boolean isReversed();
+
   boolean isWillLoop();
 
   int getCurrTick();

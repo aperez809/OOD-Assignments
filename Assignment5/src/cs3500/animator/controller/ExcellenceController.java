@@ -166,6 +166,7 @@ public final class ExcellenceController implements IAnimControl, ActionListener,
    * model methods to make the desired modifications.
    */
   public void keyFrameHandler(String shapeName, String operation) {
+
     int[] stateVals = panel.getNewStateValues();
     switch (operation) {
       case "Remove":

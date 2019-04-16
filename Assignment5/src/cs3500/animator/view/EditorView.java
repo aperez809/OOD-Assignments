@@ -403,6 +403,12 @@ public class EditorView extends AnimationPanelView implements ActionListener {
     modifyKeyFramePanel.setVisible(areModifyKeyFrameOptionsShown);
   }
 
+  /**
+   * Returns an array list including the name of the shape declared by the user in the editor view
+   * to be added to the animation. If there is no text contained in the shape title declaration,
+   * null is added.
+   * @return array list including the name of the shape to be added
+   */
   public ArrayList<String> getShapeToAdd() {
     ArrayList<String> temp = new ArrayList<>();
     if (newShapeName.getText().length() > 0) {

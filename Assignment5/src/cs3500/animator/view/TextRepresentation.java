@@ -6,6 +6,7 @@ import cs3500.animator.model.IAction;
 import cs3500.animator.model.Rectangle;
 import cs3500.animator.model.Shape;
 
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -24,7 +25,7 @@ public class TextRepresentation implements IView {
   private int height;
 
   @Override
-  public void setActionListener(ExcellenceController listener) {
+  public void setActionListener(ActionListener listener) {
     return;
   }
 
@@ -226,7 +227,7 @@ public class TextRepresentation implements IView {
   }
 
   @Override
-  public void addActionListener(ExcellenceController excellenceController) {
+  public void addActionListener(ActionListener excellenceController) {
     return;
   }
 
@@ -252,8 +253,7 @@ public class TextRepresentation implements IView {
 
   @Override
   public ArrayList<String> getShapeToAdd() {
-    return null;
-    this.shapes.remove
+    throw new UnsupportedOperationException("Only for EditorView class");
   }
 
   @Override

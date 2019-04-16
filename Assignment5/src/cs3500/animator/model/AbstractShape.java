@@ -291,9 +291,10 @@ public abstract class AbstractShape implements Shape {
   public ArrayList<IAction> getActionsAtTick(int t) {
     ArrayList<IAction> associatedActions = new ArrayList<>();
     for (IAction action : actions) {
-        if (t == action.getStartTick() || t == action.getEndTick() || (t > action.getStartTick() && t < action.getEndTick())) {
-          associatedActions.add(action);
-        }
+      if (t == action.getStartTick() || t == action.getEndTick()
+              || (t > action.getStartTick() && t < action.getEndTick())) {
+        associatedActions.add(action);
+      }
     }
     //sorts the associated actions list based on start tick
     if (associatedActions.size() == 2
